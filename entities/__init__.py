@@ -21,4 +21,4 @@ While module Parser will parse XML file into above given modules
 '''
 
 # Used when we write: from entities import *, in order to import modules to other module
-__all__ = ["Document", "Entity", "Pair", "Sentence","Parser"]
+__all__ = ["xml_classes", "parser"]
