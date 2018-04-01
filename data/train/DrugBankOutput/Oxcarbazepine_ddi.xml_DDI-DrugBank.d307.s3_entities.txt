@@ -1,2 +1,0 @@
-oxcarbazepine	drug
-MHD	drug_n

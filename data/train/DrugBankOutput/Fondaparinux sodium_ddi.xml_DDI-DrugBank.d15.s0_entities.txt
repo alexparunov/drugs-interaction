@@ -1,9 +1,0 @@
-Fondaparinux	drug
-anticoagulants	group
-warfarin	drug
-platelet inhibitors	group
-acetylsalicylic acid	drug
-NSAIDs	group
-piroxicam	drug
-digoxin	drug
-fondaparinux sodium	drug

@@ -1,2 +1,0 @@
-Enoxaparin	drug
-eptifibatide	drug

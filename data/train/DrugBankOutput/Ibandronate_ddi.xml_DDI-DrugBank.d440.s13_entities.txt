@@ -1,6 +1,0 @@
-NSAIDs	group
-Ibandronate	drug
-bisphosphonates	group
-aspirin	brand
-aspirin	brand
-NSAIDs	group

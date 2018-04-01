@@ -1,6 +1,0 @@
-valproate	drug
-tiagabine	drug
-Valproate	drug
-tiagabine	drug
-valproate	drug
-tiagabine	drug

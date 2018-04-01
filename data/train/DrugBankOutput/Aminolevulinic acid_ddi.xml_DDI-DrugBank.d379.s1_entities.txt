@@ -1,8 +1,0 @@
-sulfonylureas	group
-thiazide diuretics	group
-griseofulvin	drug
-photosensitizing agents	group
-LEVULAN KERASTICK	brand
-tetracyclines	group
-sulfonamides	group
-phenothiazines	group

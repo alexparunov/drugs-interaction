@@ -1,3 +1,0 @@
-Catecholamine-depleting drugs	group
-reserpine	drug
-beta-blocking agents	group

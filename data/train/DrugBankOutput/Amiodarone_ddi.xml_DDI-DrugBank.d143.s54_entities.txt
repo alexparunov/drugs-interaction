@@ -1,3 +1,0 @@
-CYP2D6	drug
-Dextromethorphan	drug
-CYP3A4	drug

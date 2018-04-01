@@ -1,4 +1,0 @@
-tricyclic antidepressants	group
-clozapine	drug
-debrisoquin	drug
-dextromethorphan	drug

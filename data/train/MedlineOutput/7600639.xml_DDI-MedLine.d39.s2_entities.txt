@@ -1,3 +1,0 @@
-endotoxin	drug_n
-endotoxin	drug_n
-estradiol	drug

@@ -1,2 +1,0 @@
-(-)-erythro-fluorocitrate	drug_n
-1,3-difluoroacetone	drug_n

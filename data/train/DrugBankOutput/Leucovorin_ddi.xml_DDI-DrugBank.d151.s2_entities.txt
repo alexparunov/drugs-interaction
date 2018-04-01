@@ -1,2 +1,0 @@
-leucovorin	drug
-methotrexate	drug

@@ -1,3 +1,0 @@
-coumarin anticoagulant	group
-CASODEX	brand
-warfarin	drug

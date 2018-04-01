@@ -1,3 +1,0 @@
-narcotics	group
-barbiturates	group
-Alcohol	drug

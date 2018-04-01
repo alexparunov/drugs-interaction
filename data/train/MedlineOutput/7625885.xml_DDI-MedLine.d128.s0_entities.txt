@@ -1,1 +1,0 @@
-16,16-dimethylprostaglandin E2	drug_n

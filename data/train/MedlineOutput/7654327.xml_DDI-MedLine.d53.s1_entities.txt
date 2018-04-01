@@ -1,3 +1,0 @@
-vitamin D	group
-25-Dihydroxycholecalciferol D3	drug
-1,25(OH)2D3	drug

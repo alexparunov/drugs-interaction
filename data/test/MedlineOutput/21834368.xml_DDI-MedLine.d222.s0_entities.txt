@@ -1,3 +1,0 @@
-nicotine	drug
-Chantix	brand
-varenicline	drug

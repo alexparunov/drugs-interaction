@@ -1,5 +1,0 @@
-CNS depressants	group
-tricyclic antidepressants	group
-Antihistamines	group
-alcohol	drug
-barbiturates	group

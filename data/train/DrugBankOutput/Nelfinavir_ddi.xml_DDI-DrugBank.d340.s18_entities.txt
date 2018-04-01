@@ -1,6 +1,0 @@
-nelfinavir	drug
-saquinavir	drug
-saquinavir	drug
-VIRACEPT	brand
-Saquinavir	drug
-saquinavir	drug

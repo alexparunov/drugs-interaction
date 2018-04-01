@@ -1,4 +1,0 @@
-bupropion	drug
-MAO Inhibitors	group
-phenelzine	drug
-MAO inhibitor	group

@@ -1,4 +1,0 @@
-nelfinavir	drug
-VIRACEPT	brand
-ketoconazole	drug
-Ketoconazole	drug

@@ -1,2 +1,0 @@
-THC	drug_n
-phytocannabinoids	drug_n

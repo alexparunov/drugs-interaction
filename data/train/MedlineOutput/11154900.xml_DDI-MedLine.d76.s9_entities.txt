@@ -1,4 +1,0 @@
-insulin	drug
-bacitracin	drug
-CMC-Cys	drug_n
-NaCMC	drug_n

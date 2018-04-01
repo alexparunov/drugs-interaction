@@ -1,3 +1,0 @@
-Saquinavir	drug
-Anti-HIV protease inhibitors	group
-ritonavir	drug

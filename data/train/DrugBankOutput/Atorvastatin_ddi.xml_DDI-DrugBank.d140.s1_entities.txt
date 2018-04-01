@@ -1,4 +1,0 @@
-atorvastatin	drug
-Antacid	group
-atorvastatin	drug
-Maalox TC	brand

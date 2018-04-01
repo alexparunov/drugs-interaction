@@ -1,3 +1,0 @@
-tamoxifen	drug
-tamoxifen	drug
-ARIMIDEX	brand

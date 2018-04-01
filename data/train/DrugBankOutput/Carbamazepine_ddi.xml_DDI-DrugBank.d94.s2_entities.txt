@@ -1,2 +1,0 @@
-carbamazepine 10,11-epoxide	drug
-Carbamazepine	drug

@@ -1,3 +1,0 @@
-spironolactone	drug
-felodipine	drug
-indomethacin	drug

@@ -1,4 +1,0 @@
-fosfomycin	drug
-MONUROL	brand
-Cimetidine	drug
-Cimetidine	drug

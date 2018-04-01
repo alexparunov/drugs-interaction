@@ -1,2 +1,0 @@
-acitretin	drug
-methotrexate	drug

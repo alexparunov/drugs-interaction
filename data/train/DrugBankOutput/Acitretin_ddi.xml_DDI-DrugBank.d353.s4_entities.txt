@@ -1,3 +1,0 @@
-Hormonal Contraceptives	group
-acitretin	drug
-combined oral contraceptives	group

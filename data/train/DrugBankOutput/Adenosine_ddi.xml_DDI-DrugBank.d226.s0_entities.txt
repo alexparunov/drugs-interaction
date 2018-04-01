@@ -1,6 +1,0 @@
-angiotensin converting enzyme inhibitors	group
-calcium channel blocking agents	group
-adenosine	drug
-Adenocard	brand
-beta-adrenergic blocking agents	group
-quinidine	drug

@@ -1,4 +1,0 @@
-Depen	brand
-Cuprimine	brand
-Auranofin	drug
-penicillamine	drug

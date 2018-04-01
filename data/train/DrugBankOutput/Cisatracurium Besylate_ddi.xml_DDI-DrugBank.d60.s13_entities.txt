@@ -1,3 +1,0 @@
-carbamazepine	drug
-phenytoin	drug
-nondepolarizing neuromuscular blocking agents	group

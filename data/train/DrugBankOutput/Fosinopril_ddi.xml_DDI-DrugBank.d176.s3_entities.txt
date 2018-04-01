@@ -1,4 +1,0 @@
-Potassium	drug
-Potassium-Sparing Diuretics	group
-Fosinopril sodium	drug
-thiazide diuretics	group

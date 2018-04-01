@@ -1,6 +1,0 @@
-quinolones	group
-theophylline	drug
-caffeine	drug
-anticoagulant	group
-warfarin	drug
-cyclosporine	drug

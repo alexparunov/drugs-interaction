@@ -1,3 +1,0 @@
-dexfenfluramine	drug
-dexfenfluramine	drug
-MAO inhibitor	group

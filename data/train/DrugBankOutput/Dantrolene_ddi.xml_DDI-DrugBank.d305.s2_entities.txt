@@ -1,3 +1,0 @@
-phenylbutazone	drug
-diphenylhydantoin	drug
-diazepam	drug

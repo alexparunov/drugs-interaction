@@ -1,3 +1,0 @@
-chlorprothixene	drug
-tramadol	drug
-Ultram	brand

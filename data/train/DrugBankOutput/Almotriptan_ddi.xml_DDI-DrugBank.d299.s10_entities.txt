@@ -1,3 +1,0 @@
-almotriptan	drug
-ketoconazole	drug
-almotriptan	drug

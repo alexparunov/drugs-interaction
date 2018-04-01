@@ -1,5 +1,0 @@
-COREG	brand
-agents with b-blocking properties	group
-verapamil	drug
-calcium channel blockers	group
-diltiazem	drug

@@ -1,2 +1,0 @@
-cephalosporins	group
-cefotetan	drug

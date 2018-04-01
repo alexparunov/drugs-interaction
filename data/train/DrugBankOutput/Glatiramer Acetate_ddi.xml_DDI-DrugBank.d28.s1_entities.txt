@@ -1,2 +1,0 @@
-corticosteroids	group
-COPAXONE	brand

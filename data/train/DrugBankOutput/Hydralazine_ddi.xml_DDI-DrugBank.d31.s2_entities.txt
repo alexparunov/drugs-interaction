@@ -1,2 +1,0 @@
-diazoxide	drug
-hydralazine	drug

@@ -1,3 +1,0 @@
-cefditoren pivoxil	drug
-famotidine	drug
-H2-Receptor Antagonists	group

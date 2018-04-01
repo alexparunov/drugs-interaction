@@ -1,3 +1,0 @@
-sirolimus	drug
-tacrolimus	drug
-Cyclosporin	drug

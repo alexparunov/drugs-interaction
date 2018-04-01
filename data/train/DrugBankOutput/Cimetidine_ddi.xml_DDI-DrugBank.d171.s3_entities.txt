@@ -1,3 +1,0 @@
-theophylline	drug
-lidocaine	drug
-phenytoin	drug

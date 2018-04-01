@@ -1,2 +1,0 @@
-bosentan	drug
-cyclosporine A	drug

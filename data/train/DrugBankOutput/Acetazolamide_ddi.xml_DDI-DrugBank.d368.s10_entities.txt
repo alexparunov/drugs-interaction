@@ -1,2 +1,0 @@
-Acetazolamide	drug
-quinidine	drug

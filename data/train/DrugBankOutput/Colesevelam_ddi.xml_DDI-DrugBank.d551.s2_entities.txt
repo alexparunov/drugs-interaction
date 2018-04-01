@@ -1,3 +1,0 @@
-Calan SR	brand
-WelChol	brand
-verapamil	drug

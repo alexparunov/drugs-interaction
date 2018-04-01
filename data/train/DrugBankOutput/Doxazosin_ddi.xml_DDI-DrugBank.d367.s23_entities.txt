@@ -1,3 +1,0 @@
-diazepam	drug
-tranquilizers	group
-Sedatives	group

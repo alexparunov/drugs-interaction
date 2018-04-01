@@ -1,2 +1,0 @@
-arsenate	drug_n
-Vitamin D3	drug

@@ -1,3 +1,0 @@
-ketorolac	drug
-ketorolac	drug
-salicylate	group

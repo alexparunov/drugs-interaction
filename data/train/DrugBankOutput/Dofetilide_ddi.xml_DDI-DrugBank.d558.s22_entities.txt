@@ -1,4 +1,0 @@
-triamterene	drug
-metformin	drug
-amiloride	drug
-dofetilide	drug

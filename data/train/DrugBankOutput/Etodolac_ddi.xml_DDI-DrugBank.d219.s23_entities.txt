@@ -1,5 +1,0 @@
-warfarin	drug
-Lodine	brand
-warfarin	drug
-warfarin	drug
-etodolac	drug

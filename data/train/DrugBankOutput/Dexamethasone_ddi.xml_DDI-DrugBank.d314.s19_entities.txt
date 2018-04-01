@@ -1,4 +1,0 @@
-ketoconazole	drug
-macrolide antibiotics	group
-erythromycin	drug
-corticosteroids	group

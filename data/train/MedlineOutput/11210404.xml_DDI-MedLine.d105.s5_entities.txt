@@ -1,3 +1,0 @@
-zidovudine	drug
-Antiretroviral	group
-dideoxyinosine	drug

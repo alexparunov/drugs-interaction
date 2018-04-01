@@ -1,9 +1,0 @@
-Pediapred	brand
-methylprednisolone	drug
-Medrol	brand
-prednisolone	drug
-Prelone	brand
-steroid medicine	group
-prednisone	drug
-Deltasone	brand
-Orasone	brand

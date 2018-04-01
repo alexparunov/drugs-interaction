@@ -1,3 +1,0 @@
-VASOTEC	brand
-sulindac	drug
-indomethacin	drug

@@ -1,5 +1,0 @@
-primidone	drug
-phenobarbital	drug
-tiagabine	drug
-Primidone	drug
-Phenobarbital	drug

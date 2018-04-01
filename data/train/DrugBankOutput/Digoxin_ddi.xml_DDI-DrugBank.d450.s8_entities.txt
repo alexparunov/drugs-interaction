@@ -1,3 +1,0 @@
-quinine	drug
-penicillamine	drug
-digoxin	drug

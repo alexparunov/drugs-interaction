@@ -1,3 +1,0 @@
-Methenamine	drug
-amphetamines	group
-methenamine	drug

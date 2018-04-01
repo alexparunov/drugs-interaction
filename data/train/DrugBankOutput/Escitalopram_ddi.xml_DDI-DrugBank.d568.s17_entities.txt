@@ -1,8 +1,0 @@
-escitalopram	drug
-citalopram	drug
-sertraline	drug
-paroxetine	drug
-fluvoxamine	drug
-fluoxetine	drug
-SSRI	group
-sumatriptan	drug

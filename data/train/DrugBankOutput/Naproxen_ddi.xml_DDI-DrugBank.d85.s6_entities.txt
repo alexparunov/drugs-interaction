@@ -1,4 +1,0 @@
-aspirin	brand
-naproxen	drug
-aspirin	brand
-naproxen	drug

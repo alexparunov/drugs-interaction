@@ -1,4 +1,0 @@
-Lanoxin	brand
-Lanoxicaps	drug
-Aminosalicylic acid	drug
-digoxin	drug

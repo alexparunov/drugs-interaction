@@ -1,3 +1,0 @@
-Probenecid	drug
-ampicillin	drug
-ampicillin	drug

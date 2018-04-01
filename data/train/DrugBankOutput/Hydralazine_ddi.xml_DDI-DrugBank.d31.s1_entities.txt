@@ -1,3 +1,0 @@
-diazoxide	drug
-antihypertensive drugs	group
-hydralazine	drug

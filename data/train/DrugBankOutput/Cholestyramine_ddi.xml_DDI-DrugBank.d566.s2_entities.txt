@@ -1,7 +1,0 @@
-digitalis	group
-cholestyramine	drug
-resin	group
-Cholestyramine	drug
-resin	group
-cholestyramine	drug
-resin	group

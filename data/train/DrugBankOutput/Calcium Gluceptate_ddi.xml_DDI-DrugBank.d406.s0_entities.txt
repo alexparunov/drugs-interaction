@@ -1,5 +1,0 @@
-prochlorperazine edisylate	drug
-cephalothin sodium	drug
-cefamandole naftate	drug
-prednisolone sodium succinate	drug
-magnesium sulfate	drug

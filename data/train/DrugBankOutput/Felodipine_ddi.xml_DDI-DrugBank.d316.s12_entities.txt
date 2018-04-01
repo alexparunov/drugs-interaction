@@ -1,3 +1,0 @@
-felodipine	drug
-metoprolol	drug
-beta blockers	drug

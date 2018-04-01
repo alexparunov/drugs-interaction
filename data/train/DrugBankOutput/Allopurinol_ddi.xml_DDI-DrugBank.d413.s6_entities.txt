@@ -1,4 +1,0 @@
-allopurinol	drug
-Dicumarol	drug
-dicumarol	drug
-anticoagulant	group

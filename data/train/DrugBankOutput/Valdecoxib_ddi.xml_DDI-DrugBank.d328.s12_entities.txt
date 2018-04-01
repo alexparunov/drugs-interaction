@@ -1,4 +1,0 @@
-valdecoxib	drug
-phenytoin	drug
-Anticonvulsants	group
-Phenytoin	drug

@@ -1,2 +1,0 @@
-Cromolyn sodium	drug
-isoproterenol	drug

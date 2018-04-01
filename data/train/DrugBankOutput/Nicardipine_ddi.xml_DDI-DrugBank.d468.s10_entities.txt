@@ -1,7 +1,0 @@
-naproxen	drug
-quinidine	drug
-nicardipine HCl	drug
-propranolol	drug
-furosemide	drug
-warfarin	drug
-dipyridamole	drug

@@ -1,2 +1,0 @@
-clozapine	drug
-Paroxetine	drug

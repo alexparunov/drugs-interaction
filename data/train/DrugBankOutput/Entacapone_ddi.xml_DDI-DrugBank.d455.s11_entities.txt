@@ -1,5 +1,0 @@
-dopa-decarboxylase inhibitor	group
-entacapone	drug
-levodopa	drug
-tricyclic antidepressant	group
-imipramine	drug

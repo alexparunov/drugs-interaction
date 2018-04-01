@@ -1,3 +1,0 @@
-chlorpropamide	drug
-barbiturates	group
-barbiturates	group

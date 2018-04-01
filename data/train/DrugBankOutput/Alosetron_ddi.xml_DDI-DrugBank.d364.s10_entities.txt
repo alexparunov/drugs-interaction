@@ -1,6 +1,0 @@
-alosetron	drug
-clarithromycin	drug
-telithromycin	drug
-protease inhibitors	group
-voriconazole	drug
-itraconazole	drug

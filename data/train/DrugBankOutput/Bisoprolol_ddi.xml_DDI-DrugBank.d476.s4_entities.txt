@@ -1,3 +1,0 @@
-rifampin	drug
-ZEBETA	brand
-ZEBETA	brand

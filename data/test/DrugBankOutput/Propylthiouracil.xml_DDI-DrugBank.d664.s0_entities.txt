@@ -1,3 +1,0 @@
-Coumadin	brand
-warfarin	drug
-blood thinners	group

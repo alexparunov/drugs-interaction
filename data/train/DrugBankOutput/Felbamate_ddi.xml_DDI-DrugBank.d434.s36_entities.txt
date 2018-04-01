@@ -1,4 +1,0 @@
-Erythromycin	drug
-Felbatol	brand
-erythromycin	drug
-felbamate	drug

@@ -1,2 +1,0 @@
-silver	drug
-Sulfacetamide	drug

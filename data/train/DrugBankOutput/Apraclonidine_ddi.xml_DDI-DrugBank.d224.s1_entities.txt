@@ -1,7 +1,0 @@
-opiates	group
-sedatives	group
-anesthetics	group
-IOPIDINE	brand
-CNS depressants	group
-alcohol	drug
-barbiturates	group

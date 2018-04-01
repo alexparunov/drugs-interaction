@@ -1,5 +1,0 @@
-digitalis	group
-Albuterol	drug
-Antihistamines	group
-antidiabetic drugs	group
-diuretics	group

@@ -1,3 +1,0 @@
-warfarin	drug
-anastrozole	drug
-warfarin	drug

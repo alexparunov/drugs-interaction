@@ -1,3 +1,0 @@
-TIKOSYN	brand
-Ketoconazole	drug
-dofetilide	drug

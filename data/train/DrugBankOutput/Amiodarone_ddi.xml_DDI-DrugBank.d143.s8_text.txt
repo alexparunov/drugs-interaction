@@ -1,1 +1,0 @@
-Since amiodarone is a substrate for CYP3A4 and CYP2C8, drugs/substances that inhibit these isoenzymes may decrease the metabolism and increase serum concentration of amiodarone.

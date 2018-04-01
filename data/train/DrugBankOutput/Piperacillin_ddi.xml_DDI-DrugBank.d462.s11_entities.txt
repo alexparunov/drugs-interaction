@@ -1,2 +1,0 @@
-piperacillin	drug
-tazobactam	drug

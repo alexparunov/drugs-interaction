@@ -1,4 +1,0 @@
-ACE inhibitors	group
-lithium	drug
-Lithium	drug
-Lithium	drug

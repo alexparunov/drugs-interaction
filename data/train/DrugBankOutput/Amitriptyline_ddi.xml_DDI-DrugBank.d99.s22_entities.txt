@@ -1,2 +1,0 @@
-cimetidine	drug
-tricyclic antidepressants	drug

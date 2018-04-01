@@ -1,5 +1,0 @@
-methotrexate	drug
-cyclosporine	drug
-digoxin	drug
-Lodine	brand
-NSAIDs	group

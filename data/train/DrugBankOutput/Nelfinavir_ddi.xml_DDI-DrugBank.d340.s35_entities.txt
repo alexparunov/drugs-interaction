@@ -1,6 +1,0 @@
-OVCON-35	brand
-VIRACEPT	brand
-Norethindrone	drug
-Ethinyl Estradiol	drug
-norethindrone	drug
-ethinyl estradiol	drug

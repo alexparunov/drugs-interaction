@@ -1,2 +1,0 @@
-venlafaxine	drug
-zaleplon	drug

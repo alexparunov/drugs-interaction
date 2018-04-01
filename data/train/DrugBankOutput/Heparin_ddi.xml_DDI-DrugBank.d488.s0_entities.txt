@@ -1,3 +1,0 @@
-Heparin sodium	drug
-anticoagulants	group
-Heparin	drug

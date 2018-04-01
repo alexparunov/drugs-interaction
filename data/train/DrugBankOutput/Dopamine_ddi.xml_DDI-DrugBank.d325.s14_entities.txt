@@ -1,3 +1,0 @@
-anticonvulsant	group
-phenytoin	drug
-dopamine HCl	drug

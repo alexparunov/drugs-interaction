@@ -1,5 +1,0 @@
-naproxen	drug
-naproxen	drug
-naproxen	drug
-diflunisal	drug
-Naproxen	drug

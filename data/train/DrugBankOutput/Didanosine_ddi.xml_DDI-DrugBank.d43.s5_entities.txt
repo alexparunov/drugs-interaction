@@ -1,3 +1,0 @@
-VIDEX	brand
-ketoconazole	drug
-itraconazole	drug

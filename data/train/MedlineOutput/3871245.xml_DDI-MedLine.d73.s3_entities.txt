@@ -1,3 +1,0 @@
-apomorphine	drug
-MPTP	drug
-amphetamine	drug

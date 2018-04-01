@@ -1,4 +1,0 @@
-ACE inhibitor	group
-VIOXX	brand
-ACE inhibitor	group
-benazepril	drug

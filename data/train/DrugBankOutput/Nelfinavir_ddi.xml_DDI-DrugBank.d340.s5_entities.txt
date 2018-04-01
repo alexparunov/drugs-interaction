@@ -1,8 +1,0 @@
-sulfamethoxazole	drug
-trimethoprim	drug
-dapsone	drug
-VIRACEPT	brand
-fluconazole	drug
-itraconazole	drug
-erythromycin	drug
-clarithromycin	drug

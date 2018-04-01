@@ -1,3 +1,0 @@
-sumatriptan	drug
-IMITREX	brand
-STADOL NS	brand

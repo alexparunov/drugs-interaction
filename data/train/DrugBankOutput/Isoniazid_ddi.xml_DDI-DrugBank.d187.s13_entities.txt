@@ -1,3 +1,0 @@
-Valproate	drug
-valproate	drug
-isoniazid	drug

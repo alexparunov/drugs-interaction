@@ -1,2 +1,0 @@
-probenecid	drug
-gabapentin	drug

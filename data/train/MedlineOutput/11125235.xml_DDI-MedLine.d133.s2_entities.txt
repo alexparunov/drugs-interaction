@@ -1,3 +1,0 @@
-verapamil	drug
-bombesin	drug_n
-AOM	drug_n

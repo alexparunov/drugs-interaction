@@ -1,3 +1,0 @@
-thiazides	group
-acetazolamide	drug
-amphetamine	drug

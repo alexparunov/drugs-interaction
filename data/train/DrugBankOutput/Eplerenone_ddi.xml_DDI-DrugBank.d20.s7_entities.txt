@@ -1,4 +1,0 @@
-ACE inhibitor	group
-INSPRA	brand
-enalapril	drug
-enalapril	drug

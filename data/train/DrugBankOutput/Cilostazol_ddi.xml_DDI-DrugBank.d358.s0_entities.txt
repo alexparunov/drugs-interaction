@@ -1,5 +1,0 @@
-omeprazole	drug
-erythromycin	drug
-ketoconazole	drug
-PLETAL	brand
-PLETAL	brand

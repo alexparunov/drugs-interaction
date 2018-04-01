@@ -1,4 +1,0 @@
-tacrolimus	drug
-cyclosporine	drug
-NIZORAL	brand
-methylprednisolone	drug

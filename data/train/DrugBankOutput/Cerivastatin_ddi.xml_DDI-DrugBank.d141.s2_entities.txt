@@ -1,3 +1,0 @@
-Cerivastatin	drug
-CIMETlDINE	drug
-cimetidine	drug

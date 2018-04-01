@@ -1,3 +1,0 @@
-Antimycobacterial agents	group
-VIRACEPT	brand
-rifabutin	drug

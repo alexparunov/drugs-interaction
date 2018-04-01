@@ -1,3 +1,0 @@
-STADOL NS	brand
-butorphanol	drug
-sumatriptan	drug

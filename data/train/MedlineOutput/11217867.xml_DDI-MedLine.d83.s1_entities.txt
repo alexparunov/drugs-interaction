@@ -1,3 +1,0 @@
-thienobenzodiazepine derivative	group
-Olanzapine	drug
-second generation (atypical) antipsychotic agent	group

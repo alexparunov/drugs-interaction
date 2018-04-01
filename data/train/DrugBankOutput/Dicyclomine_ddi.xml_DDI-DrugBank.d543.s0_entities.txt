@@ -1,8 +1,0 @@
-antipsychotic agents	group
-antihistamines	group
-benzodiazepines	group
-phenothiazines	group
-amantadine	drug
-anticholinergic drugs	group
-quinidine	drug
-antiarrhythmic agents	group

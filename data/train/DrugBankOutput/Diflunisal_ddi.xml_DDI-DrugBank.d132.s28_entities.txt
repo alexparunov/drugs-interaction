@@ -1,2 +1,0 @@
-Naproxen	drug
-diflunisal	drug

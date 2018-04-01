@@ -1,4 +1,0 @@
-ketoconazole	drug
-levodopa	drug
-phenothiazines	group
-Clidinium	drug

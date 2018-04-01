@@ -1,2 +1,0 @@
-CRIXIVAN	brand
-itraconazole	drug

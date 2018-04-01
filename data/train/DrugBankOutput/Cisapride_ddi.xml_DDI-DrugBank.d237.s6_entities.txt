@@ -1,4 +1,0 @@
-nefazodone	drug
-Antidepressants	group
-cisapride	drug
-cisapride	drug

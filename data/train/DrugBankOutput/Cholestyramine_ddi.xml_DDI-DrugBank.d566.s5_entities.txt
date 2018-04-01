@@ -1,4 +1,0 @@
-RESIN	group
-CHOLESTYRAMINE	drug
-RESIN	group
-CHOLESTYRAMINE	drug

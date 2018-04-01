@@ -1,3 +1,0 @@
-naloxone	drug
-beta-endorphin	drug_n
-morphine	drug

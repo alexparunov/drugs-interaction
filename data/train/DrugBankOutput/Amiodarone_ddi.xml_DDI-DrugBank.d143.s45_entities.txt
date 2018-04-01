@@ -1,3 +1,0 @@
-CYP3A4	drug
-amiodarone	drug
-drugs	drug

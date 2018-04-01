@@ -1,4 +1,0 @@
-vasodilators	group
-antihypertensive medications	group
-Vasodilators	group
-Antihypertensive Medication	group

@@ -1,4 +1,0 @@
-ALLEGRA	brand
-aluminum	drug
-magnesium	drug
-antacids	group

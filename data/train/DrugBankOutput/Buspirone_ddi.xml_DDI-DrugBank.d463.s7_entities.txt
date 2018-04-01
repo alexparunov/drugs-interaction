@@ -1,4 +1,0 @@
-levothyroxine sodium	drug
-digoxin	drug
-phenobarbital	drug
-phenytoin	drug

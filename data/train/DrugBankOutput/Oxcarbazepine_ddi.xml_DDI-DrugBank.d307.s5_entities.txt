@@ -1,2 +1,0 @@
-OXC	drug
-MHD	drug_n

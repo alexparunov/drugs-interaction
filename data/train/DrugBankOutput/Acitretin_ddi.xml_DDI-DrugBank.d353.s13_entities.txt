@@ -1,4 +1,0 @@
-glyburide	drug
-digoxin	drug
-cimetidine	drug
-acitretin	drug

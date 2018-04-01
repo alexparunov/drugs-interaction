@@ -1,5 +1,0 @@
-aspirin	brand
-ketoprofen	drug
-ketoprofen	drug
-aspirin	brand
-aspirin	brand

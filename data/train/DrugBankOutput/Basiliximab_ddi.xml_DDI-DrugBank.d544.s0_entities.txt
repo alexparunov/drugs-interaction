@@ -1,5 +1,0 @@
-mycophenolate mofetil	drug
-corticosteroids	group
-azathioprine	drug
-Simulect	brand
-cyclosporine	drug

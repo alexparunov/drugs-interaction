@@ -1,8 +1,0 @@
-ritonavir	drug
-fentanyl	drug
-itraconazole	drug
-ketoconazole	drug
-clarithromycin	drug
-troleandomycin	drug
-fentanyl	drug
-nelfinavir	drug

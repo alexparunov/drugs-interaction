@@ -1,4 +1,0 @@
-Slow-channel calcium blockers	group
-verapamil	drug
-diltiazem	drug
-nifedipine	drug

@@ -1,3 +1,0 @@
-disulfiram	drug
-Isocarboxazid	drug
-Antabuse	brand

@@ -1,4 +1,0 @@
-diuretics	group
-furosemide	drug
-cephalosporins	group
-aminoglycoside antibiotics	group

@@ -1,2 +1,0 @@
-fluoxetine	drug
-cisapride	drug

@@ -1,2 +1,0 @@
-TRACRIUM	brand
-succinylcholine	drug

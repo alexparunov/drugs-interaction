@@ -1,3 +1,0 @@
-nicotine	drug
-Varenicline	drug
-nicotine	drug

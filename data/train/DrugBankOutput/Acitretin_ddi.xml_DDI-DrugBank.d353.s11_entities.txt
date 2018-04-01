@@ -1,3 +1,0 @@
-acitretin	drug
-Tetracyclines	group
-tetracyclines	group

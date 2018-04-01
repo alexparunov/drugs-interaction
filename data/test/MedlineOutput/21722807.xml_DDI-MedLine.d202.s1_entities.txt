@@ -1,2 +1,0 @@
-immunosuppressive	group
-immunosupressive drug	group

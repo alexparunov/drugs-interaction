@@ -1,2 +1,0 @@
-zaleplon	drug
-Rifampin	drug

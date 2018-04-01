@@ -1,2 +1,0 @@
-Indomethacin	drug
-resveratrol	drug_n

@@ -1,2 +1,0 @@
-efavirenz	drug
-indinavir	drug

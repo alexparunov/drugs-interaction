@@ -1,4 +1,0 @@
-benzodiazepine	group
-flumazenil	drug
-ROMAZICON	brand
-cyclic antidepressants	group

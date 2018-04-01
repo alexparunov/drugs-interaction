@@ -1,3 +1,0 @@
-ciprofloxacin	drug
-quinolones	group
-cyclosporine	drug

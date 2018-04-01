@@ -1,3 +1,0 @@
-CNS depressant drugs	group
-doxylamine	drug
-doxylamine	drug

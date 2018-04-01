@@ -1,3 +1,0 @@
-azathioprine	drug
-allopurinol	drug
-azathioprine	drug

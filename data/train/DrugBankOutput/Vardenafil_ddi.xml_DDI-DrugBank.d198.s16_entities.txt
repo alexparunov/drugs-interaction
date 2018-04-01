@@ -1,6 +1,0 @@
-digoxin	drug
-warfarin	drug
-glyburide	drug
-vardenafil	drug
-ranitidine	drug
-Maalox	brand

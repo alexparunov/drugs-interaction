@@ -1,3 +1,0 @@
-NIMBEX	brand
-phenytoin	drug
-carbamazepine	drug

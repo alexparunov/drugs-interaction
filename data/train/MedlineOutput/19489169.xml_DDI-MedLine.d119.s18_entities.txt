@@ -1,5 +1,0 @@
-propranolol	drug
-niacin	drug
-digoxin	drug
-fluvastatin	drug
-digoxin	drug

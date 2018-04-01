@@ -1,4 +1,0 @@
-ritonavir	drug
-INVIRASE	brand
-ritonavir	drug
-FORTOVASE	brand

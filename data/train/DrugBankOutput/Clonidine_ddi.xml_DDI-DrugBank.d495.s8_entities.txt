@@ -1,2 +1,0 @@
-clonidine	drug
-fluphenazine	drug

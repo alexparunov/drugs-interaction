@@ -1,3 +1,0 @@
-quinolone class antimicrobial	group
-nonsteroidal anti-inflammatory drug	group
-fenbufen	drug

@@ -1,3 +1,0 @@
-cephalosporin antibiotics	group
-EDECRIN	brand
-aminoglycoside	group

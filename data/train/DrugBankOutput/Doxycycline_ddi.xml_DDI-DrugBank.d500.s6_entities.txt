@@ -1,2 +1,0 @@
-tetracycline	drug
-contraceptives	group

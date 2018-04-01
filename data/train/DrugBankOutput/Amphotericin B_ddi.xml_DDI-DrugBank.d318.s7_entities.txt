@@ -1,3 +1,0 @@
-flucytosine	drug
-Flucytosine	drug
-amphotericin B	drug

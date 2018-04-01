@@ -1,4 +1,0 @@
-MAO inhibitors	group
-MAOI antidepressants	group
-furazolidone	drug
-amphetamine	group

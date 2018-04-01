@@ -1,3 +1,0 @@
-Clofibric acid	drug_n
-hormonal contraceptives	group
-clofibric acid	drug_n

@@ -1,2 +1,0 @@
-aminoglycoside antibiotics	group
-Furosemide	drug

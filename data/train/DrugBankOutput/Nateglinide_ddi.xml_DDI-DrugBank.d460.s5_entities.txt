@@ -1,3 +1,0 @@
-metformin	drug
-Metformin	drug
-Starlix	brand

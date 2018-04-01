@@ -1,2 +1,0 @@
-felbamate	drug
-Carbamazepine epoxide	drug_n

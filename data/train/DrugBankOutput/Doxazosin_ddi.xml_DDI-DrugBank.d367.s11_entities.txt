@@ -1,5 +1,0 @@
-trimethoprim	drug
-sulfamethoxazole	drug
-Antibiotics	group
-erythromycin	drug
-amoxicillin	drug

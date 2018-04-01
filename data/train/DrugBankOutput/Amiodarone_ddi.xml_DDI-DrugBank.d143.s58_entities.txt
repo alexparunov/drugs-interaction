@@ -1,2 +1,0 @@
-macrolide antibiotics	drug
-Fluoroquinolones	drug

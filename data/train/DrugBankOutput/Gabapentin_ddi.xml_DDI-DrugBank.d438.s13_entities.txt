@@ -1,3 +1,0 @@
-phenobarbital	drug
-Phenobarbital	drug
-gabapentin	drug

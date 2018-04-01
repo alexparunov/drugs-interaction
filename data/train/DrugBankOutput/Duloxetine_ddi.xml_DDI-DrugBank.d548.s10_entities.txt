@@ -1,4 +1,0 @@
-TCA	group
-TCA	group
-TCA	group
-Duloxetine	drug

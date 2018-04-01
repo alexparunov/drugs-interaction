@@ -1,2 +1,0 @@
-clonidine	drug
-Tricyclic antidepressants	group

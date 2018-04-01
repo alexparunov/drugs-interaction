@@ -1,3 +1,0 @@
-monoamine oxidase inhibitors	group
-reserpine	drug
-agents with b-blocking properties	group

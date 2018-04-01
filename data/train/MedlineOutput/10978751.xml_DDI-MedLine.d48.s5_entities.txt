@@ -1,2 +1,0 @@
-toxin A	drug_n
-diethyl pyrocarbonate	drug_n

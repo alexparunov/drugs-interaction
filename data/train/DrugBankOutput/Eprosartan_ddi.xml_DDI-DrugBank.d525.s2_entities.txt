@@ -1,4 +1,0 @@
-eprosartan	drug
-fluconazole	drug
-ketoconazole	drug
-eprosartan	drug

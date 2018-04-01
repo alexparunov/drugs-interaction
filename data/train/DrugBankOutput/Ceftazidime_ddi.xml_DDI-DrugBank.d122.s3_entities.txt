@@ -1,3 +1,0 @@
-ceftazidime	drug
-beta-lactam antibiotics	group
-Chloramphenicol	drug

@@ -1,3 +1,0 @@
-potassium-sparing diuretics	group
-thiazide diuretics	group
-nonsteroidal anti-inflammatory drugs	group

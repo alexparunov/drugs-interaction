@@ -1,5 +1,0 @@
-ritonavir	drug
-Ritonavir	drug
-ritonavir	drug
-VIRACEPT	brand
-nelfinavir	drug

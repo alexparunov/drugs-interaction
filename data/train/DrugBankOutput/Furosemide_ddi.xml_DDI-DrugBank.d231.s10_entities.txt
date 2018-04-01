@@ -1,3 +1,0 @@
-furosemide	drug
-sucralfate	drug
-furosemide	drug

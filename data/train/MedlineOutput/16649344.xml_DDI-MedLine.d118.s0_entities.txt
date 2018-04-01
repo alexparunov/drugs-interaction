@@ -1,2 +1,0 @@
-Sirolimus	drug
-rapamycin	drug

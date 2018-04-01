@@ -1,2 +1,0 @@
-Tiagabine	drug
-alcohol	drug

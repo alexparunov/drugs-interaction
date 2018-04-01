@@ -1,4 +1,0 @@
-toxin A	drug_n
-zinc	drug
-toxin A	drug_n
-zinc	drug

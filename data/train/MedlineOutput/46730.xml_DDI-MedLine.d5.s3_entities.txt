@@ -1,2 +1,0 @@
-trichlorfon	drug_n
-coumaphos	drug_n

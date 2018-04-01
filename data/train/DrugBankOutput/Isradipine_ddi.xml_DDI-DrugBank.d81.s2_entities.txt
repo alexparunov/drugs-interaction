@@ -1,3 +1,0 @@
-hydrochlorothiazide	drug
-isradipine	drug
-isradipine	drug

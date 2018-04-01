@@ -1,2 +1,0 @@
-Spermine	drug
-spermidine	drug_n

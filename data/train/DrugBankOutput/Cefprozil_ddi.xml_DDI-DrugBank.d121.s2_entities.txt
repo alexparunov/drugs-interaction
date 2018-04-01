@@ -1,2 +1,0 @@
-antacid	group
-cefprozil	drug

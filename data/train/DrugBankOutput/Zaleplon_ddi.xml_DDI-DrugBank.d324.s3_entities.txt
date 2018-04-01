@@ -1,2 +1,0 @@
-ethanol	drug
-zaleplon	drug

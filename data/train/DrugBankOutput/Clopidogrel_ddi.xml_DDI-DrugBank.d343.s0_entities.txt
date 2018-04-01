@@ -1,4 +1,0 @@
-NSAIDs	group
-heparin	drug
-warfarin	drug
-Aspirin	brand

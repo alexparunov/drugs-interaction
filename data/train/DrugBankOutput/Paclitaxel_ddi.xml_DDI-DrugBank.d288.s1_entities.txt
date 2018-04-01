@@ -1,3 +1,0 @@
-cisplatin	drug
-paclitaxel	drug
-TAXOL	brand

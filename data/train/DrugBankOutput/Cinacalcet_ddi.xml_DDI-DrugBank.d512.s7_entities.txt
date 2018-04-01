@@ -1,4 +1,0 @@
-erythromycin	drug
-itraconazole	drug
-Sensipar	brand
-ketoconazole	drug

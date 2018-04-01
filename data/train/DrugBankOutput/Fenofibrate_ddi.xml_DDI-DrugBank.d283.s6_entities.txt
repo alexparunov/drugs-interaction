@@ -1,2 +1,0 @@
-TRICOR	brand
-immunosuppressants	group

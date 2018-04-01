@@ -1,4 +1,0 @@
-Theo-Dur	brand
-theophylline	drug
-Tagamet	brand
-theophylline	drug

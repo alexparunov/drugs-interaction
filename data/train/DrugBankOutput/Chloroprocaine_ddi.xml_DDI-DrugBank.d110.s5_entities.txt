@@ -1,2 +1,0 @@
-chloroprocaine	drug
-sulfonamide drug	group

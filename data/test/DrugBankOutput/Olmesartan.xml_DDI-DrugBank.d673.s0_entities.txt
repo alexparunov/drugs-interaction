@@ -1,3 +1,0 @@
-warfarin	drug
-digoxin	drug
-olmesartan medoxomil	drug

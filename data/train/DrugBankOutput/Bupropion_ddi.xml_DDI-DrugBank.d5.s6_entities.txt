@@ -1,3 +1,0 @@
-hydroxybupropion	drug_n
-cimetidine	drug
-bupropion	drug

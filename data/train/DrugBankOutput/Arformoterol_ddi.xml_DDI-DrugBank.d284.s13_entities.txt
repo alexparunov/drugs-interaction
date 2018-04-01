@@ -1,2 +1,0 @@
-Beta-blockers	group
-beta-agonists	group

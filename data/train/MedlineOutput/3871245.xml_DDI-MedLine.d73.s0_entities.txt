@@ -1,3 +1,0 @@
-methamphetamine	drug
-MPTP	drug_n
-1-methyl-4-phenyl-1,2,5,6-tetrahydropyridine	drug_n

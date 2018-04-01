@@ -1,3 +1,0 @@
-Antithyroid agents	group
-sodium iodide I131	drug
-Carbimazole	drug

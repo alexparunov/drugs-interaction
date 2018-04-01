@@ -1,4 +1,0 @@
-Phenobarbital	drug
-Carbamazepine	drug
-Anticonvulsants	group
-Phenytoin	drug

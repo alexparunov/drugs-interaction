@@ -1,3 +1,0 @@
-Anticoagulants	group
-hormonal contraceptives	group
-coumarin derivatives	group

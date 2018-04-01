@@ -1,2 +1,0 @@
-glycyrrhiza extract	drug_n
-daphnetin	drug_n

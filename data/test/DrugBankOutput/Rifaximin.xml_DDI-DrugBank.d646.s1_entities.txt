@@ -1,4 +1,0 @@
-rifaximin	drug
-contraceptive	group
-ethinyl estradiol	drug
-norgestimate	drug

@@ -1,2 +1,0 @@
-prazosin	drug
-hydralazine	drug

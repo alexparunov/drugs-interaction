@@ -1,2 +1,0 @@
-aliskiren	drug
-atorvastatin	drug

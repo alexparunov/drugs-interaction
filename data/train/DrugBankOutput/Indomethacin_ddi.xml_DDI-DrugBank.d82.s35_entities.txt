@@ -1,3 +1,0 @@
-losartan	drug
-captopril	drug
-INDOCIN	brand

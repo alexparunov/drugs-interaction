@@ -1,2 +1,0 @@
-phenytoin	drug
-theophylline	drug

@@ -1,3 +1,0 @@
-beta-blocking agents	group
-Beta-adrenergic Blocking Agents	group
-nifedipine	drug

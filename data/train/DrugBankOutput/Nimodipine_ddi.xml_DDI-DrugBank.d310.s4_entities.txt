@@ -1,2 +1,0 @@
-nimodipine	drug
-cimetidine	drug

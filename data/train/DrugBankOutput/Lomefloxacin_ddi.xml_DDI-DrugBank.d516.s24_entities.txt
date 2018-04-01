@@ -1,4 +1,0 @@
-Warfarin	drug
-Quinolones	group
-anticoagulant	group
-warfarin	drug

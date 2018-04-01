@@ -1,2 +1,0 @@
-diuretic	group
-Corticotropin	drug

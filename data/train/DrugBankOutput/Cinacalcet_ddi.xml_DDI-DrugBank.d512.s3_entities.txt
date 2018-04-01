@@ -1,5 +1,0 @@
-nortriptyline	drug_n
-amitriptyline	drug
-amitriptyline	drug
-Amitriptyline	drug
-cinacalcet	drug

@@ -1,2 +1,0 @@
-coumarin anticoagulants	group
-ethotoin	drug

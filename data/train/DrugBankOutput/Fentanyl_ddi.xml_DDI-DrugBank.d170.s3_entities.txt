@@ -1,4 +1,0 @@
-fentanyl	drug
-fentanyl	drug
-diltiazem	drug
-erythromycin	drug

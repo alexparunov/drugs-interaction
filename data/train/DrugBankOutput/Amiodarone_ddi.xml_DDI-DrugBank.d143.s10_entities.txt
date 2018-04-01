@@ -1,3 +1,0 @@
-indinavir	drug
-amiodarone	drug
-amiodarone	drug

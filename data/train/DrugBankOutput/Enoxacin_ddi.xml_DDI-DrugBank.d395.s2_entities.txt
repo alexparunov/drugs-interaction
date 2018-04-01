@@ -1,3 +1,0 @@
-Caffeine	drug
-Enoxacin	drug
-methylxanthines	group

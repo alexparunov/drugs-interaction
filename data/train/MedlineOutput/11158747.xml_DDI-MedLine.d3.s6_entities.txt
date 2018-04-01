@@ -1,2 +1,0 @@
-amprenavir	drug
-Rifabutin	drug

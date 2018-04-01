@@ -1,2 +1,0 @@
-epinephrine	drug
-Doxylamine	drug

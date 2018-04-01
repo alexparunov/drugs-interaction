@@ -1,3 +1,0 @@
-warfarin	drug
-acitretin	drug
-anticoagulants of the coumarin type	group

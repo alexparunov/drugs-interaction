@@ -1,3 +1,0 @@
-lorazepam	drug
-Lorazepam	drug
-eszopiclone	drug

@@ -1,4 +1,0 @@
-digoxin	drug
-iron	drug
-ketoconazole	drug
-esomeprazole	drug

@@ -1,2 +1,0 @@
-metoclopramide	drug
-palonosetron	drug

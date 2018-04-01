@@ -1,5 +1,0 @@
-carbamate insecticide	drug_n
-succinylcholine	drug
-organophosphate insecticide	drug_n
-Phospholine Iodide	drug
-cholinesterase inhibitors	group

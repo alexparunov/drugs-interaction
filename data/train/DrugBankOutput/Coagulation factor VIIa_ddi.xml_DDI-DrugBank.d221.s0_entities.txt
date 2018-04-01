@@ -1,2 +1,0 @@
-NovoSeven	brand
-coagulation factor	group

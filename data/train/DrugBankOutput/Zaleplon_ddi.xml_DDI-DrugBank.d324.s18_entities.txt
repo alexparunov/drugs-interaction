@@ -1,5 +1,0 @@
-phenobarbital	drug
-hypnotic agent	group
-rifampin	drug
-phenytoin	drug
-carbamazepine	drug

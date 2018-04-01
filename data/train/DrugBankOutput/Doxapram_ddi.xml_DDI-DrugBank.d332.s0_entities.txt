@@ -1,3 +1,0 @@
-monoamine oxidase inhibiting drugs	group
-sympathomimetic	group
-doxapram	drug

@@ -1,1 +1,0 @@
-Avoid concomitant use unless necessary to control side effects of amphotericin B.

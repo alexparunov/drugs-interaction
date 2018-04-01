@@ -1,3 +1,0 @@
-tolazamide	drug
-Tolazamide	drug
-doxepin	drug

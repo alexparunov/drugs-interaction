@@ -1,2 +1,0 @@
-progesterone	drug
-ethinyl estradiol	drug

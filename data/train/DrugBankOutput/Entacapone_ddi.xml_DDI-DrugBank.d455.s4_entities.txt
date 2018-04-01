@@ -1,5 +1,0 @@
-diazepam	drug
-warfarin	drug
-entacapone	drug
-phenylbutazone	drug
-salicylic acid	drug

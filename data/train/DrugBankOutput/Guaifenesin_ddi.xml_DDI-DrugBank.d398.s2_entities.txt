@@ -1,4 +1,0 @@
-alcohol	drug
-dextromethorphan hydrobromide	drug
-psychotropics	group
-antihistamines	group

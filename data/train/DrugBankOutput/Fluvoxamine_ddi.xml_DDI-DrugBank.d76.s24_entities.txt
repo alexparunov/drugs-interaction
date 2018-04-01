@@ -1,2 +1,0 @@
-alprazolam	drug
-fluvoxamine	drug

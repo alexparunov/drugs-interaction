@@ -1,7 +1,0 @@
-Digoxin	drug
-Warfarin	drug
-Heparin	drug
-Salicylate	group
-ketorolac tromethamine	drug
-warfarin	drug
-ketorolac	drug

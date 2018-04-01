@@ -1,2 +1,0 @@
-hydrocortisone	drug
-amphotericin B	drug

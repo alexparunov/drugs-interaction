@@ -1,3 +1,0 @@
-eszopiclone	drug
-Digoxin	drug
-digoxin	drug

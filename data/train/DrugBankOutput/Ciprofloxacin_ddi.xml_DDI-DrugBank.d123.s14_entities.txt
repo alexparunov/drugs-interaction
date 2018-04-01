@@ -1,3 +1,0 @@
-ciprofloxacin	drug
-phenytoin	drug
-Phenytoin	drug

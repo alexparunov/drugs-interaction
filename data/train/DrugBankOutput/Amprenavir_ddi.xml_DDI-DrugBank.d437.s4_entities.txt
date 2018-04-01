@@ -1,3 +1,0 @@
-amprenavir	drug
-HIV Protease Inhibitors	group
-HIV protease inhibitors	group

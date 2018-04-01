@@ -1,2 +1,0 @@
-multivitamins	group
-zinc	drug

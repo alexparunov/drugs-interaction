@@ -1,3 +1,0 @@
-99mTc-MDP	drug
-gentamicin	drug
-radiopharmaceutical	group

@@ -1,2 +1,0 @@
-Enalapril	drug
-digitalis	group

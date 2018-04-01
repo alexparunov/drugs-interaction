@@ -1,2 +1,0 @@
-gentamicin	drug
-99mTc-MDP	drug

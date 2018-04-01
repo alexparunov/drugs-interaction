@@ -1,2 +1,0 @@
-COREG	brand
-digoxin	drug

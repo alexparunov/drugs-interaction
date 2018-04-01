@@ -1,2 +1,0 @@
-AED	group
-MHD	drug_n

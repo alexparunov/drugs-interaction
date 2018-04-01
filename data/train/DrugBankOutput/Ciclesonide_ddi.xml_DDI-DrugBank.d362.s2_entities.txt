@@ -1,3 +1,0 @@
-salicylic acid	drug
-des-ciclesonide	drug
-warfarin	drug

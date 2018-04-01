@@ -1,3 +1,0 @@
-ibutilide	drug
-beta-adrenergic blocking agents	group
-Beta-adrenergic blocking agents	group

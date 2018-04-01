@@ -1,3 +1,0 @@
-calcium	drug
-digitalis glycosides	group
-calcium acetate	drug

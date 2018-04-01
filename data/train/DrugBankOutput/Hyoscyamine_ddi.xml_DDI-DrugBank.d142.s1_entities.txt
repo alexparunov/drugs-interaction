@@ -1,2 +1,0 @@
-LEVSIN	brand
-Antacids	group

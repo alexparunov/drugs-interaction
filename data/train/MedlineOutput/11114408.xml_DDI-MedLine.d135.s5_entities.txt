@@ -1,2 +1,0 @@
-clozapine	drug
-PCP	drug_n

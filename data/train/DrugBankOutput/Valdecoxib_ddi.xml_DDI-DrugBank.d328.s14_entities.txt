@@ -1,2 +1,0 @@
-Valdecoxib	drug
-phenytoin	drug

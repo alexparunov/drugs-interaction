@@ -1,5 +1,0 @@
-diuretic	drug
-enalapril	drug
-enalapril	drug
-enalaprilat	drug
-enalaprilat	drug

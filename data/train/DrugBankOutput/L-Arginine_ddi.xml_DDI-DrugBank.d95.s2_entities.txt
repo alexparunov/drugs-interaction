@@ -1,3 +1,0 @@
-nitrates	drug
-nitrates	group
-L-arginine	drug

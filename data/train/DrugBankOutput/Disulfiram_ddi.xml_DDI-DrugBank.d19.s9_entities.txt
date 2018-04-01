@@ -1,4 +1,0 @@
-nitrites	group
-disulfiram	drug
-nitrite	drug
-disulfiram	drug

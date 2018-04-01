@@ -1,3 +1,0 @@
-Vecuronium	drug
-piperacillin	drug
-vecuronium	drug

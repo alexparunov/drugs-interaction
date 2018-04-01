@@ -1,3 +1,0 @@
-Felbatol	brand
-Valproate	drug
-valproate	drug

@@ -1,3 +1,0 @@
-S- warfarin	drug
-lenalidomide	drug
-R- warfarin	drug

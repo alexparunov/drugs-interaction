@@ -1,3 +1,0 @@
-VIOXX	brand
-Warfarin	drug
-warfarin	drug

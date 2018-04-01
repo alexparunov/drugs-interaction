@@ -1,2 +1,0 @@
-etodolac	drug
-warfarin	drug

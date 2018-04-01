@@ -1,2 +1,0 @@
-GL	drug_n
-cefazolin	drug

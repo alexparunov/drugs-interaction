@@ -1,3 +1,0 @@
-fenoprofen	drug
-fenoprofen	drug
-aspirin	brand

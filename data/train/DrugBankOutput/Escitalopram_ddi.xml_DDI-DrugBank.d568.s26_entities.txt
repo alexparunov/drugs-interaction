@@ -1,5 +1,0 @@
-escitalopram	drug
-ritonavir	drug
-escitalopram	drug
-ritonavir	drug
-Ritonavir	drug

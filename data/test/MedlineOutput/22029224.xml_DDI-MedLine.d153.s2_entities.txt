@@ -1,2 +1,0 @@
-methanol-ammonium acetate	drug_n
-ethyl acetate	drug_n

@@ -1,4 +1,0 @@
-desmethylastemizole	drug_n
-astemizole	drug
-astemizole	drug
-ketoconazole	drug

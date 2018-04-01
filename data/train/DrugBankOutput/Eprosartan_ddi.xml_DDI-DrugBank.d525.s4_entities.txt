@@ -1,3 +1,0 @@
-thiazide diuretic	group
-Eprosartan	drug
-hydrochlorothiazide	drug

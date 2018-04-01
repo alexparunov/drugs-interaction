@@ -1,4 +1,0 @@
-theophylline	drug
-dirithromycin	drug
-theophylline	drug
-theophylline	drug

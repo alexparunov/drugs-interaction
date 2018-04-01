@@ -1,8 +1,0 @@
-VIDEX	brand
-Quinolone Antibiotic	group
-ciprofloxacin	drug
-ciprofloxacin	drug
-magnesium	drug
-antacids	group
-aluminum	drug
-calcium	drug

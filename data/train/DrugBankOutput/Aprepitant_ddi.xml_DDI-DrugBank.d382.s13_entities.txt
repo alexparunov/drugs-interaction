@@ -1,3 +1,0 @@
-methylprednisolone	drug
-Aprepitant	drug
-methylprednisolone	drug

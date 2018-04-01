@@ -1,5 +1,0 @@
-phenytoin	drug
-Antizol	brand
-cimetidine	drug
-carbamazepine	drug
-ketoconazole	drug

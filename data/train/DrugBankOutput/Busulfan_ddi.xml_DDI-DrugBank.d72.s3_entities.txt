@@ -1,4 +1,0 @@
-BUSULFEX	brand
-phenytoin	drug
-BUSULFEX	brand
-phenytoin	drug

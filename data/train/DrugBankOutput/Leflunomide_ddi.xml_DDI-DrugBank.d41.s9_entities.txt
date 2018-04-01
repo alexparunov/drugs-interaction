@@ -1,3 +1,0 @@
-NSAIDs	group
-diclofenac	drug
-ibuprofen	drug

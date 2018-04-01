@@ -1,4 +1,0 @@
-diuretic	group
-captopril	drug
-captopril	drug
-captopril	drug

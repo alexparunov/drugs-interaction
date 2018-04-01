@@ -1,3 +1,0 @@
-ALPHAGAN P	brand
-Tricyclic antidepressants	group
-clonidine	drug

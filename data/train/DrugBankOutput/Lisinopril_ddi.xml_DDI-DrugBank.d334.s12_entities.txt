@@ -1,3 +1,0 @@
-hydrochlorothiazide	drug
-propranolol	drug
-PRINIVIL	brand

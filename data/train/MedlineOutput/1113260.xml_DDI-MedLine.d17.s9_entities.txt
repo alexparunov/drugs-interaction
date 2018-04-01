@@ -1,2 +1,0 @@
-PGF2alpha	drug
-oxytocin	drug

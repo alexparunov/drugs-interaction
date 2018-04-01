@@ -1,2 +1,0 @@
-dobutamine	drug
-nitroprusside	drug

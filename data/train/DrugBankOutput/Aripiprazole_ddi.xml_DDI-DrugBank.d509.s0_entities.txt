@@ -1,4 +1,0 @@
-alcohol	drug
-centrally acting drugs	group
-ABILIFY	brand
-aripiprazole	drug

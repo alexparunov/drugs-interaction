@@ -1,3 +1,0 @@
-cyclosporine	drug
-non-steroidal anti-inflammatory drugs	group
-cyclosporine	drug

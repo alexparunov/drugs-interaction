@@ -1,1 +1,0 @@
-The geometric mean ratio for C(max) and AUC(0-96) was calculated. 

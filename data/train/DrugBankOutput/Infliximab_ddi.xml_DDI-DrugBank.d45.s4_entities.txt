@@ -1,5 +1,0 @@
-narcotics	group
-corticosteroids	group
-folic acid	drug
-nonsteroidal anti-inflammatory agents	group
-MTX	drug

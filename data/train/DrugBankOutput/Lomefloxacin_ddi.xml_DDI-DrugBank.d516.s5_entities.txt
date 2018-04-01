@@ -1,5 +1,0 @@
-lomefloxacin	drug
-Magnesium	drug
-aluminum	drug
-antacids	group
-lomefloxacin	drug

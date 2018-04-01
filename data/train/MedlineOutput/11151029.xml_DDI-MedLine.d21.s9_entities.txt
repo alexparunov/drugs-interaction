@@ -1,2 +1,0 @@
-clonazepam	drug
-Imipramine	drug

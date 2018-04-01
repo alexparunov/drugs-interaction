@@ -1,2 +1,0 @@
-vasodilators	group
-nitroglycerin	drug

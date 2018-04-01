@@ -1,4 +1,0 @@
-ranitidine	drug
-cimetidine	drug
-ibuprofen	drug
-ibuprofen	drug

@@ -1,4 +1,0 @@
-Digoxin	drug
-tiagabine	drug
-digoxin	drug
-digoxin	drug

@@ -1,3 +1,0 @@
-Itraconazole	drug
-Itraconazole	drug
-isoniazid	drug

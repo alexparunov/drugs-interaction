@@ -1,4 +1,0 @@
-Ketoconazole	drug
-ketoconazole	drug
-aripiprazole	drug
-aripiprazole	drug

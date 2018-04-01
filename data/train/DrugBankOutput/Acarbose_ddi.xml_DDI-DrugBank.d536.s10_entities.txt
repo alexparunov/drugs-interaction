@@ -1,3 +1,0 @@
-Acarbose	drug
-metformin	drug
-metformin	drug

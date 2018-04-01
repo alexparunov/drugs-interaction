@@ -1,2 +1,0 @@
-cyclophosphamide	drug
-phenobarbital	drug

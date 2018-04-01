@@ -1,2 +1,0 @@
-penicillins	drug
-PIPRACIL	brand

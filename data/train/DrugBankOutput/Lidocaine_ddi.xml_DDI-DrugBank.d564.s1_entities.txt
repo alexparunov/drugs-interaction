@@ -1,3 +1,0 @@
-epinephrine	drug
-butyrophenones	group
-Phenothiazines	group

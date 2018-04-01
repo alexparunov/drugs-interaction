@@ -1,3 +1,0 @@
-cyclosporin	drug
-Cyclosporin	drug
-chloroquine	drug

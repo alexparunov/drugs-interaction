@@ -1,3 +1,0 @@
-vasopressors	group
-dopamine	drug
-isoproterenol	drug

@@ -1,3 +1,0 @@
-caffeine	drug
-ciprofloxacin	drug
-quinolones	group

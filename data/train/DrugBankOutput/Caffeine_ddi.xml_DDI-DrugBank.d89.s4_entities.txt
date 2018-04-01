@@ -1,2 +1,0 @@
-ketoprofen	drug
-Caffeine	drug

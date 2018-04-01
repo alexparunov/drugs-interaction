@@ -1,3 +1,0 @@
-corticosteroids	group
-Cholestyramine	drug
-Cholestyramine	drug

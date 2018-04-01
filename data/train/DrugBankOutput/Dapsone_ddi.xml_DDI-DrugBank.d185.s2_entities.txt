@@ -1,4 +1,0 @@
-DHA	drug_n
-dapsone hydroxylamine	drug_n
-SMX	drug
-TMP	drug

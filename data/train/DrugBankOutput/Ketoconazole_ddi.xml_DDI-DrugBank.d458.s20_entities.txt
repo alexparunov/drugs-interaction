@@ -1,2 +1,0 @@
-coumarin drugs	group
-imidazole drugs	group

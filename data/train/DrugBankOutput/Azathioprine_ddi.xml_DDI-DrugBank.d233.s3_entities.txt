@@ -1,3 +1,0 @@
-azathioprine	drug
-Angiotensln Converting Enzyme Inhibitors	group
-angiotensin converting enzyme inhibitors	group

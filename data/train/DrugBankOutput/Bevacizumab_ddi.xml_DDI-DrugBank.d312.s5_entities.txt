@@ -1,3 +1,0 @@
-AVASTIN	brand
-SN38	drug_n
-irinotecan	drug

@@ -1,8 +1,0 @@
-Cephalosporins	group
-Cephalosporins	group
-cefoperazone	drug
-cefmenoxime	drug
-cefamandole	drug
-cefotetan	drug
-cefazolin	drug
-latamoxef	drug

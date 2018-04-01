@@ -1,3 +1,0 @@
-nitrates	group
-PRINIVIL	brand
-digoxin	drug

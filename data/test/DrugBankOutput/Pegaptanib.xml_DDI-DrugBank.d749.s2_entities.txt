@@ -1,2 +1,0 @@
-pegaptanib	drug
-Macugen	brand

@@ -1,4 +1,0 @@
-indomethacin	drug
-indomethacin	drug
-PRINIVIL	brand
-PRINIVIL	brand

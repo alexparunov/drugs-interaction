@@ -1,2 +1,0 @@
-alpha-blockers	group
-Vardenafil	drug

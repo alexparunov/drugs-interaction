@@ -1,3 +1,0 @@
-cyclosporine	drug
-everolimus	drug
-prednisone	drug

@@ -1,2 +1,0 @@
-drugs	drug
-flecainide	drug

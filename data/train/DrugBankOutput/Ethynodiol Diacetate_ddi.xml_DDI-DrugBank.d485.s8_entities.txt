@@ -1,5 +1,0 @@
-tetracycline	drug
-antibiotics	group
-Antibiotics	group
-ampicillin	drug
-synthetic steroids	group

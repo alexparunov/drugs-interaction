@@ -1,3 +1,0 @@
-azithromycin	drug
-buforin II	drug_n
-minocycline	drug

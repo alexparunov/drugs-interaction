@@ -1,3 +1,0 @@
-chloroquine	drug
-Cimetidine	drug
-Cimetidine	drug

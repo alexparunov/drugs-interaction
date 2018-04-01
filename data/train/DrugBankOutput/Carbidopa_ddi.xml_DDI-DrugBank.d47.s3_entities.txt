@@ -1,3 +1,0 @@
-levodopa	drug
-phenytoin	drug
-papaverine	drug

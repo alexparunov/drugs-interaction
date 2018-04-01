@@ -1,2 +1,0 @@
-Acitretin	drug
-progestin	group

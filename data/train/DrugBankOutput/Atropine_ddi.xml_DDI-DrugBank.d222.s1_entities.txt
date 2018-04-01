@@ -1,2 +1,0 @@
-atropine	drug
-pralidoxime	drug

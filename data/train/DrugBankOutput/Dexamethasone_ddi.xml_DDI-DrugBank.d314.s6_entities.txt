@@ -1,4 +1,0 @@
-corticosteroids	group
-Anticoagulants	group
-warfarin	drug
-warfarin	drug

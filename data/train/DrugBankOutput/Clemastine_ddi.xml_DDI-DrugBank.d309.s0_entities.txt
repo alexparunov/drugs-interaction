@@ -1,5 +1,0 @@
-alcohol	drug
-CNS depressants	group
-antihistamines	group
-tranquilizers	group
-barbiturates	group

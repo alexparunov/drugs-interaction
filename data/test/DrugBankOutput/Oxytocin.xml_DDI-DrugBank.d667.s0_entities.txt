@@ -1,2 +1,0 @@
-oxytocin	drug
-vasoconstrictor	group

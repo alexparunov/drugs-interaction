@@ -1,3 +1,0 @@
-MTX	drug
-HUMIRA	brand
-Methotrexate	drug

@@ -1,3 +1,0 @@
-coumarin	group
-Aminoglutethimide	drug
-warfarin	drug

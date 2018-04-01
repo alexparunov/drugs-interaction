@@ -1,3 +1,0 @@
-aminoglycosides	group
-non-depolarising muscle relaxant	group
-FLUOTHANE	brand

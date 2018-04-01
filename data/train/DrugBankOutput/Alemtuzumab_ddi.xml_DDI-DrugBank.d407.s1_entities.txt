@@ -1,2 +1,0 @@
-antibodies	group
-Campath	brand

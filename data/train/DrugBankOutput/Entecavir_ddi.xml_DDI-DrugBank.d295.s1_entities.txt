@@ -1,4 +1,0 @@
-entecavir	drug
-lamivudine	drug
-adefovir dipivoxil	drug
-tenofovir disoproxil fumarate	drug

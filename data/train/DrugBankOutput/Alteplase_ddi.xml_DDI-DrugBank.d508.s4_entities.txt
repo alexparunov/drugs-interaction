@@ -1,2 +1,0 @@
-heparin	drug
-aspirin	brand

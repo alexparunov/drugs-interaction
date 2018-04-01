@@ -1,4 +1,0 @@
-phenytoin	drug
-Itraconazole	drug
-itraconazole	drug
-rifampin	drug

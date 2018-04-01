@@ -1,4 +1,0 @@
-N6-cyclopentyladenosine	drug_n
-CPA	drug_n
-theophylline	drug
-CGS 21680	drug_n

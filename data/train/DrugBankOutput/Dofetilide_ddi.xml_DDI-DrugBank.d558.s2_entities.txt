@@ -1,3 +1,0 @@
-dofetilide	drug
-TIKOSYN	brand
-Cimetidine	drug

@@ -1,3 +1,0 @@
-Cyclosporine	drug
-cyclosporine	drug
-corticosteroids	group

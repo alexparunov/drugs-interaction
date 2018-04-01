@@ -1,3 +1,0 @@
-lithium	drug
-INSPRA	brand
-lithium	drug

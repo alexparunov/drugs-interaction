@@ -1,2 +1,0 @@
-griseofulvin	drug
-warfarin-type anticoagulant	group

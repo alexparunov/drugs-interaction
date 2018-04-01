@@ -1,2 +1,0 @@
-cyclosporine	drug
-diltiazem	drug

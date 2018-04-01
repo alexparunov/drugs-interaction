@@ -1,2 +1,0 @@
-hydroxyurea	drug
-deferasirox	drug

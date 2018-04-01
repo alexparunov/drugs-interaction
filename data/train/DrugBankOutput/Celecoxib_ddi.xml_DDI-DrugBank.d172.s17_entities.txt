@@ -1,2 +1,0 @@
-celecoxib	drug
-fluconazole	drug

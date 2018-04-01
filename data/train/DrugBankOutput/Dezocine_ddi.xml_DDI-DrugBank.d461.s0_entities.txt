@@ -1,6 +1,0 @@
-anesthetics	group
-sedatives	group
-antianxiety drugs	group
-hypnotics	group
-alcohol	drug
-opiate analgesics	group

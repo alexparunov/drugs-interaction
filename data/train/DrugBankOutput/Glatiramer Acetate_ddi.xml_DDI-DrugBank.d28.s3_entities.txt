@@ -1,2 +1,0 @@
-COPAXONE	brand
-Interferon beta	drug

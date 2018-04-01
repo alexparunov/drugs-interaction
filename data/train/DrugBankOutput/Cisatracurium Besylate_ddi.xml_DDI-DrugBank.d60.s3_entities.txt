@@ -1,4 +1,0 @@
-succinylcholine	drug
-NIMBEX	brand
-succinylcholine	drug
-NIMBEX	brand

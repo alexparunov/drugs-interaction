@@ -1,4 +1,0 @@
-Probenecid	drug
-Probenecid	drug
-ciprofloxacin	drug
-ciprofloxacin	drug

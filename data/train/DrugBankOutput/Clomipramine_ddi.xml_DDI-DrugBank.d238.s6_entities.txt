@@ -1,7 +1,0 @@
-CMI	drug
-barbiturates	group
-phenytoin	drug
-cimetidine	drug
-fluoxetine	drug
-tricyclic antidepressants	group
-methylphenidate	drug

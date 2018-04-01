@@ -1,6 +1,0 @@
-flecainide	drug
-propafenone	drug
-antidepressants	group
-cimetidine	drug
-Type 1C antiarrhythmics	group
-phenothiazines	group

@@ -1,3 +1,0 @@
-Olanzapine	drug
-haloperidol	drug
-risperidone	drug

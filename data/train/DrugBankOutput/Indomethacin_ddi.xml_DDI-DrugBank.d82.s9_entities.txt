@@ -1,3 +1,0 @@
-indomethacin	drug
-probenecid	drug
-INDOCIN	brand

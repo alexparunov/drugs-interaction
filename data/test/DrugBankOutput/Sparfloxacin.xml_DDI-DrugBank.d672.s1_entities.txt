@@ -1,3 +1,0 @@
-Sparfloxacin	drug
-Methylxanthines	group
-theophylline	drug

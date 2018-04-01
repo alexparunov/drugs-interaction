@@ -1,2 +1,0 @@
-BiCNU	brand
-Carmustine	drug

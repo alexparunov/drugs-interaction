@@ -1,2 +1,0 @@
-Ergotamine	drug
-dihydroergotamine	drug

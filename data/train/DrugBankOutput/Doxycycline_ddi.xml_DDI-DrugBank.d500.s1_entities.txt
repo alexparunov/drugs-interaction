@@ -1,3 +1,0 @@
-tetracyclines	group
-penicillin	drug
-penicillin	group

@@ -1,3 +1,0 @@
-theophylline	drug
-theophylline	drug
-norfloxacin	drug

@@ -1,3 +1,0 @@
-antacids	group
-Aspirin	brand
-Antacids	group

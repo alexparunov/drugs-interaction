@@ -1,5 +1,0 @@
-Maalox TC	brand
-aluminum	drug
-Antacids	group
-cefdinir	drug
-magnesium	drug

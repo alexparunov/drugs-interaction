@@ -1,3 +1,0 @@
-sulfapyridine	drug
-Valproic acid	drug
-Depakene	brand

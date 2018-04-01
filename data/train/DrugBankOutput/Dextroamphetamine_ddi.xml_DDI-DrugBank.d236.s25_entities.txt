@@ -1,3 +1,0 @@
-Phenytoin	drug
-Amphetamines	group
-phenytoin	drug

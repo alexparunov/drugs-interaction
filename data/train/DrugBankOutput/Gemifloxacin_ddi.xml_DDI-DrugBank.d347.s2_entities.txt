@@ -1,3 +1,0 @@
-probenecid	drug
-FACTIVE	brand
-gemifloxacin	drug

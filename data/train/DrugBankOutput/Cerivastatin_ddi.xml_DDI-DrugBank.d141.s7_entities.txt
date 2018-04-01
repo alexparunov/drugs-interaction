@@ -1,4 +1,0 @@
-digoxin	drug
-cerivastatin sodium	drug
-DIGOXIN	drug
-digoxin	drug

@@ -1,2 +1,0 @@
-histamine	drug
-pentagastrin	drug

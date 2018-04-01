@@ -1,2 +1,0 @@
-anesthetics	group
-clonidine	drug

@@ -1,6 +1,0 @@
-Cimetidine	drug
-Probenecid	drug
-cimetidine	drug
-probenecid	drug
-zalcitabine	drug
-zalcitabine	drug

@@ -1,3 +1,0 @@
-antidepressant	group
-anxiolytic	group
-hypnotic	group

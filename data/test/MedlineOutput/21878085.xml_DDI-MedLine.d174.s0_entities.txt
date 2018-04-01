@@ -1,3 +1,0 @@
-nonsteroidal anti-inflammatory drugs	group
-Cyclooxygenase inhibitors	group
-acetylsalicylic acid	drug

@@ -1,3 +1,0 @@
-dyphylline	drug
-probenecid	drug
-dyphylline	drug

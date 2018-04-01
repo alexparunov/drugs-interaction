@@ -1,6 +1,0 @@
-bexarotene	drug
-ketoconazole	drug
-itraconazole	drug
-erythromycin	drug
-gemfibrozil	drug
-bexarotene	drug

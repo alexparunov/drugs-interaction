@@ -1,2 +1,0 @@
-MPTP	drug_n
-MPTP	drug_n

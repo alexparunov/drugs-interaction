@@ -1,2 +1,0 @@
-cephalosporin antibiotics	group
-aminoglycoside antibiotics	group

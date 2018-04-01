@@ -1,4 +1,0 @@
-antidiabetics	group
-sulfapyridine	drug
-antidiabetics	group
-Antidiabetics	group

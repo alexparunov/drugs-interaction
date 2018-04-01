@@ -1,5 +1,0 @@
-highly active antiretroviral	group
-doxorubicin	drug
-cyclophosphamide	drug
-prednisone	drug
-vincristine	drug

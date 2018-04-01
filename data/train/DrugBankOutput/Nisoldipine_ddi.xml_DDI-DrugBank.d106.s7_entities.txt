@@ -1,3 +1,0 @@
-atenolol	drug
-SULAR	brand
-antihypertensive	group

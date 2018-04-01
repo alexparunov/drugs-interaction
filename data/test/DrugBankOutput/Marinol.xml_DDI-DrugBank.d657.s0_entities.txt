@@ -1,6 +1,0 @@
-opioid analgesics	group
-sedatives	group
-MARINOL	brand
-Dronabinol	drug
-anti-infective	drug
-Dronabinol	drug

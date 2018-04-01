@@ -1,3 +1,0 @@
-dopamine antagonists	group
-Bromocriptine mesylate	drug
-butyrophenones	group

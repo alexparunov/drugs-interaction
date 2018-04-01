@@ -1,2 +1,0 @@
-ampicillin	drug
-allopurinol	drug

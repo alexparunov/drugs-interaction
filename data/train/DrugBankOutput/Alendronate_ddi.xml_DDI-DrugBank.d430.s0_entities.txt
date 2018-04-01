@@ -1,2 +1,0 @@
-ranitidine	drug
-alendronate	drug

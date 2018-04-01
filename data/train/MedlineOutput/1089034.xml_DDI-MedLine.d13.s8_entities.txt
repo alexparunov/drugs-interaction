@@ -1,3 +1,0 @@
-amphetamine	drug
-alcohol	drug
-heroin	drug_n

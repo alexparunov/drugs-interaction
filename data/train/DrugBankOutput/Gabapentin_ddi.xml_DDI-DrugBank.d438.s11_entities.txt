@@ -1,3 +1,0 @@
-gabapentin	drug
-valproic acid	drug
-Valproic Acid	drug

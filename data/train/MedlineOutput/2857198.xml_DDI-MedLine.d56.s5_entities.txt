@@ -1,3 +1,0 @@
-PTX	drug_n
-phentolamine	drug
-ouabain	drug

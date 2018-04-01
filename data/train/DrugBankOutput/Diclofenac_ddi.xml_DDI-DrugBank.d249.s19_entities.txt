@@ -1,9 +1,0 @@
-cephalothin	drug
-doxycycline	drug
-sulfamethoxazole	drug
-erythromycin	drug
-ampicillin	drug
-Benzylpenicillin	drug
-chlortetracycline	drug
-oxacillin	drug
-diclofenac	drug

@@ -1,2 +1,0 @@
-VIRACEPT	brand
-nelfinavir	drug

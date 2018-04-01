@@ -1,2 +1,0 @@
-naproxen	drug
-methotrexate	drug

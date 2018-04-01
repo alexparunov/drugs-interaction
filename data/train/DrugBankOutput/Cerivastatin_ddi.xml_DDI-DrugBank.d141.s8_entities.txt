@@ -1,2 +1,0 @@
-digoxin	drug
-Cerivastatin	drug

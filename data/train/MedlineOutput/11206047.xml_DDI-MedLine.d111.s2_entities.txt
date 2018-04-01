@@ -1,6 +1,0 @@
-quinidine	drug
-phenobarbital	drug
-lidocaine	drug
-Acetaminophen	drug
-valproic acid	drug
-theophylline	drug

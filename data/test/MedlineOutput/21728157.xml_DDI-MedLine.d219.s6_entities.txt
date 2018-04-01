@@ -1,2 +1,0 @@
-antiretroviral	group
-antituberculosis	group

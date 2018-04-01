@@ -1,3 +1,0 @@
-phenytoin	drug
-phenobarbitone	drug
-anticonvulsant agents	group

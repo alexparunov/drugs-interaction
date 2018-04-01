@@ -1,2 +1,0 @@
-valdecoxib	drug
-omeprazole	drug

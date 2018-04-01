@@ -1,4 +1,0 @@
-eplerenone	drug
-eplerenone	drug
-ketoconazole	drug
-INSPRA	brand

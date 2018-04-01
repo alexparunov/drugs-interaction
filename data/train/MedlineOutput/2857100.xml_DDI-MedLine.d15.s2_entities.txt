@@ -1,3 +1,0 @@
-apomorphine	drug
-3H-spiroperidol	drug_n
-neuroleptics	group

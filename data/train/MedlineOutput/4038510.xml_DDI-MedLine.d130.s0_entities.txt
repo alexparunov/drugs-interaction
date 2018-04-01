@@ -1,2 +1,0 @@
-cisplatin	drug
-sodium thiosulfate	drug

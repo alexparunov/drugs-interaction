@@ -1,3 +1,0 @@
-Sulindac	drug
-diflunisal	drug
-sulindac	drug

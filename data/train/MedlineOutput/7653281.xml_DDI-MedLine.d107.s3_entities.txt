@@ -1,4 +1,0 @@
-methanol	drug_n
-ethanol	drug
-acetaldehyde	drug_n
-alcohols	drug_n

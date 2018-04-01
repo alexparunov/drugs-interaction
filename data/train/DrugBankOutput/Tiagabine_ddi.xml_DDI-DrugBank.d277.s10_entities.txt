@@ -1,6 +1,0 @@
-tiagabine	drug
-Carbamazepine	drug
-GABITRIL	brand
-AEDs	group
-AEDs	group
-carbamazepine	drug

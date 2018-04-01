@@ -1,3 +1,0 @@
-Beta-Blockers	group
-fenoldopam	drug
-beta-blockers	group

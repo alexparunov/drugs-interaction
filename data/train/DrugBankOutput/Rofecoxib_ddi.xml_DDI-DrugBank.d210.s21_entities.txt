@@ -1,4 +1,0 @@
-methotrexate	drug
-methotrexate	drug
-rofecoxib	drug
-methotrexate	drug

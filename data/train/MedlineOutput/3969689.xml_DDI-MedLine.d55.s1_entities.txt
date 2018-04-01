@@ -1,4 +1,0 @@
-caffeine	drug
-acetaminophen	drug
-caffeine	drug
-acetaminophen	drug

@@ -1,3 +1,0 @@
-lithium	drug
-Lithium	drug
-Nonsteroidal anti-inflammatory agents	group

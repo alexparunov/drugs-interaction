@@ -1,3 +1,0 @@
-anticoagulant	group
-chloral hydrate	drug
-methaqualone	drug

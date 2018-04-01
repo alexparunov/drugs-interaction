@@ -1,3 +1,0 @@
-eszopiclone	drug
-Olanzapine	drug
-olanzapine	drug

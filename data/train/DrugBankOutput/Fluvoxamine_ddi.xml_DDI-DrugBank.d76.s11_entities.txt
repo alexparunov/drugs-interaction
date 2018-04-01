@@ -1,4 +1,0 @@
-astemizole	drug
-cisapride	drug
-fluvoxamine	drug
-terbinafine	drug

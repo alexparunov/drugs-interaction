@@ -1,2 +1,0 @@
-melarsoprol	drug
-anti-helminthic	group

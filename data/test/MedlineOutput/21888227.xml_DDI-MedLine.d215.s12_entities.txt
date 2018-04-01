@@ -1,5 +1,0 @@
-Cephalothin	drug
-Ceftriaxone	drug
-antibiotic	group
-Gentamicin	drug
-Nystatin	drug

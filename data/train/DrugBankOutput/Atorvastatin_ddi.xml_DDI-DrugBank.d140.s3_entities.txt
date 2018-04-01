@@ -1,4 +1,0 @@
-drugs	drug
-antipyrine	drug
-atorvastatin	drug
-Antipyrine	drug

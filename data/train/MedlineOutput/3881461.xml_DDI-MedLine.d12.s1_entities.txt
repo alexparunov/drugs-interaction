@@ -1,3 +1,0 @@
-insulin	drug
-EGF	drug_n
-transferrin	drug_n

@@ -1,3 +1,0 @@
-lisinopril	drug
-Non-steroidal Anti-inflammatory Agents	group
-non-steroidal anti-inflammatory drugs	group

@@ -1,5 +1,0 @@
-metformin	drug
-metformin	drug
-cephalexin	drug
-Metformin	drug
-metformin	drug

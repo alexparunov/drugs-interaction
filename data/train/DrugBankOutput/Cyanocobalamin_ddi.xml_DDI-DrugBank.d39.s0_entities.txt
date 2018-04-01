@@ -1,5 +1,0 @@
-pyrimethamine	drug
-folic acid	drug
-antibiotics	group
-methotrexate	drug
-vitamin B12	drug

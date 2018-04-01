@@ -1,2 +1,0 @@
-Lofexidine	drug
-anti-hypertensive drug	group

@@ -1,8 +1,0 @@
-Losartan	drug
-Bosentan	drug
-Digoxin	drug
-Nimodipine	drug
-losartan	drug
-bosentan	drug
-digoxin	drug
-nimodipine	drug

@@ -1,6 +1,0 @@
-estazolam	drug
-barbiturates	group
-carbamazepine	drug
-estazolam	drug
-rifampin	drug
-phenytoin	drug

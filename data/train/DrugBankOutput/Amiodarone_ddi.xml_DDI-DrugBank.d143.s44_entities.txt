@@ -1,3 +1,0 @@
-warfarin	drug
-amiodarone	drug
-anticoagulant	drug

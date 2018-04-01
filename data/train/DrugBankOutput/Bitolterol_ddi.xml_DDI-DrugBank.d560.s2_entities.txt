@@ -1,2 +1,0 @@
-bitolterol	drug
-steroid	group

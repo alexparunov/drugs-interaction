@@ -1,3 +1,0 @@
-morphine	drug
-N-methyllevallorphan	drug_n
-loperamide	drug

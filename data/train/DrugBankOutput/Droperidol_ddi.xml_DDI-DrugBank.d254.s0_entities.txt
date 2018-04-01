@@ -1,6 +1,0 @@
-anesthetics	group
-INAPSINE	brand
-tranquilizers	group
-opioids	group
-CNS depressant drugs	group
-barbiturates	group

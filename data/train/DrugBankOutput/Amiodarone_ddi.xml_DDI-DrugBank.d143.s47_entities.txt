@@ -1,3 +1,0 @@
-Rifampin	drug
-Antibiotics	drug
-CYP3A4	drug

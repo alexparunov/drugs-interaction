@@ -1,3 +1,0 @@
-calcium	drug
-L-lysine	drug
-calcium	drug

@@ -1,3 +1,0 @@
-SMX	drug
-TMP	drug
-lamivudine	drug

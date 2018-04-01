@@ -1,3 +1,0 @@
-HMG-CoA reductase inhibitors	group
-immunosuppressive drugs	group
-cyclosporine	drug

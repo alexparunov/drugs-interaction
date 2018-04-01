@@ -1,2 +1,0 @@
-anticoagulant	group
-adrenocortical steroids	group

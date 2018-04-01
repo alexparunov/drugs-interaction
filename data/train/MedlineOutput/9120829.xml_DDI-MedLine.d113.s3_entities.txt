@@ -1,3 +1,0 @@
-ethanol	drug
-temazepam	drug
-benzodiazepine	group

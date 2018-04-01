@@ -1,3 +1,0 @@
-cisapride	drug
-ketoconazole	drug
-cisapride	drug

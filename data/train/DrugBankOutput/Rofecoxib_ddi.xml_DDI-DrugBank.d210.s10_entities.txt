@@ -1,3 +1,0 @@
-Cimetidine	drug
-cimetidine	drug
-rofecoxib	drug

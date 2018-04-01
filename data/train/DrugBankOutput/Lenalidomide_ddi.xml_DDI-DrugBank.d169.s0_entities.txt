@@ -1,3 +1,0 @@
-lenalidomide	drug
-REVLIMID	brand
-lenalidomide	drug

@@ -1,2 +1,0 @@
-TORADOL	brand
-morphine	drug

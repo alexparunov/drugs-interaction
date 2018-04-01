@@ -1,2 +1,0 @@
-ciprofloxacin	drug
-trovafloxacin	drug

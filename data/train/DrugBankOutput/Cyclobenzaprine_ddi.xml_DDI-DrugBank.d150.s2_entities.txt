@@ -1,2 +1,0 @@
-guanethidine	drug
-Tricyclic antidepressants	group

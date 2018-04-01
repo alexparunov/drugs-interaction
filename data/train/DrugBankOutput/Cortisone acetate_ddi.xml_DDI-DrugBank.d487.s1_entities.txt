@@ -1,5 +1,0 @@
-corticosteroids	group
-rifampin	drug
-phenytoin	drug
-phenobarbital	drug
-corticosteroid	group

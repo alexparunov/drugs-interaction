@@ -1,5 +1,0 @@
-triazolam	drug
-citalopram	drug
-Triazolam	drug
-citalopram	drug
-triazolam	drug

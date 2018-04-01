@@ -1,3 +1,0 @@
-methotrexate	drug
-diflunisal	drug
-Methotrexate	drug

@@ -1,3 +1,0 @@
-anticholinergic	group
-Anafranil	brand
-sympathomimetic drugs	group

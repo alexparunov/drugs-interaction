@@ -1,6 +1,0 @@
-insulin	drug
-EXTRANEAL	brand
-Insulin	drug
-EXTRANEAL	brand
-insulin	drug
-insulin	drug

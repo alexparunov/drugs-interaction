@@ -1,3 +1,0 @@
-contraceptives	group
-estrogen	drug
-tetracyclines	group

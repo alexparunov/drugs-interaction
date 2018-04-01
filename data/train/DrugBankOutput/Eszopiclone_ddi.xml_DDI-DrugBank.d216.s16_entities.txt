@@ -1,5 +1,0 @@
-Warfarin	drug
-Eszopiclone	drug
-(R)-warfarin	drug
-(S)-warfarin	drug
-warfarin	drug

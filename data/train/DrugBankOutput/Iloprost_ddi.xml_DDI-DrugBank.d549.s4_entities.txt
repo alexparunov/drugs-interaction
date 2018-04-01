@@ -1,2 +1,0 @@
-digoxin	drug
-iloprost	drug

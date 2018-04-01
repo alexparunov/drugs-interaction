@@ -1,2 +1,0 @@
-isosorbide dinitrate	drug
-vasodilators	group

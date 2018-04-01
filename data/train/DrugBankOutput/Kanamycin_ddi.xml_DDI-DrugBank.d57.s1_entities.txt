@@ -1,3 +1,0 @@
-penicillin	group
-aminoglycoside	group
-aminoglycoside	group

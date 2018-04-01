@@ -1,3 +1,0 @@
-TRICOR	brand
-Anticoagulants	group
-COUMARIN ANTICOAGULANTS	group

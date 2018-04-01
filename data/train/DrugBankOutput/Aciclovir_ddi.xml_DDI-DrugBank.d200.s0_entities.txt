@@ -1,2 +1,0 @@
-acyclovir	drug
-probenecid	drug

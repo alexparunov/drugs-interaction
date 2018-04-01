@@ -1,3 +1,0 @@
-antidiabetic agents	group
-corticosteroids	group
-Antidiabetics	group

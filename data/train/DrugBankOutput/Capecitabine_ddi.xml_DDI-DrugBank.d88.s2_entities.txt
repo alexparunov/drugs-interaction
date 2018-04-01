@@ -1,3 +1,0 @@
-5-DFUR	drug_n
-5-FU	drug_n
-FBAL	drug_n

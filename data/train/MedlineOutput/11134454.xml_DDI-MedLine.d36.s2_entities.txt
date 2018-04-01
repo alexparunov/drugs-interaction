@@ -1,4 +1,0 @@
-carbamazepine	drug
-tricyclic antidepressant	group
-carbamazepine	drug
-tricyclic antidepressants	group

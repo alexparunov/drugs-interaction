@@ -1,3 +1,0 @@
-theophylline	drug
-Arginine	drug
-glucose	drug

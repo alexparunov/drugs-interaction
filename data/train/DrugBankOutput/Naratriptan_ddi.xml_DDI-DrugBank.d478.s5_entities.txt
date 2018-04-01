@@ -1,2 +1,0 @@
-SSRI	group
-naratriptan	drug

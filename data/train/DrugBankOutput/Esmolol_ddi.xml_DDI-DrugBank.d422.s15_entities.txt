@@ -1,4 +1,0 @@
-BREVIBLOC	brand
-dopamine	drug
-epinephrine	drug
-norepinephrine	drug

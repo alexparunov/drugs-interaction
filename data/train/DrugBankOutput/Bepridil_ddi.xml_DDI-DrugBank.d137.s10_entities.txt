@@ -1,3 +1,0 @@
-bepridil hydrochloride	drug
-Anti-arrhythmics	group
-tricyclic anti-depressants	group

@@ -1,4 +1,0 @@
-Gemfibrozil	drug
-fibrates	group
-Niacin	drug
-nicotinic acid	drug

@@ -1,3 +1,0 @@
-barbituates	group
-chlorprothixene	drug
-benzodiazepines	group

@@ -1,3 +1,0 @@
-amphotericin B	drug
-itraconazole	drug
-CANCIDAS	brand

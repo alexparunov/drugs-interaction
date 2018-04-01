@@ -1,6 +1,0 @@
-methylergonovine	drug
-ergot	group
-Ergot Derivatives	group
-Dihydroergotamine	drug
-ergonovine	drug
-ergotamine	drug

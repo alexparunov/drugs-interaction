@@ -1,3 +1,0 @@
-muscle relaxants	group
-doxapram	drug
-muscle relaxant drugs	group

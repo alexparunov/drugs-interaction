@@ -1,4 +1,0 @@
-aripiprazole	drug
-Alcohol	drug
-ethanol	drug
-ethanol	drug

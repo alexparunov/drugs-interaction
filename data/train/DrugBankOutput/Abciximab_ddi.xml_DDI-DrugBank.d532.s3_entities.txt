@@ -1,4 +1,0 @@
-Heparin	drug
-anticoagulants	group
-thrombolytics	group
-anti platelet agents	group

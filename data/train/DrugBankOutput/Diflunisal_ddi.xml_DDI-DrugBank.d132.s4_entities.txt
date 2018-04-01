@@ -1,4 +1,0 @@
-diflunisal	drug
-Tolbutamide	drug
-tolbutamide	drug
-tolbutamide	drug

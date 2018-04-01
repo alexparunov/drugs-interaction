@@ -1,4 +1,0 @@
-ciclesonide	drug
-ketoconazole	drug
-des-ciclesonide	drug
-ciclesonide	drug

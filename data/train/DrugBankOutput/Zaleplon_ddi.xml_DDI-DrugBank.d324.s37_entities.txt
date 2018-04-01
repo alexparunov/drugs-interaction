@@ -1,2 +1,0 @@
-ibuprofen	drug
-zaleplon	drug

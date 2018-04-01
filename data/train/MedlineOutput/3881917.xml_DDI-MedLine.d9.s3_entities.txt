@@ -1,4 +1,0 @@
-calcium-entry blocking agents	group
-verapamil	drug
-nifedipine	drug
-diltiazem	drug

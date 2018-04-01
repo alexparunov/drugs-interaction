@@ -1,3 +1,0 @@
-interleukin-1 antagonist	group
-anakinra	drug
-etanercept	drug

@@ -1,5 +1,0 @@
-ergotamine	drug
-ergot-type medications	group
-dihydroergotamine	drug
-methysergide	drug
-AXERT	brand

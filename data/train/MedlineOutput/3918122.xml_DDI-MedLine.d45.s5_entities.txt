@@ -1,3 +1,0 @@
-tripelennamine	drug
-pentazocine	drug
-heroin	drug_n

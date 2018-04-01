@@ -1,2 +1,0 @@
-anticoagulant	group
-alcohol	drug

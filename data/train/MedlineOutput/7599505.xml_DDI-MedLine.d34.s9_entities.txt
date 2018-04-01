@@ -1,2 +1,0 @@
-cobalt	drug
-iron	drug

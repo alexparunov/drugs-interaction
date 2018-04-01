@@ -1,4 +1,0 @@
-sympathomimetic drugs	group
-glycosides	group
-digitalis	group
-Epinephrine	drug

@@ -1,7 +1,0 @@
-bosentan	drug
-hormonal contraceptive	group
-Hormonal Contraceptives	group
-Contraceptives	group
-ethinyl estradiol	drug
-Ortho-Novum	brand
-norethindrone	drug

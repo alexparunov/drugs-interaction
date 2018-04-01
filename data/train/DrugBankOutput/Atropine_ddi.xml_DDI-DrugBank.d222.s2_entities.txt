@@ -1,2 +1,0 @@
-anticholinesterases	group
-barbiturates	group

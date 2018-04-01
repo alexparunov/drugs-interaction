@@ -1,3 +1,0 @@
-polymyxin	group
-antibiotics	group
-aminoglycosides	group

@@ -1,3 +1,0 @@
-NSAIDs	group
-ACE inhibitors	group
-lisinopril	drug

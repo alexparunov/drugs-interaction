@@ -1,5 +1,0 @@
-Insulin	drug
-Hypoglycemics	group
-Agents with b-blocking properties	group
-insulin	drug
-hypoglycemics	group

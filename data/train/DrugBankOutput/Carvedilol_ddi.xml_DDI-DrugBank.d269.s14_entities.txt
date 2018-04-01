@@ -1,2 +1,0 @@
-Rifampin	drug
-carvedilol	drug

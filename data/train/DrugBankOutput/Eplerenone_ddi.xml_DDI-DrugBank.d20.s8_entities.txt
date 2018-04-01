@@ -1,3 +1,0 @@
-Lithium	drug
-eplerenone	drug
-lithium	drug

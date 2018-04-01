@@ -1,3 +1,0 @@
-haloperidol	drug
-phenothiazines	group
-Antipsychotic drugs	group

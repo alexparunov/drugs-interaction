@@ -1,4 +1,0 @@
-warfarin	drug
-warfarin	drug
-fluvoxamine maleate	drug
-Warfarin	drug

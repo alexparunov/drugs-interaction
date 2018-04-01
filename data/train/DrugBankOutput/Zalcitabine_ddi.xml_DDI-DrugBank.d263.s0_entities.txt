@@ -1,3 +1,0 @@
-Zidovudine	drug
-ZDV	drug
-zalcitabine	drug

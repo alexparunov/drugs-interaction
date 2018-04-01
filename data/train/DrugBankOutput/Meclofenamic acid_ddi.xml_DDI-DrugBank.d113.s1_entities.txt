@@ -1,3 +1,0 @@
-warfarin	drug
-meclofenamate sodium	drug
-warfarin	drug

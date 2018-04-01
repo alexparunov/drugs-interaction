@@ -1,2 +1,0 @@
-phenobarbital	drug
-Valproic acid	drug

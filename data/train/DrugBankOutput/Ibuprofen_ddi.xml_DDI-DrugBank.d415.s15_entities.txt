@@ -1,3 +1,0 @@
-lithium	drug
-ibuprofen	drug
-lithium	drug

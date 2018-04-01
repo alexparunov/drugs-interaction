@@ -1,3 +1,0 @@
-clonidine	drug
-clonidine	drug
-ZEBETA	brand

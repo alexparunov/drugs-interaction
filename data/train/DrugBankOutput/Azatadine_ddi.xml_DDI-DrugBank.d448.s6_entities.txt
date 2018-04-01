@@ -1,3 +1,0 @@
-pseudoephedrine	drug
-Antacids	group
-kaolin	drug

@@ -1,2 +1,0 @@
-RR	drug_n
-InsP(3)	drug_n

@@ -1,3 +1,0 @@
-Nifedipine	drug
-Nitrates	group
-nitrates	group

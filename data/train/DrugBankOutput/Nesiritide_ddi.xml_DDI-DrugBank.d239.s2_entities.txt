@@ -1,7 +1,0 @@
-Natrecor	brand
-ACE inhibitors	group
-milrinone	drug
-nitroprusside	drug
-nitroglycerin	drug
-vasodilators	group
-Natrecor	brand

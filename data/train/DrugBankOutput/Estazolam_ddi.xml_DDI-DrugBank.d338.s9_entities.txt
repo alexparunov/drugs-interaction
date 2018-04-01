@@ -1,3 +1,0 @@
-estazolam	drug
-Fluoxetine	drug
-fluoxetine	drug

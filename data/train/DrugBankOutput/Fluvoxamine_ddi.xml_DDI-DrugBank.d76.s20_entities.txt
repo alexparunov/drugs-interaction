@@ -1,3 +1,0 @@
-N-desmethyldiazepam	drug_n
-fluvoxamine	drug
-diazepam	drug

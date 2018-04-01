@@ -1,9 +1,0 @@
-vancomycin	drug
-non-steroidal anti-inflammatory	group
-cyclosporine	drug
-tacrolimus	drug
-ibuprofen	drug
-gentamicin	drug
-aminoglycosides	group
-amphotericin B	drug
-amikacin	drug

@@ -1,3 +1,0 @@
-flecainide	drug
-flecainide	drug
-quinidine	drug

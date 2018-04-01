@@ -1,6 +1,0 @@
-digoxin	drug
-NSAID	group
-diclofenac	drug
-diclofenac	drug
-cyclosporine	drug
-methotrexate	drug

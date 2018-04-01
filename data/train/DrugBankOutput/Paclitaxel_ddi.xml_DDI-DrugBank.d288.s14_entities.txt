@@ -1,2 +1,0 @@
-TAXOL	brand
-bronchodilators	group

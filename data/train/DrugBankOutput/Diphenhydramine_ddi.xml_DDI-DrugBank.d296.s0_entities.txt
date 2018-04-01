@@ -1,6 +1,0 @@
-sedatives	group
-tranquilizers	group
-Diphenhydramine hydrochloride	drug
-alcohol	drug
-CNS depressants	group
-hypnotics	group

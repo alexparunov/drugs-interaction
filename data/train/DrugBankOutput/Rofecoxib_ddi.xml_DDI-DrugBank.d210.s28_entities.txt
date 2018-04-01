@@ -1,3 +1,0 @@
-theophylline	drug
-VIOXX	brand
-theophylline	drug

@@ -1,3 +1,0 @@
-lithium	drug
-INDOCIN	brand
-lithium	drug

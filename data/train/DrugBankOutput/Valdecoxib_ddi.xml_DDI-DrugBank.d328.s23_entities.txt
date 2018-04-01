@@ -1,4 +1,0 @@
-warfarin	drug
-BEXTRA	brand
-Warfarin	drug
-valdecoxib	drug

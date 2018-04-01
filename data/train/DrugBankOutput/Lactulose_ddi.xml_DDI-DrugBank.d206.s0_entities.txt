@@ -1,3 +1,0 @@
-lactulose	drug
-lactulose	drug
-antacids	group

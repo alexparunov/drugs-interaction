@@ -1,3 +1,0 @@
-dolasetron	drug
-hydrodolasetron	drug_n
-hydrodolasetron	drug_n

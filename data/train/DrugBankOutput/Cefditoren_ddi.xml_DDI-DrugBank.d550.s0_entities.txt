@@ -1,4 +1,0 @@
-cefditoren pivoxil	drug
-Contraceptives	group
-contraceptives	group
-ethinyl estradiol	drug

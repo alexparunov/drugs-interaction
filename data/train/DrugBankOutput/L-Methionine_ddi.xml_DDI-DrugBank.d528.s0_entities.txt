@@ -1,5 +1,0 @@
-Acetaminophen	drug
-methotrexate	drug
-L-methionine	drug
-acetaminophen	drug
-methotrexate	drug

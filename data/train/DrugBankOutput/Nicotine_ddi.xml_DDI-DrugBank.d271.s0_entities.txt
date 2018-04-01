@@ -1,3 +1,0 @@
-tricyclic antidepressants	group
-nicotine	drug
-theophylline	drug

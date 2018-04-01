@@ -1,3 +1,0 @@
-desipramine	drug
-imipramine	drug
-alprazolam	drug

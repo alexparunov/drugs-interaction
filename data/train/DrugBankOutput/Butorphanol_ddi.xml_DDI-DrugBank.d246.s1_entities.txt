@@ -1,2 +1,0 @@
-butorphanol	drug
-opioids	group

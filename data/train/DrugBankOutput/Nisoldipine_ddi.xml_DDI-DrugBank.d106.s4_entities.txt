@@ -1,3 +1,0 @@
-SULAR	brand
-phenytoin	drug
-antihypertensive	group

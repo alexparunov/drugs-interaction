@@ -1,3 +1,0 @@
-Clonazepam	drug
-ranitidine	drug
-clonazepam	drug

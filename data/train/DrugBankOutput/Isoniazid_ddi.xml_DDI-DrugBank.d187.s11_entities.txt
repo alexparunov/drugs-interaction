@@ -1,4 +1,0 @@
-theophylline	drug
-isoniazid	drug
-isoniazid	drug
-theophylline	drug

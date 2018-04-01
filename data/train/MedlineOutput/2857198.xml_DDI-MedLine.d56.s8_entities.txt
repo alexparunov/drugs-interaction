@@ -1,2 +1,0 @@
-ouabain	drug
-PTX	drug_n

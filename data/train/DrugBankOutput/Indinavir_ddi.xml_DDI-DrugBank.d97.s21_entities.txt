@@ -1,3 +1,0 @@
-CRIXIVAN	brand
-protease inhibitors	group
-antiretroviral agents	group

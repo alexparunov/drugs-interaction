@@ -1,4 +1,0 @@
-Vasoconstrictors	group
-D.H.E. 45	brand
-dihydroergotamine mesylate	drug
-peripheral vasoconstrictors	group

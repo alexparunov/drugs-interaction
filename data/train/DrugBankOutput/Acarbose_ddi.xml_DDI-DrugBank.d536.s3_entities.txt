@@ -1,3 +1,0 @@
-Acarbose	drug
-sulfonylureas	group
-insulin	drug

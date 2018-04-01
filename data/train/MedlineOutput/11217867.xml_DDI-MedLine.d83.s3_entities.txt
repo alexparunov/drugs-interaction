@@ -1,2 +1,0 @@
-haloperidol	drug
-olanzapine	drug

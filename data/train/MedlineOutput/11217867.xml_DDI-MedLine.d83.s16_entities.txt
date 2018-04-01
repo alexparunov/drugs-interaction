@@ -1,2 +1,0 @@
-risperidone	drug
-olanzapine	drug

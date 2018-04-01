@@ -1,3 +1,0 @@
-warfarin	drug
-enoxacin	drug
-Enoxacin	drug

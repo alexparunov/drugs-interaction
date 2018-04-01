@@ -1,2 +1,0 @@
-5-DFCR	drug_n
-capecitabine	drug

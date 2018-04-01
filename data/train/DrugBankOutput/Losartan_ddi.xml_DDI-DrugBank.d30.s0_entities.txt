@@ -1,5 +1,0 @@
-cimetidine	drug
-warfarin	drug
-digoxin	drug
-hydrochlorothiazide	drug
-phenobarbital	drug

@@ -1,3 +1,0 @@
-anticoagulants	group
-Fluvoxamine	drug
-anticoagulant	group

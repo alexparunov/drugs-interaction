@@ -1,5 +1,0 @@
-fluvoxamine	drug
-benzodiazepines	group
-lorazepam	drug
-oxazepam	drug
-temazepam	drug

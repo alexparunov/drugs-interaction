@@ -1,2 +1,0 @@
-ethanol	drug
-Antizol	brand

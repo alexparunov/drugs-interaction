@@ -1,3 +1,0 @@
-ganciclovir	drug
-Ganciclovir	drug
-foscarnet	drug

@@ -1,4 +1,0 @@
-dopamine	drug
-catecholamines	group
-Bretylium Tosylate	drug
-norepinephrine	drug

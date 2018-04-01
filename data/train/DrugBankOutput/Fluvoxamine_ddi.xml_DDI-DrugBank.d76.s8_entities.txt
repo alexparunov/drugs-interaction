@@ -1,3 +1,0 @@
-astemizole	drug
-terfenadine	drug
-cisapride	drug

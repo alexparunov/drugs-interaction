@@ -1,2 +1,0 @@
-Amprenavir	drug
-rifampin	drug

@@ -1,3 +1,0 @@
-Survanta	brand
-pulmonary surfactant	group
-budesonide	drug

@@ -1,2 +1,0 @@
-levofloxacin	drug
-oxycodone	drug

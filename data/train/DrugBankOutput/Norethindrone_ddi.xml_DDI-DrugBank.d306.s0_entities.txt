@@ -1,7 +1,0 @@
-rifampin	drug
-barbiturates	group
-antituberculosis drug	group
-phenytoin	drug
-carbamazepine	drug
-progestin	group
-anticonvulsants	group

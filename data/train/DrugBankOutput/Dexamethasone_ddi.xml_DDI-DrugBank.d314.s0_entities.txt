@@ -1,3 +1,0 @@
-corticosteroids	group
-Aminoglutethimide	drug
-Aminoglutethimide	drug

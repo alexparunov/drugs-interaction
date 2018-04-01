@@ -1,3 +1,0 @@
-zileuton	drug
-amitriptyline	drug
-tacrine	drug

@@ -1,2 +1,0 @@
-catecholamine depletors	group
-acebutolol	drug

@@ -1,3 +1,0 @@
-hydantoin antiepileptic	group
-phenytoin	drug
-coumarin anticoagulant	group

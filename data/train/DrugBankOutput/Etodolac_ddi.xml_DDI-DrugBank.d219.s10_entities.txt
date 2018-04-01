@@ -1,3 +1,0 @@
-hydrochlorothiazide	drug
-furosemide	drug
-Diuretics	group

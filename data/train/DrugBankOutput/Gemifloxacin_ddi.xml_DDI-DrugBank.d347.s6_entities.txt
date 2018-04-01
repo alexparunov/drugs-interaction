@@ -1,4 +1,0 @@
-antacid	group
-gemifloxacin	drug
-magnesium	drug
-aluminum	drug

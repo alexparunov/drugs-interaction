@@ -1,4 +1,0 @@
-Hydrochlorothiazide	drug
-Diuretic	group
-hydrochlorothiazide	drug
-ketoprofen	drug

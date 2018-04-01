@@ -1,3 +1,0 @@
-pyridoxine	drug
-HEXALEN	brand
-cisplatin	drug

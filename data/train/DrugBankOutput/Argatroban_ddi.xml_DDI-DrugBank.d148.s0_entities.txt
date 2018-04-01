@@ -1,5 +1,0 @@
-heparin	drug
-heparin	drug
-Argatroban	drug
-Heparin	drug
-heparin	drug

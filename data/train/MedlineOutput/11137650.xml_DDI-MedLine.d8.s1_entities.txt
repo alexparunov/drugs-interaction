@@ -1,3 +1,0 @@
-ofloxacin	drug
-KRM-1648	drug_n
-benzoxazinorifamycin	drug_n

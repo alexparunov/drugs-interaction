@@ -1,6 +1,0 @@
-erythromycin	drug
-azithromycin	drug
-cetirizine	drug
-pseudoephedrine	drug
-antipyrine	drug
-ketoconazole	drug

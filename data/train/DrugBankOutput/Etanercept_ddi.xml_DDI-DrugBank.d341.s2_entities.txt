@@ -1,3 +1,0 @@
-ENBREL	brand
-anakinra	drug
-ENBREL	brand

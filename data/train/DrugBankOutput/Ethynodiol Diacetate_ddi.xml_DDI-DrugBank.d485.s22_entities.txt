@@ -1,7 +1,0 @@
-carbamazepine	drug
-aminoglutethimide	drug
-nevirapine	drug
-nafcillin	drug
-phenytoin	drug
-phenobarbital	drug
-rifamycins	group

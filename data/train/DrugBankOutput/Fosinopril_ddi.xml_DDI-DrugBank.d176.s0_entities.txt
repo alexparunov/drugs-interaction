@@ -1,3 +1,0 @@
-diuretics	group
-Diuretics	group
-fosinopril sodium	drug

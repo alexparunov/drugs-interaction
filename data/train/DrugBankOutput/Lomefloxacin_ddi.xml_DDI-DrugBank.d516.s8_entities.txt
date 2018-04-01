@@ -1,3 +1,0 @@
-lomefloxacin	drug
-caffeine	drug
-Caffeine	drug

@@ -1,3 +1,0 @@
-peripherally restricted opioid antagonist	group
-ADL-8-2698	drug
-opioid	group

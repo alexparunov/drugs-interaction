@@ -1,3 +1,0 @@
-low molecular weight heparins	group
-unfractionated heparin	drug
-heparin	drug

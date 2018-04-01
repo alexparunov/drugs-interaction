@@ -1,3 +1,0 @@
-Isoflurane	drug
-muscle relaxants	group
-nondepolarizing muscle relaxants	group

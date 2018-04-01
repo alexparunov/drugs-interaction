@@ -1,3 +1,0 @@
-diltiazem	drug
-triazolam	drug
-midazolam	drug

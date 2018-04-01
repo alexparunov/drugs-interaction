@@ -1,5 +1,0 @@
-protriptyline	drug
-tricyclics	group
-d-amphetamine	drug
-desipramine	drug
-d-amphetamine	drug

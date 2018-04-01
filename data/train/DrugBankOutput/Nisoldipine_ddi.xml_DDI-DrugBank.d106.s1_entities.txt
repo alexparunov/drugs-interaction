@@ -1,2 +1,0 @@
-nisoldipine	drug
-Ranitidine	drug

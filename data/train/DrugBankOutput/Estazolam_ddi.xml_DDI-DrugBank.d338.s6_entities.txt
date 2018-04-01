@@ -1,3 +1,0 @@
-itraconazole	drug
-ketoconazole	drug
-estazolam	drug

@@ -1,2 +1,0 @@
-Cholestyramine	drug
-fluvastatin	drug

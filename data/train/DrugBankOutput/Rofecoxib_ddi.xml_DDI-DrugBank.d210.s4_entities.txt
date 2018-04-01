@@ -1,3 +1,0 @@
-ibuprofen	drug
-aspirin	brand
-VIOXX	brand

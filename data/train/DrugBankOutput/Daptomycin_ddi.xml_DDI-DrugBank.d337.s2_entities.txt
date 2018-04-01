@@ -1,2 +1,0 @@
-simvastatin	drug
-daptomycin	drug

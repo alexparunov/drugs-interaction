@@ -1,2 +1,0 @@
-Chloral hydrate	drug
-anticoagulant	group

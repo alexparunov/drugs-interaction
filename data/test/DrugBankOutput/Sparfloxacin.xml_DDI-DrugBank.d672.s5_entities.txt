@@ -1,3 +1,0 @@
-aluminum	drug
-sparfloxacin	drug
-magnesium	drug

@@ -1,3 +1,0 @@
-morphine	drug
-morphine	drug
-Diazepam	drug

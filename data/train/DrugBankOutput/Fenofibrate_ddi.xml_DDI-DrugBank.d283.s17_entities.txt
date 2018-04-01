@@ -1,2 +1,0 @@
-atorvastatin	drug
-fenofibric acid	drug_n

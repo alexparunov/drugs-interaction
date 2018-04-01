@@ -1,3 +1,0 @@
-ethosuximide	drug
-Carbamazepine	drug
-clonazepam	drug

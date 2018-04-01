@@ -1,4 +1,0 @@
-triazolam	drug
-triazolam	drug
-Erythromycin	drug
-Triazolam	drug

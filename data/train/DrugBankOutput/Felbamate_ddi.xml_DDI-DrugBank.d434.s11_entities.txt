@@ -1,5 +1,0 @@
-phenytoin	drug
-Felbatol	brand
-Phenytoin	drug
-Antiepileptic Drugs	group
-Felbatol	brand

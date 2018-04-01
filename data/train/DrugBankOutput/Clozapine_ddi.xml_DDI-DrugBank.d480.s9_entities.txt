@@ -1,3 +1,0 @@
-Clozapine	drug
-antihypertensive drugs	group
-atropine	drug

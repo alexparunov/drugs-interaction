@@ -1,1 +1,0 @@
-Clostridium difficile toxin A	drug_n

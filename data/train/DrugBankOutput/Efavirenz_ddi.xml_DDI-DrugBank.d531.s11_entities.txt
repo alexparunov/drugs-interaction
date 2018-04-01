@@ -1,5 +1,0 @@
-cisapride	drug
-triazolam	drug
-midazolam	drug
-astemizole	drug
-voriconazole	drug

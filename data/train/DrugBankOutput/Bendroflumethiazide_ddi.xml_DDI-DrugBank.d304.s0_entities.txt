@@ -1,4 +1,0 @@
-cholestyramine	drug
-colestipol	drug
-thiazide diuretics	group
-diuretic	group

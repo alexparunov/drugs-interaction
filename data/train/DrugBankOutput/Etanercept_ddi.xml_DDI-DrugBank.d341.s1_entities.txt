@@ -1,2 +1,0 @@
-ENBREL	brand
-methotrexate	drug

@@ -1,3 +1,0 @@
-ibuprofen	drug
-Coumarin-Type Anticoagulants	group
-coumarin-type anticoagulants	group

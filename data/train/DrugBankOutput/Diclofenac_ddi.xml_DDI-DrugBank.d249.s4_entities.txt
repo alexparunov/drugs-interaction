@@ -1,4 +1,0 @@
-diclofenac	drug
-digoxin	drug
-methotrexate	drug
-cyclosporine	drug

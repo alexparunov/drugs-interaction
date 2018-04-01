@@ -1,4 +1,0 @@
-clofibrate	drug
-fibrates	group
-gemfibrozil	drug
-fibrates	group

@@ -1,2 +1,0 @@
-TCAs	group
-tricyclic antidepressants	group

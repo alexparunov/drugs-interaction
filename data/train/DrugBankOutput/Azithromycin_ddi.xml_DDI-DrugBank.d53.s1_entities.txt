@@ -1,3 +1,0 @@
-azithromycin	drug
-nelfinavir	drug
-azithromycin	drug

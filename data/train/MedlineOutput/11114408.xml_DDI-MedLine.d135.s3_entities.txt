@@ -1,3 +1,0 @@
-PCP	drug_n
-atypical antipsychotic	group
-clozapine	drug

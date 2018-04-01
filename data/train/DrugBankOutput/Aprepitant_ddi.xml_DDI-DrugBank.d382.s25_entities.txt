@@ -1,4 +1,0 @@
-Aprepitant	drug
-midazolam	drug
-midazolam	drug
-Aprepitant	drug

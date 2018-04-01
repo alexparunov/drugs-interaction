@@ -1,3 +1,0 @@
-NSAI	group
-acetylsalicylic acid	drug
-cyclooxygenase inhibitors	group

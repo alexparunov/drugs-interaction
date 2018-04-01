@@ -1,3 +1,0 @@
-quinidine	drug
-Aripiprazole	drug
-aripiprazole	drug

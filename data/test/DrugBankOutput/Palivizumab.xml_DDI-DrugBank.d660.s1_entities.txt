@@ -1,5 +1,0 @@
-Synagis	brand
-vaccines	group
-influenza vaccine	group
-bronchodilators	group
-corticosteroids	group

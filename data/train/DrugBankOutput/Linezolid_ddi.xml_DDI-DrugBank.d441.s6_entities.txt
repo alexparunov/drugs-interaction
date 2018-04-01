@@ -1,5 +1,0 @@
-SSRIs	group
-ZYVOX	brand
-serotonergic agents	group
-antidepressants	group
-selective serotonin reuptake inhibitors	group

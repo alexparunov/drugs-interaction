@@ -1,4 +1,0 @@
-SUSTIVA	brand
-indinavir	drug
-indinavir	drug
-indinavir	drug

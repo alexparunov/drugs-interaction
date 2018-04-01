@@ -1,3 +1,0 @@
-apomorphine	drug
-emetic	group
-Dimenhydrinate	drug

@@ -1,3 +1,0 @@
-dexamethasone	drug
-retinyl acetate	drug
-EGF	drug_n

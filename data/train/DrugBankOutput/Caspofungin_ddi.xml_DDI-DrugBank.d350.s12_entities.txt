@@ -1,7 +1,0 @@
-nevirapine	drug
-efavirenz	drug
-dexamethasone	drug
-phenytoin	drug
-CANCIDAS	brand
-carbamazepine	drug
-caspofungin	drug

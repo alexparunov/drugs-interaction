@@ -1,2 +1,0 @@
-Probenecid	drug
-etomidate	drug

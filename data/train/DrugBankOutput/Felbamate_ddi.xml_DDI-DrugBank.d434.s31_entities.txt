@@ -1,6 +1,0 @@
-Felbatol	brand
-Felbatol	brand
-Carbamazepine	drug
-Carbamazepine	drug
-carbamazepine	drug
-Felbatol	brand

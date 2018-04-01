@@ -1,5 +1,0 @@
-alprazolam	drug
-alprazolam	drug
-Alprazolam	drug
-alprazolam	drug
-fluoxetine	drug

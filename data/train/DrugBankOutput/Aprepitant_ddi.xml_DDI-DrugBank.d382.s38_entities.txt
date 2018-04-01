@@ -1,4 +1,0 @@
-rifampin	drug
-aprepitant	drug
-Rifampin	drug
-Aprepitant	drug

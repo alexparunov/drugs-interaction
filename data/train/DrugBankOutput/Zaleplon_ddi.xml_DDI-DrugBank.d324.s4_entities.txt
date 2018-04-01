@@ -1,3 +1,0 @@
-imipramine	drug
-Imipramine	drug
-Sonata	brand

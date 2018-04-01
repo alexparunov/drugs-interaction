@@ -1,2 +1,0 @@
-lomefloxacin	drug
-antacid	group

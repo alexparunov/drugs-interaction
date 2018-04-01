@@ -1,3 +1,0 @@
-Acarbose	drug
-sulfonylurea	drug
-glyburide	drug

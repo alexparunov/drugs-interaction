@@ -1,3 +1,0 @@
-ketoprofen	drug
-ketoprofen	drug
-warfarin	drug

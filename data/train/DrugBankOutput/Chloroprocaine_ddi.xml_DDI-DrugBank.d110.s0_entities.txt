@@ -1,6 +1,0 @@
-epinephrine	drug
-anesthetic solutions	group
-monoamine oxidase inhibitors	group
-norepinephrine	drug
-phenothiazines	group
-tricyclic antidepressants	group

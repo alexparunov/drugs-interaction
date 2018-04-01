@@ -1,3 +1,0 @@
-cimetidine	drug
-ranitidine	drug
-cisapride	drug

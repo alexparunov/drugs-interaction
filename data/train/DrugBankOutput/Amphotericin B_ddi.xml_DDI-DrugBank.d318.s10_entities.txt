@@ -1,3 +1,0 @@
-pentamidine	drug
-cyclosporine	drug
-aminoglycosides	group

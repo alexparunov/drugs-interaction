@@ -1,5 +1,0 @@
-norethandrolone	drug
-methandrostenolone	drug
-oxymetholone	drug
-androgens	group
-Anabolic steroids	group

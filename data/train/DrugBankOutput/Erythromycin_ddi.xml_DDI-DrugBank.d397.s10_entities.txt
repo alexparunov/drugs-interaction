@@ -1,4 +1,0 @@
-terfenadine	drug
-astemizole	drug
-Erythromycin	drug
-antihistamines	group

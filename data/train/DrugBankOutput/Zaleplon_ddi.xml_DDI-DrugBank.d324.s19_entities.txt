@@ -1,4 +1,0 @@
-zaleplon	drug
-5-oxo-desethylzaleplon glucuronide	drug_n
-5-oxo-desethylzaleplon	drug_n
-zaleplon	drug

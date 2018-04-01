@@ -1,4 +1,0 @@
-verapamil	drug
-disopyramide	drug
-disopyramide phosphate	drug
-verapamil	drug

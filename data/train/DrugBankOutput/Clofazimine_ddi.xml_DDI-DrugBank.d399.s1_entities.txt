@@ -1,2 +1,0 @@
-clofazimine	drug
-dapsone	drug

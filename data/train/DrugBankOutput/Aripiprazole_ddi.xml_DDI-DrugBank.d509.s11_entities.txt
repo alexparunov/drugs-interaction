@@ -1,3 +1,0 @@
-ketoconazole	drug
-aripiprazole	drug
-aripiprazole	drug

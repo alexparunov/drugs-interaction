@@ -1,3 +1,0 @@
-amiodarone	drug
-amiodarone	drug
-protease inhibitor	group

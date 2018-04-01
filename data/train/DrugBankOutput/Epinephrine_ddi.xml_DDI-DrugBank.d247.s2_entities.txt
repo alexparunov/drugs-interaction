@@ -1,3 +1,0 @@
-Epinephrine	drug
-sympathomimetic drugs	group
-isoproterenol	drug

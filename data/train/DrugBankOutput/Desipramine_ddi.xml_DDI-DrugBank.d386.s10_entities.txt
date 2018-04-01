@@ -1,4 +1,0 @@
-selective serotonin reuptake inhibitors	group
-SSRIs	group
-fluoxetine	drug
-paroxetine	drug

@@ -1,4 +1,0 @@
-ethacrynic acid	drug
-furosemide	drug
-loop diuretics	group
-Netilmicin	drug

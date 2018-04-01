@@ -1,2 +1,0 @@
-PCP	drug_n
-PCP	drug_n

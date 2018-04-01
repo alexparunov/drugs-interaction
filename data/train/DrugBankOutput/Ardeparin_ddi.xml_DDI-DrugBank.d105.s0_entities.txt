@@ -1,6 +1,0 @@
-ardeparin	drug
-aspirin	brand
-NSAIDs	group
-nonsteroidal anti-inflammatory drugs	group
-platelet aggregation inhibitors	group
-Anticoagulants	group

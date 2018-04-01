@@ -1,3 +1,0 @@
-ciprofloxacin	drug
-Histamine H2-receptor antagonists	group
-Histamine H2-receptor antagonists	group

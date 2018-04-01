@@ -1,2 +1,0 @@
-estradiol	drug
-progesterone	drug

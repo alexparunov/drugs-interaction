@@ -1,3 +1,0 @@
-Activase	brand
-aspirin	brand
-heparin	drug

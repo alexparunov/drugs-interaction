@@ -1,5 +1,0 @@
-resins	group
-hydrochlorothiazide	drug
-Cholestyramine	drug
-colestipol	drug
-anionic exchange resins	group

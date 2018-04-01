@@ -1,3 +1,0 @@
-antihypertensive drugs	group
-Bumetanide	drug
-Antihypertensives	group

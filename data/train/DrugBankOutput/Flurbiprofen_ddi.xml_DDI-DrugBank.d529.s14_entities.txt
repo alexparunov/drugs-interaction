@@ -1,4 +1,0 @@
-flurbiprofen	drug
-Diuretics	group
-furosemide	drug
-nonsteroidal anti-inflammatory drugs	group

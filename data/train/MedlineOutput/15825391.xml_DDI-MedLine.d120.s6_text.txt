@@ -1,1 +1,0 @@
-The simplest inference is that the toxicity and effectiveness of polyenes are determined by their relative avidities for the predominant sterol in cell membranes.

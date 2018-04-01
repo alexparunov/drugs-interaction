@@ -1,5 +1,0 @@
-isradipine	drug
-isradipine	drug
-propranolol	drug
-propranolol	drug
-propranolol	drug

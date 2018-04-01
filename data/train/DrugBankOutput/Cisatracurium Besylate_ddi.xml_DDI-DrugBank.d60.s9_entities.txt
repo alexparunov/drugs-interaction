@@ -1,3 +1,0 @@
-NIMBEX	brand
-isoflurane	drug
-enflurane	drug

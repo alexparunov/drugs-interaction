@@ -1,3 +1,0 @@
-amphetamine	drug
-propoxyphene	drug
-Propoxyphene	drug

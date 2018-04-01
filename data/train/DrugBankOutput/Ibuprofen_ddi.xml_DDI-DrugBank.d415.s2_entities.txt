@@ -1,4 +1,0 @@
-ibuprofen	drug
-nonsteroidal anti-inflammatory agents	group
-aspirin	brand
-Aspirin	brand

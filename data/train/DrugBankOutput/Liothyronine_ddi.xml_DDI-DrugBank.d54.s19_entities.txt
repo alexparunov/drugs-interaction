@@ -1,3 +1,0 @@
-anesthetic	group
-Ketamine	drug
-thyroid preparation	group

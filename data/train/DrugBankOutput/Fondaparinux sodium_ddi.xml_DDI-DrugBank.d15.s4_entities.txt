@@ -1,2 +1,0 @@
-coumarin	group
-fondaparinux	drug

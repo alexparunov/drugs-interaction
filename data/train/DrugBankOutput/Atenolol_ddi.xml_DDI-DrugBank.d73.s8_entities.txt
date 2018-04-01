@@ -1,2 +1,0 @@
-aspirin	brand
-beta blockers	group

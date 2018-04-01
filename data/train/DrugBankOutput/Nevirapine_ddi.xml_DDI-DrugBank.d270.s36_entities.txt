@@ -1,3 +1,0 @@
-ketoconazole	drug
-Nevirapine	drug
-ketoconazole	drug

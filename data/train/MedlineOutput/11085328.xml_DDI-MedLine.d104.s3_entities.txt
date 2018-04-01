@@ -1,3 +1,0 @@
-PCP	drug_n
-DCG-IV	drug_n
-L-CCG-1	drug_n

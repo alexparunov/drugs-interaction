@@ -1,3 +1,0 @@
-bosentan	drug
-Tacrolimus	drug
-tacrolimus	drug

@@ -1,3 +1,0 @@
-KCl	drug
-noradrenaline	drug
-Resveratrol	drug_n

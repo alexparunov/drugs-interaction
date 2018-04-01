@@ -1,2 +1,0 @@
-Argatroban	drug
-warfarin	drug

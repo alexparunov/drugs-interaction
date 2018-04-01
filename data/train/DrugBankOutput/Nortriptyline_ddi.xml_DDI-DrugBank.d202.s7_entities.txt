@@ -1,2 +1,0 @@
-Fluoxetine	drug
-norfluoxetine	drug_n

@@ -1,5 +1,0 @@
-contraceptive	group
-ethinylestradiol	drug
-contraceptives	group
-Trileptal	brand
-levonorgestrel	drug

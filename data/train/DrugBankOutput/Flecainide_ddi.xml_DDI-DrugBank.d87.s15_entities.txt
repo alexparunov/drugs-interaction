@@ -1,4 +1,0 @@
-flecainide	drug
-flecainide	drug
-amiodarone	drug
-flecainide	drug

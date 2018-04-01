@@ -1,3 +1,0 @@
-Calcium channel blocking agents	group
-calcium channel blockers	group
-ibutilide	drug

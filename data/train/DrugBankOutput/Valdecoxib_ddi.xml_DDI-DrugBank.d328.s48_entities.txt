@@ -1,4 +1,0 @@
-valdecoxib	drug
-diazepam	drug
-diazepam	drug
-valdecoxib	drug

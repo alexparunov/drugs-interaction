@@ -1,3 +1,0 @@
-antacid	group
-aluminum	drug
-6MNA	drug_n

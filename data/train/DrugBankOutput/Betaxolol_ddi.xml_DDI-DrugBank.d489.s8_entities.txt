@@ -1,3 +1,0 @@
-beta-blockers	group
-beta-blockers	group
-epinephrine	drug

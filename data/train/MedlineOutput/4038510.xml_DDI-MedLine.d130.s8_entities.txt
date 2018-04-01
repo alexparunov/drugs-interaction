@@ -1,2 +1,0 @@
-thiosulfate	drug
-cisplatin	drug

@@ -1,3 +1,0 @@
-VIDEX	brand
-delavirdine	drug
-indinavir	drug

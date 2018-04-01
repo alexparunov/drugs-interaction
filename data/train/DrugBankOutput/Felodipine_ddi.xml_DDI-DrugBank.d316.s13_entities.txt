@@ -1,2 +1,0 @@
-PLENDIL	drug
-digoxin	drug

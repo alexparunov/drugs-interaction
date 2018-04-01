@@ -1,3 +1,0 @@
-Trileptal	brand
-Calcium Antagonist	group
-felodipine	drug

@@ -1,2 +1,0 @@
-psychotropic drugs	group
-Clozapine	drug

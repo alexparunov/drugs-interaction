@@ -1,5 +1,0 @@
-glyburide	drug
-glyburide	drug
-glyburide	drug
-glyburide	drug
-valdecoxib	drug

@@ -1,3 +1,0 @@
-protease inhibitor	group
-Antiretroviral	group
-reverse transcriptase inhibitors	group

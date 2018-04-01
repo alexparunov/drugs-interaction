@@ -1,6 +1,0 @@
-psychotropic medications	group
-alcohol	drug
-LEXAPRO	brand
-Alcohol	drug
-LEXAPRO	brand
-alcohol	drug

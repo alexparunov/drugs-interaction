@@ -1,2 +1,0 @@
-KRM-1648	drug_n
-ofloxacin	drug

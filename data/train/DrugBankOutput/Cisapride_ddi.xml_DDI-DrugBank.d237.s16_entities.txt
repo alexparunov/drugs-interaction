@@ -1,2 +1,0 @@
-maprotiline	drug
-tetracyclic antidepressants	group

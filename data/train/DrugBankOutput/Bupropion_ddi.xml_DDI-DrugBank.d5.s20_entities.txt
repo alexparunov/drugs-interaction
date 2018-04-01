@@ -1,5 +1,0 @@
-Amantadine	drug
-Levodopa	drug
-levodopa	drug
-bupropion	drug
-amantadine	drug

@@ -1,3 +1,0 @@
-iloprost	drug
-vasodilators	group
-antihypertensive agents	group

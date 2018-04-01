@@ -1,4 +1,0 @@
-salicylic acid	drug
-DIFFERIN	brand
-sulfur	drug
-resorcinol	drug

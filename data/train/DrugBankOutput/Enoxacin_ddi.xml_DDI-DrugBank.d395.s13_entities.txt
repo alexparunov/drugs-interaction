@@ -1,5 +1,0 @@
-antacids	group
-quinolones	group
-magnesium	drug
-calcium	drug
-aluminum	drug

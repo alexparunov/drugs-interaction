@@ -1,4 +1,0 @@
-Methenamine	drug
-amphetamines	group
-acidifying agents	group
-methenamine	drug

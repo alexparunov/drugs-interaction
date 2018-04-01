@@ -1,4 +1,0 @@
-albendazole	drug
-cimetidine	drug
-Albendazole sulfoxide	drug
-Cimetidine	drug

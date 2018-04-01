@@ -1,4 +1,0 @@
-norfloxacin	drug
-norfloxacin	drug
-Didanosine	drug
-Videx	brand

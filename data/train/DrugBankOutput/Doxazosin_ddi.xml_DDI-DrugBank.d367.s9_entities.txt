@@ -1,8 +1,0 @@
-ibuprofen	drug
-indomethacin	drug
-codeine	drug
-codeine	drug
-acetaminophen	drug
-aspirin	brand
-Analgesic	group
-anti-inflammatory	group

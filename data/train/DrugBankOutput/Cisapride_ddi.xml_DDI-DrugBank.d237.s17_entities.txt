@@ -1,2 +1,0 @@
-antipsychotic medications	group
-sertindole	drug

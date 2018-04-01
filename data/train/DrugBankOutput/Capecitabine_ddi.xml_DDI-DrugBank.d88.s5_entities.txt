@@ -1,3 +1,0 @@
-5-fluorouracil	drug
-Leucovorin	drug
-leucovorin	drug

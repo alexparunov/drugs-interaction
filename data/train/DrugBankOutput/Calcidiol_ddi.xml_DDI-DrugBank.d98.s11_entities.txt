@@ -1,3 +1,0 @@
-corticosteroids	group
-Corticosteroids	group
-vitamin D analogues	group

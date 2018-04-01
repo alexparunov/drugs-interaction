@@ -1,4 +1,0 @@
-Antihypertensive medications	group
-diazoxide	drug
-anesthetic	group
-skeletal-muscle relaxants	group

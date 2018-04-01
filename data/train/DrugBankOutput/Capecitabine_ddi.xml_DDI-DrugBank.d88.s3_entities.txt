@@ -1,5 +1,0 @@
-phenprocoumon	drug
-warfarin	drug
-coumarin-derivative anticoagulants	group
-capecitabine	drug
-Coumarin Anticoagulants	group

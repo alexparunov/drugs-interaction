@@ -1,2 +1,0 @@
-fluvoxamine	drug
-alosetron	drug

@@ -1,3 +1,0 @@
-haloperidol	drug
-rifampin	drug
-haloperidol	drug

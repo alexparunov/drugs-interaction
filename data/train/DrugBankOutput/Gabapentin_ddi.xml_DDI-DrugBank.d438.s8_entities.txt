@@ -1,4 +1,0 @@
-carbamazepine 10, 11 epoxide	drug_n
-gabapentin	drug
-Carbamazepine	drug
-carbamazepine	drug

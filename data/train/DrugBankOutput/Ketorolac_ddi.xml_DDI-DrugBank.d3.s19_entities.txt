@@ -1,6 +1,0 @@
-alprazolam	drug
-thiothixene	drug
-fluoxetine	drug
-psychoactive drugs	group
-TORADOL	brand
-Psychoactive Drugs	group

@@ -1,4 +1,0 @@
-beta-blocker	group
-clonidine	drug
-beta-blockers	group
-clonidine	drug

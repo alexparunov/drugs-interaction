@@ -1,3 +1,0 @@
-macrolide antibiotics	drug
-amiodarone	drug
-fluoroquinolones	drug

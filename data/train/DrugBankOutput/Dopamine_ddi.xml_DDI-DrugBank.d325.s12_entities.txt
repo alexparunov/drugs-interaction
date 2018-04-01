@@ -1,3 +1,0 @@
-ergonovine	drug
-vasopressor	group
-oxytocic drugs	group

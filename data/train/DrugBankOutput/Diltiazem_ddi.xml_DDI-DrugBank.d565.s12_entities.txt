@@ -1,3 +1,0 @@
-diltiazem	drug
-cimetidine	drug
-diltiazem	drug

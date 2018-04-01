@@ -1,5 +1,0 @@
-Methotrexate	drug
-Digoxin	drug
-Diclofenac	drug
-Cyclosporine	drug
-NSAIDs	group

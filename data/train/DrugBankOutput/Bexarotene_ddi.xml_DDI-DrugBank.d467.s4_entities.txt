@@ -1,4 +1,0 @@
-bexarotene	drug
-gemfibrozil	drug
-Targretin	brand
-gemfibrozil	drug

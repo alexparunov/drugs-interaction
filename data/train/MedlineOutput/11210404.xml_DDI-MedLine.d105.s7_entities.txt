@@ -1,4 +1,0 @@
-zidovudine	drug
-zidovudine	drug
-zidovudine	drug
-Azithromycin	drug

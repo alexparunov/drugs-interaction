@@ -1,4 +1,0 @@
-conivaptan	drug
-digoxin	drug
-Digoxin	drug
-digoxin	drug

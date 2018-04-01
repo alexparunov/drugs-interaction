@@ -1,3 +1,0 @@
-phenytoin	drug
-phenobarbital	drug
-sodium valproate	drug

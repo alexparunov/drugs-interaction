@@ -1,3 +1,0 @@
-lapatinib	drug
-ketoconazole	drug
-Ketoconazole	drug

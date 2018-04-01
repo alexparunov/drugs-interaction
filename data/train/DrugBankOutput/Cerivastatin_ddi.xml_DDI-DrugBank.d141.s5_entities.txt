@@ -1,4 +1,0 @@
-cholestyramine	drug
-cerivastatin sodium	drug
-cerivastatin	drug
-cerivastatin sodium	drug

@@ -1,3 +1,0 @@
-irbesartan	drug
-nifedipine	drug
-hydrochlorothiazide	drug

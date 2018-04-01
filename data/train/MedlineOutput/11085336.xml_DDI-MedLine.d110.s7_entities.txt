@@ -1,2 +1,0 @@
-cocaine	drug
-ibogaine	drug_n

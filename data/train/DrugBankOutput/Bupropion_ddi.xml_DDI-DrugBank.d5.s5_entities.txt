@@ -1,2 +1,0 @@
-bupropion	drug
-cimetidine	drug

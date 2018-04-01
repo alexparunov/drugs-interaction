@@ -1,2 +1,0 @@
-neuroleptics	group
-dopamine agonists	group

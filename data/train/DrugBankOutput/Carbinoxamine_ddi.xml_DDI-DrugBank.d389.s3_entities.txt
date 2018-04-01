@@ -1,3 +1,0 @@
-sympathomimetics	group
-MAO inhibitors	group
-beta adrenergic blockers	group

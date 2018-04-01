@@ -1,2 +1,0 @@
-hydrocortisone	drug
-d-amphetamine	drug

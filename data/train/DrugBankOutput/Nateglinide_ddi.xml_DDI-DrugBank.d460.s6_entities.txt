@@ -1,3 +1,0 @@
-digoxin	drug
-Starlix	brand
-Digoxin	drug

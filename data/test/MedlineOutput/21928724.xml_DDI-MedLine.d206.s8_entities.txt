@@ -1,2 +1,0 @@
-Curcumin	drug_n
-antidepressant	group

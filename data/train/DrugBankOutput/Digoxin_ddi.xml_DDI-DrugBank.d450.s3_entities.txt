@@ -1,7 +1,0 @@
-digoxin	drug
-digoxin	drug
-digitalis	group
-clarithromycin	drug
-Erythromycin	drug
-tetracycline	drug
-macrolide antibiotics	group

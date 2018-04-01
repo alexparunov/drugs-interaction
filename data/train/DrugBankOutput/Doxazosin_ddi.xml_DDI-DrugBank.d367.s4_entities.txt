@@ -1,4 +1,0 @@
-cimetidine	drug
-doxazosin	drug
-doxazosin	drug
-doxazosin	drug

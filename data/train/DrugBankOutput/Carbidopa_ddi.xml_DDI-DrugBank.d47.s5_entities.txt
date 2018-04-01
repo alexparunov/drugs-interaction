@@ -1,3 +1,0 @@
-levodopa	drug
-Iron	drug
-carbidopa	drug

@@ -1,2 +1,0 @@
-adenosine	drug
-carbamazepine	drug

@@ -1,5 +1,0 @@
-dopa decarboxylase inhibitor	group
-MAO-B inhibitor	group
-selegiline	drug
-entacapone	drug
-levodopa	drug

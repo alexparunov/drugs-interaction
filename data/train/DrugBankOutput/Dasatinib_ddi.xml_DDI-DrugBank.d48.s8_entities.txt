@@ -1,2 +1,0 @@
-Antacids	group
-dasatinib	drug

@@ -1,4 +1,0 @@
-Aldomet	brand
-Methyldopa	drug
-sulfapyridine	drug
-methyldopa	drug

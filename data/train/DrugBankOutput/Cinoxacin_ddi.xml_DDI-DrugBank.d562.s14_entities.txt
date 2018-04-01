@@ -1,3 +1,0 @@
-cyclosporine	drug
-quinolones	group
-cyclosporine	drug

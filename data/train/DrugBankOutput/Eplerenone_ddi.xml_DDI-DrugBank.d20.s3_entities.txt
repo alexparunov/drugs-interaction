@@ -1,6 +1,0 @@
-erythromycin	drug
-eplerenone	drug
-saquinavir	drug
-verapamil	drug
-eplerenone	drug
-fluconazole	drug

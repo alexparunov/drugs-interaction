@@ -1,2 +1,0 @@
-atazanavir	drug
-Protease inhibitor	group

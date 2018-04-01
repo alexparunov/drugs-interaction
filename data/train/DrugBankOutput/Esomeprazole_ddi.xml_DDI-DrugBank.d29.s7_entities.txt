@@ -1,2 +1,0 @@
-Esomeprazole	drug
-esomeprazole	drug

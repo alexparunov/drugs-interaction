@@ -1,4 +1,0 @@
-Lithium	drug
-Diclofenac	drug
-lithium	drug
-lithium	drug

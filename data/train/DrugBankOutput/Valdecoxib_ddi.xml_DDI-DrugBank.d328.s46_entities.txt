@@ -1,4 +1,0 @@
-valdecoxib	drug
-contraceptive	group
-ethinyl estradiol	drug
-norethindrone	drug

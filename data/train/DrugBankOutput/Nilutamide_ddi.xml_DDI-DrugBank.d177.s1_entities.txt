@@ -1,3 +1,0 @@
-theophylline	drug
-phenytoin	drug
-vitamin K antagonists	group

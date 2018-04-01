@@ -1,4 +1,0 @@
-fluvoxamine	drug
-phenytoin	drug
-drugs	drug
-phenytoin	drug

@@ -1,3 +1,0 @@
-warfarin	drug
-nisoldipine	drug
-digoxin	drug

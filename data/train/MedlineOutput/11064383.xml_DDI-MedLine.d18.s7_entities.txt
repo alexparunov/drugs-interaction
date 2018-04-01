@@ -1,2 +1,0 @@
-sodium dodecyl sulfate	drug_n
-Survanta	brand

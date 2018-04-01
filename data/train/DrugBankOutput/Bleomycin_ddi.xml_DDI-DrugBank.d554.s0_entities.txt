@@ -1,6 +1,0 @@
-vaccines	group
-foscarnet	drug
-cisplatin	drug
-antibiotic	group
-diuretic	group
-cyclosporine	drug

@@ -1,2 +1,0 @@
-itraconazole	drug
-Itraconazole	drug

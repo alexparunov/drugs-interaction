@@ -1,3 +1,0 @@
-simvastatin	drug
-lovastatin	drug
-HMG-CoA Reductase Inhibitors	group

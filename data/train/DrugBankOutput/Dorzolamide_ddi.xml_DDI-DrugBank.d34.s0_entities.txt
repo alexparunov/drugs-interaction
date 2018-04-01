@@ -1,3 +1,0 @@
-salicylate	group
-carbonic anhydrase inhibitors	group
-dorzolamide	drug

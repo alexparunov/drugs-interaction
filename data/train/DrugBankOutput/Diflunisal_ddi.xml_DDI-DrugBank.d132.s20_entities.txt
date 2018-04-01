@@ -1,4 +1,0 @@
-indomethacin	drug
-indomethacin	drug
-Nonsteroidal Anti-Inflammatory Drugs	group
-diflunisal	drug

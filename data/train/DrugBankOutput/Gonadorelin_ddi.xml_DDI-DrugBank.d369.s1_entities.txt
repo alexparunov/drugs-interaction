@@ -1,4 +1,0 @@
-androgens	group
-estrogens	group
-progestins	group
-glucocorticoids	group

@@ -1,3 +1,0 @@
-alpha-adrenergic blocking agents	group
-Dopamine	drug
-beta-adrenergic blocking agents	drug

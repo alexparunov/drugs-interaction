@@ -1,3 +1,0 @@
-(+)-NANM	drug_n
-(-)-NANM	drug_n
-morphine	drug

@@ -1,4 +1,0 @@
-anesthesia	drug
-CYP3A4	drug
-lidocaine	drug
-amiodarone	drug

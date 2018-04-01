@@ -1,3 +1,0 @@
-quinolone antibiotics	group
-alosetron	drug
-cimetidine	drug

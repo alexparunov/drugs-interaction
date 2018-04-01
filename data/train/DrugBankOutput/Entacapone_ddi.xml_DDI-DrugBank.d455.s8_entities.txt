@@ -1,4 +1,0 @@
-entacapone	drug
-selegiline	drug
-dopa decarboxylase inhibitor	group
-levodopa	drug

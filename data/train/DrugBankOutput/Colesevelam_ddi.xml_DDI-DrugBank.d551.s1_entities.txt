@@ -1,7 +1,0 @@
-warfarin	drug
-valproic acid	drug
-quinidine	drug
-metoprolol	drug
-lovastatin	drug
-digoxin	drug
-WelChol	brand

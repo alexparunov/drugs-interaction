@@ -1,3 +1,0 @@
-MAOIs	group
-amantadine	drug
-anticholinergic drugs	group

@@ -1,5 +1,0 @@
-enoxacin	drug
-enoxacin	drug
-enoxacin	drug
-Bismuth	drug
-Bismuth subsalicylate	drug

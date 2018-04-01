@@ -1,4 +1,0 @@
-procaine	drug
-thiazolesulfone	drug
-PAH	drug
-sulfonamides	group

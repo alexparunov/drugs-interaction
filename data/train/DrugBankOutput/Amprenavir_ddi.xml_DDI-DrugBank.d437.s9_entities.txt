@@ -1,4 +1,0 @@
-methadone	drug
-methadone	drug
-Methadone	drug
-amprenavir	drug

@@ -1,5 +1,0 @@
-antiretroviral	group
-saquinavir	drug
-rifampin	drug
-Antimycobacterial Agents	group
-saquinavir	drug

@@ -1,4 +1,0 @@
-tricyclic antidepressants	drug
-anticholinergic	drug
-cimetidine	drug
-drug	drug

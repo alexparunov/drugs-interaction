@@ -1,5 +1,0 @@
-hydrocodone	drug
-antidepressant	group
-hydrocodone	drug
-tricyclic antidepressants	group
-MAO inhibitors	group

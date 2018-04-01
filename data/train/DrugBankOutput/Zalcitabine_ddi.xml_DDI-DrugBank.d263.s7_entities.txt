@@ -1,5 +1,0 @@
-lamivudine	drug
-zalcitabine	drug
-antiretroviral	group
-zalcitabine	drug
-zalcitabine	drug

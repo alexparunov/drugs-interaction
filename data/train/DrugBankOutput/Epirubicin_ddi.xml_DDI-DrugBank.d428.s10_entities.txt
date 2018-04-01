@@ -1,2 +1,0 @@
-epirubicin	drug
-Cimetidine	drug

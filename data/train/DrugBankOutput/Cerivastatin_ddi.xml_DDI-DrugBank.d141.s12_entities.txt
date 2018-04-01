@@ -1,3 +1,0 @@
-cerivastatin	drug
-ERYTHROMYCIN	drug
-erythromycin	drug

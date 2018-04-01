@@ -1,4 +1,0 @@
-chlorpromazine	drug
-ethyl alcohol	drug
-hexobarbital	drug
-clorazepate dipotassium	drug

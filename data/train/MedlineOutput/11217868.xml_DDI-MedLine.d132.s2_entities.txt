@@ -1,2 +1,0 @@
-NNRTI	group
-PI	group

@@ -1,6 +1,0 @@
-warfarin	drug
-digoxin	drug
-warfarin	drug
-digoxin	drug
-anagrelide	drug
-anagrelide	drug

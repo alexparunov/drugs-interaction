@@ -1,3 +1,0 @@
-Cefizox	brand
-cephalosporins	group
-aminoglycosides	group

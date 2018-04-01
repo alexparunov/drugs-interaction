@@ -1,3 +1,0 @@
-nitrofurantoin	drug
-nitrofurantoin	drug
-Norfloxacin	drug

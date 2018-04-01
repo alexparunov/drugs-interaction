@@ -1,2 +1,0 @@
-anticonvulsant	group
-phenytoin	drug

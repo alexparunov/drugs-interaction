@@ -1,3 +1,0 @@
-dinoprost	drug
-oxytocics	group
-Oxytocin	drug

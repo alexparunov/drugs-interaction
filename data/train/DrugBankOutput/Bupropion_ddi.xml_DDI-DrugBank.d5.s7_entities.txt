@@ -1,2 +1,0 @@
-erythrohydrobupropion	drug_n
-threohydrobupropion	drug_n

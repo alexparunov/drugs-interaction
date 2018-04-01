@@ -1,4 +1,0 @@
-Ketoconazole	drug
-ketoconazole	drug
-aliskiren	drug
-aliskiren	drug

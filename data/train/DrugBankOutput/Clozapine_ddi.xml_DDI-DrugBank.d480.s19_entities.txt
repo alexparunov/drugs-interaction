@@ -1,3 +1,0 @@
-clozapine	drug
-fluvoxamine	drug
-paroxetine	drug

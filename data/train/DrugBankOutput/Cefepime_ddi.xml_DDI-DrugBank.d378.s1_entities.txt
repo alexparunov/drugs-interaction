@@ -1,3 +1,0 @@
-furosemide	drug
-cephalosporins	group
-diuretics	group

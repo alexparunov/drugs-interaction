@@ -1,2 +1,0 @@
-dipyridamole	drug
-PERSANTINE	brand

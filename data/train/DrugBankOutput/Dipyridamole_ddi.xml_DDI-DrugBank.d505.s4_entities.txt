@@ -1,3 +1,0 @@
-cholinesterase inhibitors	group
-Dipyridamole	drug
-Cholinesterase Inhibitors	group

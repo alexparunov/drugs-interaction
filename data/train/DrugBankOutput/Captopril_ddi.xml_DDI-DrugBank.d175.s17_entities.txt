@@ -1,2 +1,0 @@
-aspirin	brand
-nonsteroidal anti-inflammatory agents	group

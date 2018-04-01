@@ -1,2 +1,0 @@
-Ticagrelor	drug
-antiplatelet agent	group

@@ -1,2 +1,0 @@
-sulfinpyrazone	drug
-salicylates	group

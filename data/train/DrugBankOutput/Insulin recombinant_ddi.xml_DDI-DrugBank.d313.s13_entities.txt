@@ -1,3 +1,0 @@
-insulins	group
-NovoLog	brand
-insulin	drug

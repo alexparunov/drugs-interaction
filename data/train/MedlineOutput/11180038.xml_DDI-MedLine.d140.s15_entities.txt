@@ -1,2 +1,0 @@
-everolimus	drug
-cyclosporine	drug

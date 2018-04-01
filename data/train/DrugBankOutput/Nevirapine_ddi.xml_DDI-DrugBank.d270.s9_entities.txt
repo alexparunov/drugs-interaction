@@ -1,3 +1,0 @@
-warfarin	drug
-antithrombotic agent	group
-nevirapine	drug

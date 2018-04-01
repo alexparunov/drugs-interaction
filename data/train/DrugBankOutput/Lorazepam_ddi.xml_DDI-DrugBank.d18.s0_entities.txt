@@ -1,4 +1,0 @@
-lorazepam	drug
-benzodiazepines	group
-alcohol	drug
-barbiturates	group

@@ -1,2 +1,0 @@
-levetiracetam	drug
-Valproate	drug

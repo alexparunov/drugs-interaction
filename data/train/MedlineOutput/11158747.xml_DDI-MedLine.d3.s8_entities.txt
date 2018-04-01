@@ -1,4 +1,0 @@
-rifampin	drug
-amprenavir	drug
-amprenavir	drug
-Rifampin	drug

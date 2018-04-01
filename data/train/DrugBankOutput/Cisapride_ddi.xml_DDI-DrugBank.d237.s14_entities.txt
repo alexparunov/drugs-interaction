@@ -1,5 +1,0 @@
-procainamide	drug
-quinidine	drug
-antiarrhythmics	group
-Cisapride	drug
-sotalol	drug

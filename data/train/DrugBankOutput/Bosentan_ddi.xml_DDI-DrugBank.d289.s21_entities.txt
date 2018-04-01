@@ -1,2 +1,0 @@
-Bosentan	drug
-hypoglycemic agents	group

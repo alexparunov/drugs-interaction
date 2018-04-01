@@ -1,3 +1,0 @@
-PPIs	group
-H2 Blockers	group
-Proton Pump Inhibitors	group

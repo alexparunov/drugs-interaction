@@ -1,2 +1,0 @@
-antineoplastic drugs	group
-antiretroviral drugs	group

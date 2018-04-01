@@ -1,2 +1,0 @@
-zalcitabine	drug
-Lamivudine	drug

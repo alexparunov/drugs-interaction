@@ -1,6 +1,0 @@
-erythromycin	drug
-cimetidine	drug
-ketoconazole	drug
-itraconazole	drug
-felodipine	drug
-felodipine	drug

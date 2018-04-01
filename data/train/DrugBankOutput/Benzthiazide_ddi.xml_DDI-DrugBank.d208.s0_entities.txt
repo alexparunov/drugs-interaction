@@ -1,9 +1,0 @@
-norepinephrine	drug
-lithium	drug
-Aleve	brand
-NSAIDs	group
-alcohol	drug
-Benzthiazide	drug
-decongestant drugs	group
-blood thinner	group
-Ibuprofen	drug

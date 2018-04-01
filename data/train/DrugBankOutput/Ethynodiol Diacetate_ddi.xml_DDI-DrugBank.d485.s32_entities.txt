@@ -1,6 +1,0 @@
-Protease inhibitors	group
-Amprenavir	drug
-lopinavir	drug
-nelfinavir	drug
-ritonavir	drug
-combination hormonal contraceptives	group

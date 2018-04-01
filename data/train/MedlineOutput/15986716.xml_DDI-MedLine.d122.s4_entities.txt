@@ -1,2 +1,0 @@
-nicotine	drug
-alcohol	drug

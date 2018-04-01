@@ -1,3 +1,0 @@
-Enoxacin	drug
-theophylline	drug
-theophylline	drug

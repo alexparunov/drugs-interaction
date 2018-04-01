@@ -1,4 +1,0 @@
-antibiotics	group
-erythromycin	drug
-clarithromycin	drug
-azithromycin	drug

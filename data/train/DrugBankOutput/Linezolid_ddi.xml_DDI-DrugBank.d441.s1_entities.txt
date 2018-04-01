@@ -1,3 +1,0 @@
-adrenergic	group
-linezolid	drug
-serotonergic agents	group

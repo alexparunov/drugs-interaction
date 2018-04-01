@@ -1,2 +1,0 @@
-Carbamazepine	drug
-tricyclic antidepressant	group

@@ -1,4 +1,0 @@
-Bezalip	brand
-Bezalip retard	brand
-sulphonylureas	group
-insulin	drug

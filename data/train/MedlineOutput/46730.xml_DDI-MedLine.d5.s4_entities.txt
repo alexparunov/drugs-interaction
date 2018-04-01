@@ -1,2 +1,0 @@
-coumaphos	drug_n
-phenobarbital sodium	drug

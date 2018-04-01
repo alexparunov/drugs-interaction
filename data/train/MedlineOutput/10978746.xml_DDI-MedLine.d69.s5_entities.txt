@@ -1,2 +1,0 @@
-contortrostatin	drug_n
-Flavoridin	drug_n

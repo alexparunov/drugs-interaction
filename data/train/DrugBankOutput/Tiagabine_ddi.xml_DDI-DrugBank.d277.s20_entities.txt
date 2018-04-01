@@ -1,4 +1,0 @@
-Ethanol	drug
-Triazolam	drug
-triazolam	drug
-tiagabine	drug

@@ -1,4 +1,0 @@
-quinolones	group
-norfloxacin	drug
-glyburide	drug
-sulfonylurea agent	group

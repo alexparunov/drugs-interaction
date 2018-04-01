@@ -1,3 +1,0 @@
-metoprolol	drug
-felodipine	drug
-felodipine	drug

@@ -1,2 +1,0 @@
-glucocorticoid	group
-hydrocortisone	drug

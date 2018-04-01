@@ -1,2 +1,0 @@
-escitalopram	drug
-MAO inhibitor	group

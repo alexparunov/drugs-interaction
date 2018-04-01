@@ -1,4 +1,0 @@
-didanosine	drug
-ganciclovir	drug
-VIDEX	brand
-Ganciclovir	drug

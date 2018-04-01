@@ -1,5 +1,0 @@
-beta-agonist	group
-loop diuretics	group
-non-potassium sparing diuretics	group
-beta-agonists	group
-thiazide diuretics	group

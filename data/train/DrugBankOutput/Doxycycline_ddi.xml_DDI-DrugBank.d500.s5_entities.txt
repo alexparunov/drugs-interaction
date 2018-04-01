@@ -1,3 +1,0 @@
-Penthrane	brand
-tetracycline	drug
-methoxyflurane	drug

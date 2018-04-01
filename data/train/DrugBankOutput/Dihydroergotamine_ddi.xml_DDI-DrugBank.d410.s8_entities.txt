@@ -1,4 +1,0 @@
-fluoxetine	drug
-fluvoxamine	drug
-paroxetine	drug
-sertraline	drug

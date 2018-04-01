@@ -1,3 +1,0 @@
-warfarin	drug
-Sparfloxacin	drug
-Warfarin	drug

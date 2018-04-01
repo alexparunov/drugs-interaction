@@ -1,5 +1,0 @@
-theophylline	drug
-azithromycin	drug
-pseudoephedrine	drug
-ketoconazole	drug
-erythromycin	drug

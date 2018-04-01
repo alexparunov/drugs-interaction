@@ -1,2 +1,0 @@
-quinolones	group
-caffeine	drug

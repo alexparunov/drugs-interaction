@@ -1,5 +1,0 @@
-ethinylestradiol	drug
-digoxin	drug
-theophylline	drug
-FACTIVE	brand
-contraceptive product	group

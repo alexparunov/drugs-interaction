@@ -1,4 +1,0 @@
-enalapril	drug
-enalapril	drug
-antihypertensive agents	group
-diuretics	group

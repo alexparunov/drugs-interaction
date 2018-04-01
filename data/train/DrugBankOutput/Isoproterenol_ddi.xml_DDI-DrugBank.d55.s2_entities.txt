@@ -1,4 +1,0 @@
-halothane	drug
-sympathomimetic amines	group
-ISUPREL	brand
-anesthetics	group

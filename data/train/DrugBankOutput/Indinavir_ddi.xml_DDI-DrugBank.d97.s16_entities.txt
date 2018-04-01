@@ -1,2 +1,0 @@
-Neuroleptic	group
-pimozide	drug

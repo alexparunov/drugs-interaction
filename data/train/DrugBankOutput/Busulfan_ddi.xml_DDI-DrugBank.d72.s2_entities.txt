@@ -1,2 +1,0 @@
-busulfan	drug
-Phenytoin	drug

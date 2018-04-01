@@ -1,2 +1,0 @@
-beta blocking agents	group
-reserpine	drug

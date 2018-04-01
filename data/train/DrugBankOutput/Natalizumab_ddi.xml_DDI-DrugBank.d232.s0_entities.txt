@@ -1,3 +1,0 @@
-TYSABRI	brand
-interferon beta-1a	drug
-AVONEX	brand

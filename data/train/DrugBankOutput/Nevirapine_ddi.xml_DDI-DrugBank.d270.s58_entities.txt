@@ -1,3 +1,0 @@
-methadone	drug
-nevirapine	drug
-methadone	drug

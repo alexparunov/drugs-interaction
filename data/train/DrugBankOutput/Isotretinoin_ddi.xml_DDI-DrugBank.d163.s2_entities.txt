@@ -1,5 +1,0 @@
-Accutane	brand
-Tetracyclines	group
-Accutane	brand
-tetracyclines	group
-tetracyclines	group

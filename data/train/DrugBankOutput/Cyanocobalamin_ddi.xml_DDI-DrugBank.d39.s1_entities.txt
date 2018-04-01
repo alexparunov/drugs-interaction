@@ -1,4 +1,0 @@
-para-aminosalicylic acid	drug
-Colchicine	drug
-vitamin B12	drug
-alcohol	drug

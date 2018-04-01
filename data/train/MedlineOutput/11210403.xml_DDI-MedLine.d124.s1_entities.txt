@@ -1,4 +1,0 @@
-opiate	group
-morphine	drug
-trovafloxacin	drug
-ciprofloxacin	drug

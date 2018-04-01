@@ -1,2 +1,0 @@
-metoprolol	drug
-LEXAPRO	brand

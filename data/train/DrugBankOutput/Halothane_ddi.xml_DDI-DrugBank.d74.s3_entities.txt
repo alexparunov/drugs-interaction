@@ -1,2 +1,0 @@
-adrenaline	drug
-antiarrhythmic agent	group

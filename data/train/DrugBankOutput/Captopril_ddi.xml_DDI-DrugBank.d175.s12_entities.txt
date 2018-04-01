@@ -1,2 +1,0 @@
-Beta-adrenergic blocking drugs	group
-captopril	drug

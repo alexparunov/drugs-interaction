@@ -1,4 +1,0 @@
-cyclosporine	drug
-Cyclosporine	drug
-TRICOR	brand
-fibrate drugs	group

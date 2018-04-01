@@ -1,3 +1,0 @@
-SUSTIVA	brand
-ritonavir	drug
-lopinavir	drug

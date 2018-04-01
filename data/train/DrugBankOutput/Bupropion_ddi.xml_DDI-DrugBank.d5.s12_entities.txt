@@ -1,5 +1,0 @@
-antipsychotics	group
-antidepressants	group
-tricyclics	group
-beta-blockers	group
-antiarrhythmics	drug

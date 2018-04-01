@@ -1,3 +1,0 @@
-Grepafloxacin	drug
-Theophylline	drug
-theophylline	drug

@@ -1,3 +1,0 @@
-iron	drug_n
-iron	drug_n
-cefdinir	drug

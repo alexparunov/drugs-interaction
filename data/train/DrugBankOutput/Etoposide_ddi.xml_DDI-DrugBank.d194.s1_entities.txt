@@ -1,5 +1,0 @@
-etoposide	drug
-etoposide	drug
-etoposide	drug
-cyclosporin A	drug
-etoposide	drug

@@ -1,3 +1,0 @@
-haloperidol	drug
-haloperidol	drug
-buspirone HCl	drug

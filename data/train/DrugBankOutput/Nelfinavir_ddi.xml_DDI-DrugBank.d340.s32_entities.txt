@@ -1,4 +1,0 @@
-VIRACEPT	brand
-nelfinavir	drug
-Rifampin	drug
-rifampin	drug

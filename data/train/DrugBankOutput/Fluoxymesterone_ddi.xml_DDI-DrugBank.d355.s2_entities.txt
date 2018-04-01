@@ -1,3 +1,0 @@
-oxyphenbutazone	drug
-androgens	group
-oxyphenbutazone	drug

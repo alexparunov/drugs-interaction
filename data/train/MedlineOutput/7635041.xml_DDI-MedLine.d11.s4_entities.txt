@@ -1,6 +1,0 @@
-azathioprine	drug
-cyclosporin	drug
-corticosteroids	group
-immunosuppressive drugs	group
-cyclophosphamide	drug
-methotrexate	drug

@@ -1,4 +1,0 @@
-acetaminophen	drug
-diflunisal	drug
-acetaminophen	drug
-diflunisal	drug

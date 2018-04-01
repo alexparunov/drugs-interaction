@@ -1,4 +1,0 @@
-lithium	drug
-lithium	drug
-Lithium	drug
-diuretics	group

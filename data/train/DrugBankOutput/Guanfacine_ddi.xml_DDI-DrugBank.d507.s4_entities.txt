@@ -1,2 +1,0 @@
-guanfacine	drug
-TCAs	group

@@ -1,3 +1,0 @@
-propranolol	drug
-Flurbiprofen	drug
-atenolol	drug

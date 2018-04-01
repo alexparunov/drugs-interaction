@@ -1,3 +1,0 @@
-Acetaminophen	drug
-Sulfapyridine	drug
-Tylenol	brand

@@ -1,4 +1,0 @@
-insulin	drug
-hypoglycemic	group
-Insulin	drug
-Hypoglycemics	group

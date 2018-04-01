@@ -1,3 +1,0 @@
-Warfarin	drug
-warfarin	drug
-grepafloxacin	drug

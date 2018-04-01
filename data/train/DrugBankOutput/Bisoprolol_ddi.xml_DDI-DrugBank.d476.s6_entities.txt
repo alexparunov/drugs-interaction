@@ -1,3 +1,0 @@
-cimetidine	drug
-thiazide diuretics	group
-digoxin	drug

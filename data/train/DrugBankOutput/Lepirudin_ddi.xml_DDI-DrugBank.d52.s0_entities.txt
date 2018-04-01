@@ -1,3 +1,0 @@
-REFLUDAN	brand
-streptokinase	drug
-thrombolytics	group

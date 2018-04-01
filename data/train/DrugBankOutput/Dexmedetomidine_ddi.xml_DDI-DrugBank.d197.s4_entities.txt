@@ -1,6 +1,0 @@
-hypnotic	group
-opioid	group
-anesthetic	group
-sedative	group
-PRECEDEX	brand
-PRECEDEX	brand

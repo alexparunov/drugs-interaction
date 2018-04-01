@@ -1,3 +1,0 @@
-bumetanide	drug
-Anticoagulants	group
-warfarin	drug

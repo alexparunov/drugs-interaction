@@ -1,2 +1,0 @@
-CNS-depressant drug	group
-guanfacine	drug

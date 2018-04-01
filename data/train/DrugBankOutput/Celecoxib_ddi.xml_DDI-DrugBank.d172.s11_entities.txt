@@ -1,4 +1,0 @@
-furosemide	drug
-thiazides	group
-Furosemide	drug
-NSAIDs	group

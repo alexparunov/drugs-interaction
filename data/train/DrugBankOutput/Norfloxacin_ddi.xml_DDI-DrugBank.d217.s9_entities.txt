@@ -1,3 +1,0 @@
-norfloxacin	drug
-norfloxacin	drug
-probenecid	drug

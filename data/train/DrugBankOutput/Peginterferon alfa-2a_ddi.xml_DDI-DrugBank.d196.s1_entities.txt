@@ -1,3 +1,0 @@
-Theophylline	drug
-theophylline	drug
-PEGASYS	brand

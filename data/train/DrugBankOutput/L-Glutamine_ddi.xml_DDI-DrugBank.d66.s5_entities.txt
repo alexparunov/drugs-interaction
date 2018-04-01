@@ -1,3 +1,0 @@
-methotrexate	drug
-Methotrexate	drug
-L-glutamine	drug

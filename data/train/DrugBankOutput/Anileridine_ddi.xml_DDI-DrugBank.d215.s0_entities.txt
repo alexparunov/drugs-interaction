@@ -1,5 +1,0 @@
-phenothiazines	group
-sedatives	group
-opioids	group
-anileridine	drug
-anesthetics	group

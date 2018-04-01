@@ -1,3 +1,0 @@
-lamivudine	drug
-VIRACEPT	brand
-stavudine	drug

@@ -1,4 +1,0 @@
-metoprolol	drug
-propranolol	drug
-beta-adrenergic blocking agents	group
-dopamine	drug

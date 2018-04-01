@@ -1,3 +1,0 @@
-Loperamide	drug
-morphine	drug
-dmPGE2	drug_n

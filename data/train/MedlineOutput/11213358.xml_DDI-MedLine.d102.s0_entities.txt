@@ -1,3 +1,0 @@
-progesterone	drug
-estradiol	drug
-noradrenaline	drug

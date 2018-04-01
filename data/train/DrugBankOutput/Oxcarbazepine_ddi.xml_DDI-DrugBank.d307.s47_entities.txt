@@ -1,4 +1,0 @@
-MHD	drug_n
-dextropropoxyphene	drug
-erythromycin	drug
-Cimetidine	drug

@@ -1,3 +1,0 @@
-ethanol	drug
-ethanol	drug
-disulfiram	drug

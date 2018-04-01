@@ -1,4 +1,0 @@
-erythromycin	drug
-ciclesonide	drug
-erythromycin	drug
-des-ciclesonide	drug

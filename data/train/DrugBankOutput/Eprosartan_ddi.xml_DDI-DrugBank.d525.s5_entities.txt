@@ -1,3 +1,0 @@
-nifedipine	drug
-Eprosartan	drug
-calcium channel blockers	group

@@ -1,3 +1,0 @@
-terfenadine	drug
-Itraconazole	drug
-terfenadine	drug

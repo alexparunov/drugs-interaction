@@ -1,6 +1,0 @@
-calcitriol	drug
-vitamin D	group
-phenobarbital	drug
-phenytoin	drug
-Phenobarbital	drug
-Phenytoin	drug

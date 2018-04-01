@@ -1,2 +1,0 @@
-Antineoplastic agents	group
-amphotericin B	drug

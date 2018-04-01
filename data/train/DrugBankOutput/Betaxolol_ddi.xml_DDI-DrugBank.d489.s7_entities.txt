@@ -1,5 +1,0 @@
-diltiazem	drug
-verapamil	drug
-nifedipine	drug
-dihydropyridine derivative	group
-calcium antagonist	group

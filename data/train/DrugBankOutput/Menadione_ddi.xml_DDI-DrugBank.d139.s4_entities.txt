@@ -1,4 +1,0 @@
-vitamin K	group
-vitamin K	group
-Colestipol	drug
-colestipol	drug

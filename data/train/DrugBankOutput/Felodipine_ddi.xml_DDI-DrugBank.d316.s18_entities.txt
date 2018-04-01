@@ -1,2 +1,0 @@
-tacrolimus	drug
-felodipine	drug

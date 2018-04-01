@@ -1,4 +1,0 @@
-glipizide	drug
-chlorpropamide	drug
-Hypoglycemic Agents	group
-MEVACOR	brand

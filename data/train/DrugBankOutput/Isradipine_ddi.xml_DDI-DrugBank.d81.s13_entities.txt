@@ -1,5 +1,0 @@
-isradipine	drug
-digoxin	drug
-Digoxin	drug
-DynaCirc	brand
-digoxin	drug

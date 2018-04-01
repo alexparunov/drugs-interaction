@@ -1,6 +1,0 @@
-esomeprazole	drug
-phenytoin	drug
-warfarin	drug
-quinidine	drug
-clarithromycin	drug
-amoxicillin	drug

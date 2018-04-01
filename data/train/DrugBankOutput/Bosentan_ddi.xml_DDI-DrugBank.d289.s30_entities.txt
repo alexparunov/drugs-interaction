@@ -1,4 +1,0 @@
-Warfarin	drug
-bosentan	drug
-S-warfarin	drug
-R-warfarin	drug

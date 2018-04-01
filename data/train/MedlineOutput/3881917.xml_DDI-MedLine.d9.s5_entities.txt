@@ -1,3 +1,0 @@
-nifedipine	drug
-verapamil	drug
-diltiazem	drug

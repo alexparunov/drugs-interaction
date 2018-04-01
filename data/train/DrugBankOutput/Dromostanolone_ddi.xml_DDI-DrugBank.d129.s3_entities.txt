@@ -1,2 +1,0 @@
-androgens	group
-insulin	drug

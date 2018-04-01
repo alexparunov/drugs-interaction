@@ -1,3 +1,0 @@
-sparfloxacin	drug
-Cimetidine	drug
-Cimetidine	drug

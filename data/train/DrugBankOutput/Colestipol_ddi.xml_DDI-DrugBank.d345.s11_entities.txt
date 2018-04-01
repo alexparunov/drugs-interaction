@@ -1,6 +1,0 @@
-penicillin G	drug
-hydrochlorothiazide	drug
-tetracycline	drug
-furosemide	drug
-gemfibrozil	drug
-colestipol hydrochloride	drug

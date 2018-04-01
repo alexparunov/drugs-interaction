@@ -1,3 +1,0 @@
-MAO inhibitors	group
-dopamine HCl	drug
-dopamine HCl	drug

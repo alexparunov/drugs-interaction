@@ -1,3 +1,0 @@
-quinolone	group
-multivitamins	group
-zinc	drug

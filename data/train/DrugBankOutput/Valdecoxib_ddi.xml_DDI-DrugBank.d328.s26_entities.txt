@@ -1,3 +1,0 @@
-BEXTRA	brand
-Anticoagulant	brand
-warfarin	drug

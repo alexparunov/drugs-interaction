@@ -1,2 +1,0 @@
-arbutamine	drug
-Beta-adrenergic blocking agents	group

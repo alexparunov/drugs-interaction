@@ -1,2 +1,0 @@
-propoxyphene	drug
-alprazolam	drug

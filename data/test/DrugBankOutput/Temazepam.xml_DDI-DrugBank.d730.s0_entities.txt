@@ -1,2 +1,0 @@
-cimetidine	drug
-temazepam	drug

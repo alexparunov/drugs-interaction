@@ -1,3 +1,0 @@
-tolbutamide	drug
-Atromid-S	brand
-phenytoin	drug

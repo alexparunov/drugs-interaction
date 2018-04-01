@@ -1,4 +1,0 @@
-midazolam	drug
-benzodiazepines	group
-Erythromycin	drug
-triazolam	drug

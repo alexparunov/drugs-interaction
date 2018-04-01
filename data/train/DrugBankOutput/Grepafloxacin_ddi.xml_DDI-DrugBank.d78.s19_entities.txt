@@ -1,4 +1,0 @@
-Nonsteroidal Anti-inflammatory Drugs	group
-NSAIDs	group
-nonsteroidal anti inflammatory drug	group
-quinolone	group

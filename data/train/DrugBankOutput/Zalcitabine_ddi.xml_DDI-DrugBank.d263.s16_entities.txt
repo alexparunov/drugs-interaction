@@ -1,2 +1,0 @@
-pentamidine	drug
-HIVID	drug

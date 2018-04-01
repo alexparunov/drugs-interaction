@@ -1,3 +1,0 @@
-ACE-inhibitors	group
-NSAIDs	group
-ACE-inhibitors	group

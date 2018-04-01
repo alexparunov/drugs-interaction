@@ -1,3 +1,0 @@
-antidiabetic medication	group
-antidiabetic agents	group
-VELCADE	brand

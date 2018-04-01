@@ -1,4 +1,0 @@
-captopril	drug
-diltiazem	drug
-nifedipine	drug
-iloprost	drug

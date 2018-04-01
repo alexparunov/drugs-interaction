@@ -1,4 +1,0 @@
-digoxin	drug
-Eprosartan	drug
-glyburide	drug
-warfarin	drug

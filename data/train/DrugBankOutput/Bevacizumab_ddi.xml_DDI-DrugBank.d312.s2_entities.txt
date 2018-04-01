@@ -1,2 +1,0 @@
-AVASTIN	brand
-Irinotecan	drug

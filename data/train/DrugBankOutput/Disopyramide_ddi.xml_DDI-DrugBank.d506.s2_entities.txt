@@ -1,6 +1,0 @@
-propranolol	drug
-Norpace	brand
-procainamide	drug
-lidocaine	drug
-antiarrhythmic drugs	group
-quinidine	drug

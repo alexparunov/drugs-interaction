@@ -1,4 +1,0 @@
-Methotrexate	drug
-methotrexate	drug
-ciprofloxacin	drug
-methotrexate	drug

@@ -1,3 +1,0 @@
-allopurinol sodium	drug
-Cyclosporin	drug
-cyclosporine	drug

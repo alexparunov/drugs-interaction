@@ -1,2 +1,0 @@
-gemfibrozil	drug
-Targretin	brand

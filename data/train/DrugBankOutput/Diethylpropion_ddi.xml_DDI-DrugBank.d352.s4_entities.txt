@@ -1,2 +1,0 @@
-diethylpropion	drug
-phenothiazines	group

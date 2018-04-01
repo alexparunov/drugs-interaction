@@ -1,4 +1,0 @@
-quinidine	drug
-disopyramide	drug
-quinidine	drug
-Norpace	brand

@@ -1,3 +1,0 @@
-propranolol	drug
-atenolol	drug
-hydrochlorothiazide	drug

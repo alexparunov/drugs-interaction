@@ -1,3 +1,0 @@
-Bile acid binding resins	group
-phosphate	drug
-hydrocortisone	drug

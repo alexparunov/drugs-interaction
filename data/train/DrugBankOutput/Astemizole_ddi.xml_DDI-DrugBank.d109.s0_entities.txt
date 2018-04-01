@@ -1,4 +1,0 @@
-Erythromycin	drug
-Macrolides	group
-Itraconazole	drug
-Ketoconazole	drug

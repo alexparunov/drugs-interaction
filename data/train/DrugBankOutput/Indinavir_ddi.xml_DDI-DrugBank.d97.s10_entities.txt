@@ -1,4 +1,0 @@
-dihydroergotamine	drug
-ergonovine	drug
-ergotamine	drug
-methylergonovine	drug

@@ -1,4 +1,0 @@
-Antithrombotics	group
-Aspirin	brand
-heparin	drug
-Activase	brand

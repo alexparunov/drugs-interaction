@@ -1,2 +1,0 @@
-enoxacin	drug
-ranitidine	drug

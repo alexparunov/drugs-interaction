@@ -1,4 +1,0 @@
-phenytoin	drug
-Barbiturates	group
-fludrocortisone acetate	drug
-rifampin	drug

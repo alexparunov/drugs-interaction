@@ -1,3 +1,0 @@
-Amiodarone	drug
-disopyramide	drug
-lidocaine	drug

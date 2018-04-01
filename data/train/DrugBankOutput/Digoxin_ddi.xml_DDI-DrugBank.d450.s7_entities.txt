@@ -1,3 +1,0 @@
-digoxin	drug
-Rifampin	drug
-digoxin	drug

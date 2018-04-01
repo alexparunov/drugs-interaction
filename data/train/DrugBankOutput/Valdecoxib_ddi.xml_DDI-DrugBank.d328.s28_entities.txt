@@ -1,4 +1,0 @@
-valdecoxib	drug
-fluconazole	drug
-ketoconazole	drug
-valdecoxib	drug

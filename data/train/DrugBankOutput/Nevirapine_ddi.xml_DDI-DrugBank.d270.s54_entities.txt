@@ -1,2 +1,0 @@
-nevirapine	drug
-rifabutin	drug

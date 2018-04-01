@@ -1,5 +1,0 @@
-quinidine	drug
-procainamide	drug
-amphetamines	group
-tricyclics	group
-Ethoxzolamide	drug

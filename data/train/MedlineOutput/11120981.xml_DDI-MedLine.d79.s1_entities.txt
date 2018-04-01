@@ -1,5 +1,0 @@
-indinavir	drug
-didanosine	drug
-indinavir	drug
-didanosine	drug
-indinavir	drug

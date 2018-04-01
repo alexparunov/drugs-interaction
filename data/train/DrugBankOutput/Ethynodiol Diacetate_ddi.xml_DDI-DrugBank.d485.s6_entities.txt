@@ -1,2 +1,0 @@
-Aminoglutethimide	drug
-progestins	group

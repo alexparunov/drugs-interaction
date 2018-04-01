@@ -1,4 +1,0 @@
-atovaquone	drug
-phenytoin	drug
-phenytoin	drug
-atovaquone	drug

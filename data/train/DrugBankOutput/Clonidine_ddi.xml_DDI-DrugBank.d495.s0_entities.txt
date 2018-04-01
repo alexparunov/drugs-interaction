@@ -1,3 +1,0 @@
-tricyclic antidepressants	group
-clonidine hydrochloride	drug
-clonidine	drug

@@ -1,4 +1,0 @@
-vinblastine	drug
-flecainide	drug
-tricyclic antidepressants	group
-thioridazine	drug

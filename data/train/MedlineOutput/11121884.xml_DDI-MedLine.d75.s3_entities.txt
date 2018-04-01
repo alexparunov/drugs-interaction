@@ -1,3 +1,0 @@
-mu-selective opioids	group
-delta(1)-selective opioids	group
-kappa-selective opioids	group

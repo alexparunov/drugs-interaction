@@ -1,3 +1,0 @@
-warfarin	drug
-Coumarin Anticoagulant	group
-lovastatin	drug

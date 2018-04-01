@@ -1,2 +1,0 @@
-uricosuric medication	group
-hydroxyurea	drug

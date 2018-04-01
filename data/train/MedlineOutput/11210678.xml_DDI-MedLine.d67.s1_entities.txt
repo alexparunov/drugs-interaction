@@ -1,5 +1,0 @@
-indomethacin	drug
-metamizol	drug
-morphine	drug
-diazepam	drug
-midazolam	drug

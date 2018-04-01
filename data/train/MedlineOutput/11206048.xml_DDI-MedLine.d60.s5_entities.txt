@@ -1,2 +1,0 @@
-CYP2C9	drug
-fluvoxamine	drug

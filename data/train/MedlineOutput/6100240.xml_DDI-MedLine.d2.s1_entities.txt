@@ -1,3 +1,0 @@
-adrenocortical steroid	group
-neomycin	drug
-ACTH	drug

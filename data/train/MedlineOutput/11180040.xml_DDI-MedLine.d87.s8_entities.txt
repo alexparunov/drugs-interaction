@@ -1,2 +1,0 @@
-ADL 8-2698	drug
-morphine	drug

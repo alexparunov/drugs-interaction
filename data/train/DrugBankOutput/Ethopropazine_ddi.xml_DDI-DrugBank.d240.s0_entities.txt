@@ -1,3 +1,0 @@
-alcohol	drug
-Ethopropazine	drug
-CNS depressants	group

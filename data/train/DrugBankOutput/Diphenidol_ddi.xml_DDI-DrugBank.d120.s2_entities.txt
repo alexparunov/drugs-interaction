@@ -1,4 +1,0 @@
-emetic	group
-apomorphine	drug
-apomorphine	drug
-diphenidol	drug

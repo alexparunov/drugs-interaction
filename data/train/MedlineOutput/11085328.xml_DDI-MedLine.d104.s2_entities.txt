@@ -1,2 +1,0 @@
-PCP	drug_n
-phencyclidine	drug_n

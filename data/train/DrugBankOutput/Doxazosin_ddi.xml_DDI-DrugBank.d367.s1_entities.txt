@@ -1,5 +1,0 @@
-indomethacin	drug
-warfarin	drug
-phenytoin	drug
-doxazosin mesylate	drug
-digoxin	drug

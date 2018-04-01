@@ -1,3 +1,0 @@
-digoxin	drug
-diltiazem hydrochloride	drug
-digoxin	drug

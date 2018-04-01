@@ -1,2 +1,0 @@
-loxapine	drug
-lorazepam	drug

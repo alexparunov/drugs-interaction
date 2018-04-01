@@ -1,3 +1,0 @@
-flucytosine	drug
-cytostatic agent	group
-Cytosine arabinoside	drug

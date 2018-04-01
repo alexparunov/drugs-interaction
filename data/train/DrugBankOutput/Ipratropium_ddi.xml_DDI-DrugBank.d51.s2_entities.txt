@@ -1,3 +1,0 @@
-anticholinergic medications	group
-Anticholinergic agents	group
-ipratropium bromide	drug

@@ -1,4 +1,0 @@
-eplerenone	drug
-NSAID	group
-Nonsteroidal Anti-Inflammatory Drugs	group
-NSAIDs	group

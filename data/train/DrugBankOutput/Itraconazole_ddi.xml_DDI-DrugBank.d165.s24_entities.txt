@@ -1,2 +1,0 @@
-azole antifungal agents	group
-isoniazid	drug

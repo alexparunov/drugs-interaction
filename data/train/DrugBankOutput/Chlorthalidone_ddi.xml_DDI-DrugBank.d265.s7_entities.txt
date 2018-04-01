@@ -1,2 +1,0 @@
-tubocurarine	drug
-Chlorthalidone	drug

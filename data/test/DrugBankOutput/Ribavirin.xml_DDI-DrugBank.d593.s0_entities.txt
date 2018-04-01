@@ -1,6 +1,0 @@
-bronchodilators	group
-antiviral agents	group
-VIRAZOLE	brand
-digoxin	drug
-antibiotics	group
-anti-metabolites	group

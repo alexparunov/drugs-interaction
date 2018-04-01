@@ -1,3 +1,0 @@
-amphetamine	drug
-chlordiazepoxide	drug
-cocaine	drug

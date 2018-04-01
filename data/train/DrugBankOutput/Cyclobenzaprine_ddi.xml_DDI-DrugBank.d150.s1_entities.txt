@@ -1,4 +1,0 @@
-barbiturates	group
-CNS depressants	group
-FLEXERIL	brand
-alcohol	drug

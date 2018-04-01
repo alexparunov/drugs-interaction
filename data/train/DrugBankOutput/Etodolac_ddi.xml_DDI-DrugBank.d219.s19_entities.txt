@@ -1,3 +1,0 @@
-Phenylbutazone	drug
-Phenylbutazone	drug
-etodolac	drug

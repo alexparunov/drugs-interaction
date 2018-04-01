@@ -1,2 +1,0 @@
-pentostatin	drug
-FLUDARA	brand

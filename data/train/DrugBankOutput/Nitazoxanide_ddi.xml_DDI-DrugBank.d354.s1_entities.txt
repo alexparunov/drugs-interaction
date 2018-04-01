@@ -1,2 +1,0 @@
-nitazoxanide	drug
-warfarin	drug

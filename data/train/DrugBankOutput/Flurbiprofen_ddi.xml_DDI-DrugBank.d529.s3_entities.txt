@@ -1,2 +1,0 @@
-flurbiprofen	drug
-anticoagulants	group

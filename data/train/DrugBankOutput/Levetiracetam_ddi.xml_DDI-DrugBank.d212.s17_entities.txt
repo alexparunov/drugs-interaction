@@ -1,3 +1,0 @@
-digoxin	drug
-Keppra	brand
-Digoxin	drug

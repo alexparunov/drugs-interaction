@@ -1,6 +1,0 @@
-barbiturates	group
-anticoagulants	group
-diethylstilbestrol	drug
-rifampin	drug
-corticosteroids	group
-corticosteroids	group

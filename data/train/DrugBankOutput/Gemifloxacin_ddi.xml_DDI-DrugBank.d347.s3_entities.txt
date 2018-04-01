@@ -1,3 +1,0 @@
-warfarin	drug
-FACTIVE	brand
-warfarin	drug

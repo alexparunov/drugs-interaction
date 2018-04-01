@@ -1,3 +1,0 @@
-allopurinol	drug
-allopurinol	drug
-uricosuric agents	group

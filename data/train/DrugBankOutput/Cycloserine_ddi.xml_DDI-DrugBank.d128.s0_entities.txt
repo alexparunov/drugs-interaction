@@ -1,3 +1,0 @@
-Trecator-SC	brand
-isoniazid	drug
-Nydrazid	brand

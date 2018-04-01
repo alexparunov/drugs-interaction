@@ -1,3 +1,0 @@
-felodipine	drug
-felodipine	drug
-cimetidine	drug

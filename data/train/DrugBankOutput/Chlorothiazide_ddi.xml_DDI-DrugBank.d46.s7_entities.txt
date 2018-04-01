@@ -1,8 +1,0 @@
-colestipol	drug
-Cholestyramine	drug
-Cholestytamine	drug
-resins	group
-resins	group
-colestipol	drug
-diuretic	group
-thiazide diuretics	group

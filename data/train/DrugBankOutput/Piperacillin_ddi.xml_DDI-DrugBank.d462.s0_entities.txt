@@ -1,4 +1,0 @@
-aminoglycoside	group
-aminoglycoside	group
-piperacillin	drug
-Aminoglycosides	group

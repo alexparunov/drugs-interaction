@@ -1,3 +1,0 @@
-NSAIDs	group
-Warfarin	drug
-warfarin	drug

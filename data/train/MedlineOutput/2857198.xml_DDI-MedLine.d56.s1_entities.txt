@@ -1,2 +1,0 @@
-PTX	drug_n
-Palytoxin	drug_n

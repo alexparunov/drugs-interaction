@@ -1,2 +1,0 @@
-resveratrol	drug_n
-noradrenaline	drug

@@ -1,3 +1,0 @@
-Contraceptives	group
-tiagabine	drug
-contraceptives	group

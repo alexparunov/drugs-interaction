@@ -1,2 +1,0 @@
-pseudoephedrine	drug
-phenylpropanolamine	drug

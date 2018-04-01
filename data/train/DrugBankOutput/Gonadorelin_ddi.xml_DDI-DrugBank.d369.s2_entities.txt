@@ -1,4 +1,0 @@
-levodopa	drug
-spironolactone	drug
-digoxin	drug
-contraceptives	group

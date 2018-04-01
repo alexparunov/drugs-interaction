@@ -1,4 +1,0 @@
-probenecid	drug
-cephalexin	drug
-b-lactams	group
-Probenecid	drug

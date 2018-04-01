@@ -1,5 +1,0 @@
-isopropanol	drug
-methanol	drug_n
-ethylene glycol	drug_n
-diethylene glycol	drug_n
-propylene glycol	drug_n

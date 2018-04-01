@@ -1,8 +1,0 @@
-clarithromycin	drug
-troleandomycin	drug
-nelfinavir	drug
-ritonavir	drug
-ketoconazole	drug
-Aprepitant	drug
-nefazodone	drug
-itraconazole	drug

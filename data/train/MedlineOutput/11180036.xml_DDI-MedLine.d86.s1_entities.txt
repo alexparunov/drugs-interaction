@@ -1,4 +1,0 @@
-sirolimus	drug
-macrolide immunosuppressant	group
-calcium channel blocker	group
-diltiazem	drug

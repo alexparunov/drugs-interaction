@@ -1,4 +1,0 @@
-phenytoin	drug
-doxycycline	drug
-Barbiturates	group
-carbamazepine	drug

@@ -1,4 +1,0 @@
-nitroglycerin	drug
-isradipine	drug
-DynaCirc	brand
-Nitroglycerin	drug

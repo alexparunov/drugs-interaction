@@ -1,5 +1,0 @@
-midazolam	drug
-alfentanil	drug
-propofol	drug
-isoflurane	drug
-dexmedetomidine	drug

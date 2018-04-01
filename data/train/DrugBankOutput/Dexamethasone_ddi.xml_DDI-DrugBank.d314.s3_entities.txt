@@ -1,3 +1,0 @@
-corticosteroid	group
-Antibiotics	group
-Macrolide antibiotics	group

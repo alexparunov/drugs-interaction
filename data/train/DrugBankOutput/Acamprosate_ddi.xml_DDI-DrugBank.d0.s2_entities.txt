@@ -1,3 +1,0 @@
-acamprosate	drug
-Acamprosate	drug
-naltrexone	drug

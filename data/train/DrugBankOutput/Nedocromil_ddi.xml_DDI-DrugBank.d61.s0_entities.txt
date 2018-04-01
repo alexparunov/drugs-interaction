@@ -1,3 +1,0 @@
-bronchodilators	group
-Tilade	brand
-corticosteroids	group

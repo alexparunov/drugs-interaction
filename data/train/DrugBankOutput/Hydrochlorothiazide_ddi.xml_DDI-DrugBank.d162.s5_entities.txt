@@ -1,4 +1,0 @@
-colestipol	drug
-cholestyramine	drug
-hydrochlorothiazide	drug
-resins	group

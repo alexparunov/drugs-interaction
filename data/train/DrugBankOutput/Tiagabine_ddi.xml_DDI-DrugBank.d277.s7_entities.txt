@@ -1,3 +1,0 @@
-valproate	drug
-Valproate	drug
-Tiagabine	drug

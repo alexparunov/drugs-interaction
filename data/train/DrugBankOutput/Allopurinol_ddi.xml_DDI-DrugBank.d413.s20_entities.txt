@@ -1,5 +1,0 @@
-Chlorpropamide	drug
-Chlorpropamide	drug
-allopurinol	drug
-allopurinol	drug
-chlorpropamide	drug

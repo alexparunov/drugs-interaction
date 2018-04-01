@@ -1,5 +1,0 @@
-Nabilone	drug
-diazepam	drug
-secobarbitone sodium	brand
-alcohol	drug
-codeine	drug

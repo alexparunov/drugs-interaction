@@ -1,2 +1,0 @@
-lymecycline	drug
-contraceptives	group

@@ -1,9 +1,0 @@
-hormonal contraceptives	group
-Benzodiazepines	group
-alprazolam	drug
-benzodiazepines	group
-diazepam	drug
-chlordiazepoxide	drug
-oxazepam	drug
-lorazepam	drug
-temazepam	drug

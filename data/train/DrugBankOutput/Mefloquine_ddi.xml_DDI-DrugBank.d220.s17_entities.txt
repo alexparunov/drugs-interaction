@@ -1,2 +1,0 @@
-sulfadoxine	drug
-pyrimethamine	drug

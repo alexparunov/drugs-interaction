@@ -1,5 +1,0 @@
-phenobarbital	drug
-phenytoin	drug
-carbamazepine	drug
-Clonazepam	drug
-Clonazepam	drug

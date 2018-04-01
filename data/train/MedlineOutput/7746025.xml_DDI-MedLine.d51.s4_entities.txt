@@ -1,5 +1,0 @@
-CPA	drug_n
-CGS 21680	drug
-DPCPX	drug_n
-CGS21680	drug_n
-theophylline	drug

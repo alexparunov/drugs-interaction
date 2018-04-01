@@ -1,3 +1,0 @@
-probenecid	drug
-Zidovudine	drug
-VISTIDE	brand

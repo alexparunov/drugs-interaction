@@ -1,5 +1,0 @@
-theophylline	drug
-antidepressants	group
-antipsychotics	group
-WELLBUTRIN	brand
-steroids	group

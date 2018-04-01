@@ -1,5 +1,0 @@
-methotrexate	drug
-naproxen sodium	drug
-Naproxen	drug
-methotrexate	drug
-NSAIDs	group

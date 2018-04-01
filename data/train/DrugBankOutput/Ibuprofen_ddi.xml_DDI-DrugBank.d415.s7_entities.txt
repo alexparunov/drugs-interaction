@@ -1,2 +1,0 @@
-ibuprofen	drug
-methotrexate	drug

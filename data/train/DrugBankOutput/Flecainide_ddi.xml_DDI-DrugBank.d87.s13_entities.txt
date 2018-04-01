@@ -1,4 +1,0 @@
-phenytoin	drug
-phenobarbital	drug
-carbamazepine	drug
-flecainide	drug

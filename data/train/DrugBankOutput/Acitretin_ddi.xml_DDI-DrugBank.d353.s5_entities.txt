@@ -1,2 +1,0 @@
-progestin	drug
-acitretin	drug

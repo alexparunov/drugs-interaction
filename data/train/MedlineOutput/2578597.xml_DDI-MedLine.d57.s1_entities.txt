@@ -1,3 +1,0 @@
-analgesic adjuvants	group
-antihistaminics	group
-analgesic agents	group

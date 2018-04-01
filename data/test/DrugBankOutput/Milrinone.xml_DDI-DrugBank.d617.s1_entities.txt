@@ -1,2 +1,0 @@
-lidocaine	drug
-quinidine	drug

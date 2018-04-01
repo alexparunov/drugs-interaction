@@ -1,2 +1,0 @@
-glutamate	drug
-glycine	drug

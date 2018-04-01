@@ -1,3 +1,0 @@
-CRIXIVAN	brand
-indinavir	drug
-ritonavir	drug

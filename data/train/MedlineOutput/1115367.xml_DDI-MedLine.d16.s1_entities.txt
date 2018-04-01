@@ -1,2 +1,0 @@
-halothane	drug
-ketamine	drug

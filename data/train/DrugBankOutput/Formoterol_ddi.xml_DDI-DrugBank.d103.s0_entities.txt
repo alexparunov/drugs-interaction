@@ -1,3 +1,0 @@
-bronchodilators	group
-Short-Acting beta2-agonists	group
-formoterol	drug

@@ -1,2 +1,0 @@
-fenofibrate	drug
-fenofibric acid	drug_n

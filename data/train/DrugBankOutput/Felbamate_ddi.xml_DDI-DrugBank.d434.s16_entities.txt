@@ -1,4 +1,0 @@
-phenytoin	drug
-Felbatol	brand
-phenytoin	drug
-Felbatol	brand

@@ -1,2 +1,0 @@
-atorvastatin	drug
-contraceptive	group

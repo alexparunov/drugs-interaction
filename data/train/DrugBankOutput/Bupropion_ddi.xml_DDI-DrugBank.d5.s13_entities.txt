@@ -1,3 +1,0 @@
-hydroxybupropion	drug_n
-bupropion	drug
-bupropion	drug

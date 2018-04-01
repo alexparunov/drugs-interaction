@@ -1,3 +1,0 @@
-warfarin	drug
-Argatroban	drug
-anticoagulant agents	group

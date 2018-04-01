@@ -1,3 +1,0 @@
-nelfinavir	drug
-PI	group
-nevirapine	drug

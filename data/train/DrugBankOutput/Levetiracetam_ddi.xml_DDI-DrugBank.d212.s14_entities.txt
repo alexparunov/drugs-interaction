@@ -1,5 +1,0 @@
-valproate	drug
-topiramate	drug
-Levetiracetam	drug
-carbamazepine	drug
-lamotrigine	drug

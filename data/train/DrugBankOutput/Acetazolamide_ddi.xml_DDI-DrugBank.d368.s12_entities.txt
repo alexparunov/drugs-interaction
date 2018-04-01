@@ -1,3 +1,0 @@
-lithium	drug
-Acetazolamide	drug
-lithium	drug

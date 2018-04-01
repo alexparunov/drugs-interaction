@@ -1,4 +1,0 @@
-SCH-23390	drug_n
-METH	drug
-clozapine	drug
-atypical neuroleptic	group

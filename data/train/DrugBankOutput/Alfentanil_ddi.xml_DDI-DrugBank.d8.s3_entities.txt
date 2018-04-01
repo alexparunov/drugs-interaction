@@ -1,5 +1,0 @@
-ALFENTA	brand
-volatile inhalation anesthetics	group
-ALFENTA	brand
-erythromycin	drug
-ALFENTA	brand

@@ -1,3 +1,0 @@
-calcium	drug
-antacids	group
-calcium	drug

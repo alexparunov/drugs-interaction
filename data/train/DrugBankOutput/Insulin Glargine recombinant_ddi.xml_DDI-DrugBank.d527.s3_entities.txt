@@ -1,5 +1,0 @@
-insulin	drug
-lithium	drug
-alcohol	drug
-Beta-blockers	group
-clonidine	drug

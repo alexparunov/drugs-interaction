@@ -1,2 +1,0 @@
-Buprenorphine	drug
-norbuprenorphine	drug_n

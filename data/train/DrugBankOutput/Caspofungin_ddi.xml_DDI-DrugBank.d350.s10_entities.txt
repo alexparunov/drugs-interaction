@@ -1,2 +1,0 @@
-caspofungin	drug
-rifampin	drug

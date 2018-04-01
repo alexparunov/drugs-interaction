@@ -1,5 +1,0 @@
-CYP3A4	drug
-CYP1A2	drug
-Amiodarone	drug
-CYP2D6	drug
-CYP2C9	drug

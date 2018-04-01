@@ -1,4 +1,0 @@
-isradipine	drug
-isradipine	drug
-Cimetidine	drug
-cimetidine	drug

@@ -1,3 +1,0 @@
-desbutyl levobupivacaine	drug_n
-levobupivacaine	drug
-3-hydroxy levobupivacaine	drug_n

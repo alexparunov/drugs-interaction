@@ -1,1 +1,0 @@
-False-positive tests may occur in patients with hypertension without pheochromocytoma.

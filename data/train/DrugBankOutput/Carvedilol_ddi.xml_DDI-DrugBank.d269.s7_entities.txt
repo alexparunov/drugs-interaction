@@ -1,3 +1,0 @@
-carvedilol	drug
-cyclosporine	drug
-Cyclosporine	drug

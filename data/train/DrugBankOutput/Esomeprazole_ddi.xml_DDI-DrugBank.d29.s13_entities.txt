@@ -1,5 +1,0 @@
-contraceptives	group
-diazepam	drug
-phenytoin	drug
-quinidine	drug
-esomeprazole	drug

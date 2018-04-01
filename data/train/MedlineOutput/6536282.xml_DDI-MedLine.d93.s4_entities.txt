@@ -1,2 +1,0 @@
-TML	drug_n
-trimethyl lead	drug_n

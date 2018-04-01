@@ -1,5 +1,0 @@
-zinc	drug
-zinc insulin	drug
-Edetate calcium disodium	drug
-edetate calcium disodium	drug
-Steroids	group

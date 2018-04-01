@@ -1,3 +1,0 @@
-antibiotics	group
-tetracycline class	group
-penicillins	group

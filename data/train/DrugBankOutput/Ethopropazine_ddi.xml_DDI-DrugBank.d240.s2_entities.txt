@@ -1,3 +1,0 @@
-chlorpromazine	drug
-chlorpromazine	drug
-Ethopropazine	drug

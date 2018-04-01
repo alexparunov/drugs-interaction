@@ -1,4 +1,0 @@
-carvedilol	drug
-digoxin	drug
-Digoxin	drug
-Digoxin	drug

@@ -1,4 +1,0 @@
-Ethanol	drug
-eszopiclone	drug
-ethanol	drug
-ethanol	drug

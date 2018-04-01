@@ -1,3 +1,0 @@
-cefixime	drug
-Warfarin	drug
-Anticoagulants	group

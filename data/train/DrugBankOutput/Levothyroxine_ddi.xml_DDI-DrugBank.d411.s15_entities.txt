@@ -1,2 +1,0 @@
-Sodium Iodide	drug
-Sodium Pertechnetate Tc99m	drug

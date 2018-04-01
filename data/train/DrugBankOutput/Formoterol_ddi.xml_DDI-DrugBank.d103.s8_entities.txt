@@ -1,6 +1,0 @@
-tricyclic antidepressants	group
-antihistamines	group
-disopyramide	drug
-quinidine	drug
-phenothiazines	group
-procainamide	drug

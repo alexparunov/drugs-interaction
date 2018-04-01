@@ -1,3 +1,0 @@
-penicillin	drug
-antibiotics	group
-gentamicin	drug

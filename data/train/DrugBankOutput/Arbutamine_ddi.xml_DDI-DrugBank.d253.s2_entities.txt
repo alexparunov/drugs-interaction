@@ -1,5 +1,0 @@
-quinidine	drug
-lidocaine	drug
-flecainide	drug
-Antiarrhythmic agents, class I	drug
-arbutamine	drug

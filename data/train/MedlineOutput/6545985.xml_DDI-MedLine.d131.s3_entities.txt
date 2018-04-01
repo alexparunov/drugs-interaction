@@ -1,2 +1,0 @@
-neurotensin	drug_n
-enkephalins	drug_n

@@ -1,4 +1,0 @@
-Mefloquine	drug
-quinine	drug
-quinidine	drug
-chloroquine	drug

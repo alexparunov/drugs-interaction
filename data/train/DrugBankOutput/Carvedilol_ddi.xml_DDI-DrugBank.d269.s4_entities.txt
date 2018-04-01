@@ -1,3 +1,0 @@
-agents with b-blocking properties	group
-Clonidine	drug
-clonidine	drug

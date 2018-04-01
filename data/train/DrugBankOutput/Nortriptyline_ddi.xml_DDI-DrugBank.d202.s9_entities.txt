@@ -1,3 +1,0 @@
-nortriptyline hydrochloride	drug
-anticholinergic drugs	group
-sympathomimetic drugs	group

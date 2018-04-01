@@ -1,2 +1,0 @@
-disulfiram	drug
-isoniazid	drug

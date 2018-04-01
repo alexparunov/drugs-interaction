@@ -1,5 +1,0 @@
-quinolones	group
-Theophylline	drug
-theophylline	drug
-ciprofloxacin	drug
-theophylline	drug

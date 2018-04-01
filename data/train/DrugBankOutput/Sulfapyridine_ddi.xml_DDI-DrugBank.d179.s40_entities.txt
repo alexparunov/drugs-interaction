@@ -1,5 +1,0 @@
-phenytoin	drug
-Dilantin	brand
-Phenytoin	drug
-sulfapyridine	drug
-phenytoin	drug

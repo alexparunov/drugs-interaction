@@ -1,3 +1,0 @@
-selective serotonin reuptake inhibitors	group
-tricyclic antidepressants	group
-antidepressants	group

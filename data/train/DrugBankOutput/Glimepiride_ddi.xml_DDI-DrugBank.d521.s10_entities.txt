@@ -1,2 +1,0 @@
-Nydrazid	brand
-isoniazid	drug

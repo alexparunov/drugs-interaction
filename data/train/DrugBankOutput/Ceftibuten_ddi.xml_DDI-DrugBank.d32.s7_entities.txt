@@ -1,3 +1,0 @@
-ranitidine	drug
-ceftibuten	drug
-ceftibuten	drug

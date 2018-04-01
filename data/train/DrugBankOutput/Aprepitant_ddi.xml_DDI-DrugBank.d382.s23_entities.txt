@@ -1,5 +1,0 @@
-alprazolam	drug
-triazolam	drug
-midazolam	drug
-benzodiazepines	group
-Aprepitant	drug

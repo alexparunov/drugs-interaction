@@ -1,3 +1,0 @@
-Zyban	brand
-varencline	drug
-bupropion SR	drug

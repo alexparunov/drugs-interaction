@@ -1,3 +1,0 @@
-propranolol	drug
-metoprolol	drug
-Beta-blockers	group

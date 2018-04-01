@@ -1,2 +1,0 @@
-dofetillide	drug
-digoxin	drug

@@ -1,6 +1,0 @@
-bronchodilators	group
-vitamins	group
-Pulmozyme	brand
-antibiotics	group
-corticosteroids	group
-analgesics	group

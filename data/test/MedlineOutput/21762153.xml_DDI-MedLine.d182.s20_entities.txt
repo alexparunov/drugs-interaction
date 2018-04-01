@@ -1,2 +1,0 @@
-o-Cymen-5-ol	drug_n
-zinc chloride	drug

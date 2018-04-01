@@ -1,2 +1,0 @@
-reseveratrol	drug_n
-L-NAME	drug_n

@@ -1,2 +1,0 @@
-Saquinavir	drug
-amprenavir	drug

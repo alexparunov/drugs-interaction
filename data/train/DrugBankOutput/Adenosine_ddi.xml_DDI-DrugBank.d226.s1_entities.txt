@@ -1,3 +1,0 @@
-Adenocard	brand
-Digoxin	drug
-verapamil	drug

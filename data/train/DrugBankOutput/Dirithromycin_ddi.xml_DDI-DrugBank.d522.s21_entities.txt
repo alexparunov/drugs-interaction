@@ -1,3 +1,0 @@
-Anticoagulants	group
-erythromycin	drug
-anticoagulants	group

@@ -1,5 +1,0 @@
-warfarin	drug
-warfarin	drug
-BREVIBLOC	brand
-warfarin	drug
-BREVIBLOC	brand

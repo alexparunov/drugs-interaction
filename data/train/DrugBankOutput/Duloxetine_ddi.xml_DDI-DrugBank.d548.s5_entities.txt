@@ -1,2 +1,0 @@
-quinidine	drug
-fluoxetine	drug

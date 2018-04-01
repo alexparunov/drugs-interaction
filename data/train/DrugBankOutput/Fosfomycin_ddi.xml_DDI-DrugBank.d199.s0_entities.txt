@@ -1,4 +1,0 @@
-Metoclopramide	drug
-MONUROL	brand
-metoclopramide	drug
-fosfomycin	drug

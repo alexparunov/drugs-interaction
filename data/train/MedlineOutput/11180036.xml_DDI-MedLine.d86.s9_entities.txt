@@ -1,3 +1,0 @@
-sirolimus	drug
-diltiazem	drug
-sirolimus	drug

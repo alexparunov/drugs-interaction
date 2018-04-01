@@ -1,2 +1,0 @@
-Amiodarone	drug
-CYP2D6	drug

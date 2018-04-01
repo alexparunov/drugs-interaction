@@ -1,3 +1,0 @@
-NIZORAL	brand
-midazolam	drug
-triazolam	drug

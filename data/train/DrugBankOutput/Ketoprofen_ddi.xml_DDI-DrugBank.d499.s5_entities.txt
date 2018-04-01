@@ -1,3 +1,0 @@
-aspirin	brand
-Aspirin	brand
-Ketoprofen	drug
