@@ -12,6 +12,13 @@ class Document:
             st = st + sentence.__str__() + '\n'
         return st
 
+    # Sets features for each sentence
+    def set_features(self):
+        featured_sentences = []
+        for sentence in self.sentences:
+            featured_sentences.append(sentence.set_features())
+        self.featured_sentences = featured_sentences
+
 class Sentence:
     def __init__(self, id, text):
         self.id = id
@@ -32,6 +39,9 @@ class Sentence:
         for pair in self.pairs:
             st = st + pair.__str__() +'\n'
         return st
+
+    def set_features(self):
+        return self.text
 
 class Entity:
     def __init__(self, id, charOffset, type, text):
