@@ -48,62 +48,54 @@ class Sentence:
         offsetWords = []
         for entity in self.entities:
             charOffsets.append(entity.charOffset)
+            offsetWords.append(entity.text)
 
-        # Some offsets are combination of several offsets. For example
-        # 105-115;130-140. While they are considered as one. We should take care of this case
-
-        # This index will determine is word is beginning of chunk of offsetted words
-        # If i == 0 it means that word is beginning of chunk.
-        # This will be used later in BIO tagging. So in this case we will assign tag B
-        i = 0
-        for charOffset in charOffsets:
-            split_charOffsets = charOffset.split(";")
+        # This will contain the list of ranges that are composed of offsets
+        # This will be used lated to determine if ranges in tagged_words are matching
+        # ranges of existing offsets
+        all_offsets = []
+        all_features = []
+        for i in range(len(charOffsets)):
+            # Some offsets are combination of several offsets. For example
+            # 105-115;130-140. While they are considered as one. We should take care of this case
+            split_charOffsets = charOffsets[i].split(";")
             # if length was changed, then split was done
             if len(split_charOffsets) > 1:
-                for offset in split_charOffsets:
-                    ofst = offset.split('-')
-                    beg = int(ofst[0]); end = int(ofst[1])
-                    word = self.text[beg:end+1]
-                    offsetWords.append((word.strip(), i))
+                # If lengths is 0 it means no word was added, so it is definitely a beginning tag
+                if len(all_features) == 0:
+                    all_features.append(self.get_featured_tuple(offsetWords[i],'NN','B'))
+                else:
+                    all_features.append(self.get_featured_tuple(offsetWords[i],'NN','I'))
             else:
-                ofst = charOffset.split('-')
+                ofst = charOffsets[i].split("-")
                 beg = int(ofst[0]); end = int(ofst[1])
-                offsetWords.append((self.text[beg:end+1].strip(), i))
-            i += 1
+                _range = list(range(beg,end+1))
+                all_offsets.append(_range)
 
         # Tuple: (word, pos_tag). For example ('Warfarin', 'NN')
         tagged_words = pos_tag(word_tokenize(self.text))
-        print(tagged_words)
-        all_features = []
 
+        pos = 0
         for tagged_word in tagged_words:
-            # Initial features
-            features = [tagged_word[0],'O']
-            distance_words = list(map(lambda x: (tagged_word[0], distance.get_jaro_distance(tagged_word[0], x[0])), offsetWords))
-            distance_words = list(filter(lambda x: x[1] > 0.85, distance_words))
+            # Find position in text where tagged_word starts
+            pos = self.text.find(tagged_word[0], pos)
+            _range = list(range(pos, pos+len(tagged_word[0])))
 
-            for offsetWord in offsetWords:
-                # Need to calculate the distance between words. The most similar ones to tagged are offsetwords
-                word_distance = 1
-                if word_distance > 0.85:
-                    # In this case words are more or less similar, so we take the offsetword instead of tagged_word.
-                    # Tuple will be (offsetword,'I') where I means this word is inside the offsets
-                    # We are doing BIO tagging, which will be used later for classification
-
-                    # In this case offsetWord[1] == 0, which means it is a beginning of chunks of offsetWords
-                    # In other words it is inside
-                    if offsetWord[1] == 0:
-                        features = [tagged_word[0], 'B']
-                    else:
-                        features = [tagged_word[0], 'I']
-
-            features.append(tagged_word[1])
-            features.append(len(features[0]))
-
-            all_features.append(tuple(features))
+            #If the range is in all_offsets it mean this word is inside the offset chars
+            if _range in all_offsets:
+                if len(all_features) == 0:
+                    all_features.append(self.get_featured_tuple(tagged_word[0],tagged_word[1],'B'))
+                else:
+                    all_features.append(self.get_featured_tuple(tagged_word[0],tagged_word[1],'I'))
+            else:
+                all_features.append(self.get_featured_tuple(tagged_word[0],tagged_word[1],'O'))
 
         return all_features
 
+    def get_featured_tuple(self, word, pos_tag, bio_tag):
+        feature = (word, bio_tag, pos_tag, len(word))
+        return feature
+    
 class Entity:
     def __init__(self, id, charOffset, type, text):
         self.id = id

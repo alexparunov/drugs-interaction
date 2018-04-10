@@ -15,9 +15,9 @@ docs = pickle.load(f)
 f.close()
 
 def main():
-    sent = docs[0].sentences[-1]
+    sent = docs[0].sentences[1]
     print(sent.__str__())
-    sent.set_features()
+    print(sent.set_features())
 
 if __name__ == "__main__":
     main()
