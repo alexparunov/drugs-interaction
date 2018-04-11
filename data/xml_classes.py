@@ -1,5 +1,6 @@
 from nltk import word_tokenize, pos_tag
 from pyjarowinkler import distance
+from numpy import isfinite
 
 class Document:
     def __init__(self, id):
@@ -17,10 +18,10 @@ class Document:
 
     # Sets features for each sentence
     def set_features(self):
-        featured_sentences = []
+        featured_words = []
         for sentence in self.sentences:
-            featured_sentences.append(sentence.set_features())
-        self.featured_sentences = featured_sentences
+            featured_words.extend(sentence.set_features())
+        self.featured_words = featured_words
 
 class Sentence:
     def __init__(self, id, text):
@@ -93,9 +94,24 @@ class Sentence:
         return all_features
 
     def get_featured_tuple(self, word, pos_tag, bio_tag):
-        feature = (word, bio_tag, pos_tag, len(word))
+        # Calculate how many numerics and several other symbols like ./().
+
+        # Lambda function which uses ascii code of a character
+        f = lambda w: 1 if ord(w) >= 40 and ord(w) <= 57 else 0
+        numerics = list(map(f, word))
+
+        # Calculate number of uppercase letters
+        f = lambda w: 1 if ord(w) >= 65 and ord(w) <= 90 else 0
+        upper_case = list(map(f, word))
+
+        # Does word inside the chunks start with uppercase
+        is_upper = bio_tag != 'B' and word[0].isupper()
+
+        feature = (word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case),
+                   int(is_upper))
+
         return feature
-    
+
 class Entity:
     def __init__(self, id, charOffset, type, text):
         self.id = id
