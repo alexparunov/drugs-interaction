@@ -24,9 +24,8 @@ def extract_features():
         all_featured_docs = []
         for doc in docs:
             print("Setting feature for Document: "+doc.id)
-            doc.set_features()                
+            doc.set_features()
             all_featured_docs.append(doc)
-            print("Features set!")
 
         with open(file_name,'wb') as f:
             pickle.dump(all_featured_docs, f)
@@ -35,8 +34,7 @@ def extract_features():
 def main():
     # extract_features()
 
-    doc = docs[2]
-    print(doc.__str__())
-    print(doc.featured_words)
+    sent = docs[2].sentences[0]
+    print(sent.set_features())
 if __name__ == "__main__":
     main()

@@ -39,8 +39,8 @@ class Sentence:
         st = "\t---SENTENCE. Id: "+self.id+", Text: "+self.text + '\n'
         for entity in self.entities:
             st = st + entity.__str__() +'\n'
-        for pair in self.pairs:
-            st = st + pair.__str__() +'\n'
+        # for pair in self.pairs:
+        #     st = st + pair.__str__() +'\n'
         return st
 
     def set_features(self):
@@ -49,44 +49,42 @@ class Sentence:
         for entity in self.entities:
             charOffsets.append(entity.charOffset)
             offsetWords.append(entity.text)
-        
-        # Tuple: (word, pos_tag). For example ('Warfarin', 'NN')
-        tagged_words = pos_tag(word_tokenize(self.text))
 
         # This will contain the list of ranges that are composed of offsets
         # This will be used lated to determine if ranges in tagged_words are matching
         # ranges of existing offsets
         all_offsets = []
-        all_features = []
-        for i in range(len(charOffsets)):
+        for charOffset in charOffsets:
             # Some offsets are combination of several offsets. For example
             # 105-115;130-140. While they are considered as one. We should take care of this case
-            split_charOffsets = charOffsets[i].split(";")
+            split_charOffsets = charOffset.split(";")
             # if length was changed, then split was done
             if len(split_charOffsets) > 1:
-                # If lengths is 0 it means no word was added, so it is definitely a beginning tag
-                if len(all_features) == 0:
-                    all_features.append(self.get_featured_tuple(i, tagged_words,'B'))
-                else:
-                    all_features.append(self.get_featured_tuple(i, tagged_words,'I'))
+                # Since those ranges are together we can't include them inside all ranges
+                # So we append subranges, which is another array
+                subranges = []
+                for spl_offset in split_charOffsets:
+                    ofst = spl_offset.split("-")
+                    beg = int(ofst[0]); end = ofst[1]
+                    subranges.append(list(range(beg, end+1)))
+                all_offsets.append(subranges)
             else:
-                ofst = charOffsets[i].split("-")
+                ofst = charOffset.split("-")
                 beg = int(ofst[0]); end = int(ofst[1])
                 _range = list(range(beg,end+1))
                 all_offsets.append(_range)
 
+        # Tuple: (word, pos_tag). For example ('Warfarin', 'NN')
+        tagged_words = pos_tag(word_tokenize(self.text))
+
+        all_features = []
         pos = 0
         for index, tagged_word in enumerate(tagged_words):
-            # Find position in text where tagged_word starts
-            pos = self.text.find(tagged_word[0], pos)
-            _range = list(range(pos, pos+len(tagged_word[0])))
-
-            #If the range is in all_offsets it mean this word is inside the offset chars
-            if _range in all_offsets:
-                if len(all_features) == 0:
-                    all_features.append(self.get_featured_tuple(index, tagged_words,'B'))
-                else:
-                    all_features.append(self.get_featured_tuple(index, tagged_words,'I'))
+            # (TODO alex) check if this word is in our charOffsets
+            # Must take care of nested ranges in all_offsets array.
+            (is_inside, pos) = self.is_inside_offsets(tagged_word[0], pos)
+            if is_inside:
+                pass
             else:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'O'))
 
@@ -109,9 +107,14 @@ class Sentence:
         is_upper = word[0].isupper()
 
         feature = [word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case), int(is_upper)]
-        
 
         return tuple(feature)
+
+    def is_inside_offsets(self, word, pos):
+        # Find position in text where tagged_word starts
+        p = self.text.find(word)
+
+        return (False, p)
 
 class Entity:
     def __init__(self, id, charOffset, type, text):
