@@ -1,5 +1,7 @@
 from nltk import word_tokenize, pos_tag
 from numpy import isfinite
+import re
+import string
 
 class Document:
     def __init__(self, id):
@@ -82,13 +84,39 @@ class Sentence:
         for index, tagged_word in enumerate(tagged_words):
             # (TODO alex) check if this word is in our charOffsets
             # Must take care of nested ranges in all_offsets array.
-            (is_inside, pos) = self.is_inside_offsets(tagged_word[0], pos)
-            if is_inside:
-                pass
+
+            (inside_tag, pos) = self.is_inside_offsets(tagged_word[0], pos, all_offsets)
+
+            if inside_tag == 1:
+                all_features.append(self.get_featured_tuple(index, tagged_words, 'B'))
+            elif inside_tag == 2:
+                all_features.append(self.get_featured_tuple(index, tagged_words, 'I'))
             else:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'O'))
 
         return all_features
+
+    def is_inside_offsets(self, word, pos, all_offsets):
+        # Find position in text where tagged_word starts
+        p = self.text.find(word, pos)
+
+        # offset where this tagged word exists
+        offset = list(range(p, p+len(word)))
+
+        for m_offset in all_offsets:
+            # is_sublist will be true if element of m_offset are lists
+            is_sublist = True
+            for m_off in m_offset:
+                try:
+                    len(m_off)
+                except TypeError:
+                    is_sublist = False
+                break
+
+            if is_sublist:
+                for m_off in m_offset:
+                    pass
+        return (3, p+len(word))
 
     def get_featured_tuple(self, index, tagged_words, bio_tag):
         word = tagged_words[index][0]
@@ -109,12 +137,6 @@ class Sentence:
         feature = [word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case), int(is_upper)]
 
         return tuple(feature)
-
-    def is_inside_offsets(self, word, pos):
-        # Find position in text where tagged_word starts
-        p = self.text.find(word)
-
-        return (False, p)
 
 class Entity:
     def __init__(self, id, charOffset, type, text):

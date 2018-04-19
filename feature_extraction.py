@@ -35,6 +35,7 @@ def main():
     # extract_features()
 
     sent = docs[2].sentences[0]
+    print(sent.text)
     print(sent.set_features())
 if __name__ == "__main__":
     main()
