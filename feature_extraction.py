@@ -32,10 +32,10 @@ def extract_features():
             print("All documents with features are set in "+file_name)
 
 def main():
-    # extract_features()
+    extract_features()
 
-    sent = docs[2].sentences[0]
-    print(sent.text)
-    print(sent.set_features())
+    #sent = docs[2].sentences[0]
+    #print(docs[2].__str__())
+    #print(sent.set_features())
 if __name__ == "__main__":
     main()

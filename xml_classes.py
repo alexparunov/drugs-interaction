@@ -67,7 +67,7 @@ class Sentence:
                 subranges = []
                 for spl_offset in split_charOffsets:
                     ofst = spl_offset.split("-")
-                    beg = int(ofst[0]); end = ofst[1]
+                    beg = int(ofst[0]); end = int(ofst[1])
                     subranges.append(list(range(beg, end+1)))
                 all_offsets.append(subranges)
             else:
@@ -100,23 +100,30 @@ class Sentence:
         # Find position in text where tagged_word starts
         p = self.text.find(word, pos)
 
+        endpos = p+len(word)
         # offset where this tagged word exists
-        offset = list(range(p, p+len(word)))
+        offset = list(range(p, endpos))
+        if offset in all_offsets:
+            return (1, endpos)
 
-        for m_offset in all_offsets:
-            # is_sublist will be true if element of m_offset are lists
-            is_sublist = True
-            for m_off in m_offset:
-                try:
-                    len(m_off)
-                except TypeError:
-                    is_sublist = False
-                break
+        # This will deal with very special cases, when drugs are split in several offsets
+        for m_offsets in all_offsets:
+            if isinstance(m_offsets, list):
+                # Our current offset is not in the array of offsets, so we return 'O' tag, i.e. 3
+                if offset not in m_offsets:
+                    return (3, endpos)
 
-            if is_sublist:
-                for m_off in m_offset:
-                    pass
-        return (3, p+len(word))
+                for index, m_off in enumerate(m_offsets):
+                    # length of a word inside various
+                    if len(m_off) > 5:
+                        if index == 0:
+                            return (1, endpos)
+                        else:
+                            return (2, endpos)
+                    else:
+                        return (1, endpos)
+
+        return (3, endpos)
 
     def get_featured_tuple(self, index, tagged_words, bio_tag):
         word = tagged_words[index][0]
@@ -131,10 +138,7 @@ class Sentence:
         f = lambda w: 1 if ord(w) >= 65 and ord(w) <= 90 else 0
         upper_case = list(map(f, word))
 
-        # Does word inside the chunks start with uppercase
-        is_upper = word[0].isupper()
-
-        feature = [word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case), int(is_upper)]
+        feature = [word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case)]
 
         return tuple(feature)
 
