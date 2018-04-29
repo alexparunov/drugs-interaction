@@ -46,84 +46,28 @@ class Sentence:
         return st
 
     def set_features(self):
-        charOffsets = []
-        offsetWords = []
+        B_tags = [] #list with words that are of type B tag
+        I_tags = [] #list of words that are of type I tag
         for entity in self.entities:
-            charOffsets.append(entity.charOffset)
-            offsetWords.append(entity.text)
+            words = entity.text.split(" ") #split words in text to tag
+            for index, word in enumerate(words):
+                if index == 0:
+                    B_tags.append(word)
+                else:
+                    I_tags.append(word)
 
-        # This will contain the list of ranges that are composed of offsets
-        # This will be used lated to determine if ranges in tagged_words are matching
-        # ranges of existing offsets
-        all_offsets = []
-        for charOffset in charOffsets:
-            # Some offsets are combination of several offsets. For example
-            # 105-115;130-140. While they are considered as one. We should take care of this case
-            split_charOffsets = charOffset.split(";")
-            # if length was changed, then split was done
-            if len(split_charOffsets) > 1:
-                # Since those ranges are together we can't include them inside all ranges
-                # So we append subranges, which is another array
-                subranges = []
-                for spl_offset in split_charOffsets:
-                    ofst = spl_offset.split("-")
-                    beg = int(ofst[0]); end = int(ofst[1])
-                    subranges.append(list(range(beg, end+1)))
-                all_offsets.append(subranges)
-            else:
-                ofst = charOffset.split("-")
-                beg = int(ofst[0]); end = int(ofst[1])
-                _range = list(range(beg,end+1))
-                all_offsets.append(_range)
-
-        # Tuple: (word, pos_tag). For example ('Warfarin', 'NN')
         tagged_words = pos_tag(word_tokenize(self.text))
-
         all_features = []
-        pos = 0
+
         for index, tagged_word in enumerate(tagged_words):
-            # (TODO alex) check if this word is in our charOffsets
-            # Must take care of nested ranges in all_offsets array.
-
-            (inside_tag, pos) = self.is_inside_offsets(tagged_word[0], pos, all_offsets)
-
-            if inside_tag == 1:
+            if tagged_word[0] in B_tags:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'B'))
-            elif inside_tag == 2:
+            elif tagged_word[0] in I_tags:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'I'))
             else:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'O'))
 
         return all_features
-
-    def is_inside_offsets(self, word, pos, all_offsets):
-        # Find position in text where tagged_word starts
-        p = self.text.find(word, pos)
-
-        endpos = p+len(word)
-        # offset where this tagged word exists
-        offset = list(range(p, endpos))
-        if offset in all_offsets:
-            return (1, endpos)
-
-        # This will deal with very special cases, when drugs are split in several offsets
-        for m_offsets in all_offsets:
-            if isinstance(m_offsets, list):
-                # Our current offset is not in the array of offsets, so we return 'O' tag, i.e. 3
-                if offset not in m_offsets:
-                    return (3, endpos)
-
-                for index, m_off in enumerate(m_offsets):
-                    # length of a word inside various
-                    if len(m_off) > 5:
-                        if index == 0:
-                            return (1, endpos)
-                        else:
-                            return (2, endpos)
-                    else:
-                        return (1, endpos)
-
-        return (3, endpos)
 
     def get_featured_tuple(self, index, tagged_words, bio_tag):
         word = tagged_words[index][0]
