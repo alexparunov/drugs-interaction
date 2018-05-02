@@ -72,6 +72,16 @@ class Sentence:
     def get_featured_tuple(self, index, tagged_words, bio_tag):
         word = tagged_words[index][0]
         pos_tag = tagged_words[index][1]
+        Ngram = 3
+
+        # ORTHOGRAPHIC Features:
+        # Starting with a uppercase letter, containing only alphanumeric characters, 
+        # containing a hyphen, digits and capitalized characters counting, etc.
+
+        # WORD SHAPE:
+        # Uppercase letters, lowercase letters, digits, and other characters in a word
+        # are converted to “A”, “a”, “0” and “O”, respectively. For example, 
+        # “Phenytoin” is mapped to “Aaaaaaaaa”.
 
         # Calculate how many numerics and several other symbols like ./().
         # Lambda function which uses ascii code of a character
@@ -81,6 +91,30 @@ class Sentence:
         # Calculate number of uppercase letters
         f = lambda w: 1 if ord(w) >= 65 and ord(w) <= 90 else 0
         upper_case = list(map(f, word))
+
+        # Character feature, N-grams of characters in a word
+
+        # Word feature, N-grams of words in a context window
+
+        # Lemma, N-grams of lemmas of words.
+
+        # Stem, N-grams of stems of words.
+
+        # POS, N-grams of POS tags.
+
+        # Text Chunking, N-grams of text chunking tags.
+
+        # Dependency Parsing, Dependency parsing results of words in a sentence.
+
+        # Affix, Suffixes and prefixes of a word.
+
+        # Dictionary Feature, Whether an n-gram matches with part of a drug name in drug dictionaries.
+
+        # Outputs of NER tools, Features derived from the output of existing chemical NER tools.
+
+        # Word Representation, Word representation features based on Brown clustering, word2vec, etc.
+
+        # Conjunction Feature, Conjunctions of different types of features, e.g., conjunction of lemma and POS features.
 
         feature = [word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case)]
 
