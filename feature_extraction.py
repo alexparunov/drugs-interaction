@@ -35,10 +35,12 @@ def main():
     extract_features()
 
 def test():
-    for doc in docs:
-        if doc.id == "DDI-DrugBank.d162":
-            d = doc
-    print(d.featured_words)
+
+    sent = docs[0].sentences[-1]
+
+    print(docs[0].featured_words)
+    #print(sent.__str__())
+    #print(sent.set_features())
 
 if __name__ == "__main__":
     #main()

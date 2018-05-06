@@ -1,4 +1,5 @@
 from nltk import word_tokenize, pos_tag
+from nltk.stem import SnowballStemmer
 from numpy import isfinite
 import re
 import string
@@ -41,8 +42,6 @@ class Sentence:
         st = "\t---SENTENCE. Id: "+self.id+", Text: "+self.text + '\n'
         for entity in self.entities:
             st = st + entity.__str__() +'\n'
-        # for pair in self.pairs:
-        #     st = st + pair.__str__() +'\n'
         return st
 
     def set_features(self):
@@ -60,6 +59,9 @@ class Sentence:
         all_features = []
 
         for index, tagged_word in enumerate(tagged_words):
+            # We don't want to save punctuations
+            if len(tagged_word[0]) < 2:
+                continue
             if tagged_word[0] in B_tags:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'B'))
             elif tagged_word[0] in I_tags:
@@ -72,53 +74,106 @@ class Sentence:
     def get_featured_tuple(self, index, tagged_words, bio_tag):
         word = tagged_words[index][0]
         pos_tag = tagged_words[index][1]
-        Ngram = 3
 
-        # ORTHOGRAPHIC Features:
-        # Starting with a uppercase letter, containing only alphanumeric characters, 
-        # containing a hyphen, digits and capitalized characters counting, etc.
+        orthographical_feature = "alphanumeric"
+        f_uppercase = lambda w: 1 if ord(w) >= 65 and ord(w) <= 90 else 0
+        upper_case = list(map(f_uppercase, word))
 
-        # WORD SHAPE:
-        # Uppercase letters, lowercase letters, digits, and other characters in a word
-        # are converted to “A”, “a”, “0” and “O”, respectively. For example, 
-        # “Phenytoin” is mapped to “Aaaaaaaaa”.
+        if sum(upper_case) == len(word):
+            orthographical_feature = "all-capitalized"
+        elif f_uppercase(word[0]) == 1:
+            orthographical_feature = "is-capitalized"
 
-        # Calculate how many numerics and several other symbols like ./().
         # Lambda function which uses ascii code of a character
-        f = lambda w: 1 if ord(w) >= 40 and ord(w) <= 57 else 0
-        numerics = list(map(f, word))
+        f_numerics = lambda w: 1 if w.isnumeric() else 0
+        numerics = list(map(f_numerics, word))
 
-        # Calculate number of uppercase letters
-        f = lambda w: 1 if ord(w) >= 65 and ord(w) <= 90 else 0
-        upper_case = list(map(f, word))
+        if sum(numerics) == len(word):
+            orthographical_feature = "all-digits"
 
-        # Character feature, N-grams of characters in a word
+        if "-" in word:
+            orthographical_feature += "Y"
+        else:
+            orthographical_feature += "N"
 
-        # Word feature, N-grams of words in a context window
 
-        # Lemma, N-grams of lemmas of words.
+        snowball_stemmer = SnowballStemmer("english")
+        stemmed_word = snowball_stemmer.stem(word)
+        ind = word.find(stemmed_word)
 
-        # Stem, N-grams of stems of words.
+        prefix_len = len(word[:ind])
+        suffix_len = len(word) - prefix_len - len(stemmed_word)
 
-        # POS, N-grams of POS tags.
+        pl3 = int(prefix_len == 3); sufl3 = int(suffix_len == 3)
+        pl4 = int(prefix_len == 4); sufl4 = int(suffix_len == 4)
+        pl5 = int(prefix_len == 5); sufl5 = int(suffix_len == 5)
 
-        # Text Chunking, N-grams of text chunking tags.
+        # Generalized Word Shape Feature. Map upper case, lower case, digit and
+        # other characters to X,x,0 and O respectively
+        # Aspirin1+ will be mapped to Xxxxxxx0O, for example
 
-        # Dependency Parsing, Dependency parsing results of words in a sentence.
+        word_shape = ""
+        for w in word:
+            if w.isupper():
+                word_shape += "X"
+            elif w.islower():
+                word_shape += "x"
+            elif w.isnumeric():
+                word_shape += "0"
+            else:
+                word_shape += "O"
 
-        # Affix, Suffixes and prefixes of a word.
 
-        # Dictionary Feature, Whether an n-gram matches with part of a drug name in drug dictionaries.
+        # Brief word shape. maps consecutive uppercase letters, lowercase letters,
+        # digits, and other characters to “X,” “x,” “0,” and “O,” respectively.
+        # Aspirin1+ will be mapped to Xx0O
 
-        # Outputs of NER tools, Features derived from the output of existing chemical NER tools.
+        # Lambda function to determine if character belongs to category other based on its ascii value
+        f_other = lambda w: True if (ord(w) < 48 or (ord(w) >= 58 and ord(w) <= 64) or
+        (ord(w) >= 91 and ord(w) <= 96) or ord(w) > 122) else False
 
-        # Word Representation, Word representation features based on Brown clustering, word2vec, etc.
+        word_shape_brief = ""
+        i = 0
+        while i < len(word):
+            if word[i].isupper():
+                word_shape_brief += "X"
+                while i < len(word) and word[i].isupper():
+                    i += 1
+                if i == len(word):
+                    break
+            if word[i].islower():
+                word_shape_brief += "x"
+                while i < len(word) and word[i].islower():
+                    i += 1
+                if i == len(word):
+                    break
+            if word[i].isnumeric():
+                word_shape_brief += "0"
+                while i < len(word) and word[i].isnumeric():
+                    i += 1
+                if i == len(word):
+                    break
+            if f_other(word[i]):
+                word_shape_brief += "O"
+                while i < len(word) and f_other(word[i]):
+                    i += 1
+                    if i == len(word):
+                        break
+            i += 1
+            if i == len(word):
+                break
 
-        # Conjunction Feature, Conjunctions of different types of features, e.g., conjunction of lemma and POS features.
 
-        feature = [word, bio_tag, pos_tag, len(word), sum(numerics), sum(upper_case)]
+        # May be add Y,N if drug is in drugbank or FDA approved list of drugs?
 
-        return tuple(feature)
+        # Following this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
+        # we get feature vector of following type
+        #[bio_tag, f1,f2, len(word), f4, f9, f10, f11, f12, f13, f14, f15, f16]
+
+        features = [bio_tag, word, pos_tag, len(word), orthographical_feature,
+                    pl3, pl4, pl5, sufl3, sufl4, sufl5, word_shape, word_shape_brief]
+
+        return tuple(features)
 
 class Entity:
     def __init__(self, id, charOffset, type, text):
