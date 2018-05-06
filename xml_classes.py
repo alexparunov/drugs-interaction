@@ -96,7 +96,6 @@ class Sentence:
         else:
             orthographical_feature += "N"
 
-
         snowball_stemmer = SnowballStemmer("english")
         stemmed_word = snowball_stemmer.stem(word)
         ind = word.find(stemmed_word)
@@ -122,7 +121,6 @@ class Sentence:
                 word_shape += "0"
             else:
                 word_shape += "O"
-
 
         # Brief word shape. maps consecutive uppercase letters, lowercase letters,
         # digits, and other characters to “X,” “x,” “0,” and “O,” respectively.
@@ -160,9 +158,6 @@ class Sentence:
                     if i == len(word):
                         break
             i += 1
-            if i == len(word):
-                break
-
 
         # May be add Y,N if drug is in drugbank or FDA approved list of drugs?
 
