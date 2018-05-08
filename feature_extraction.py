@@ -35,9 +35,9 @@ def test():
     f = open(pickled_files[3], 'rb')
     docs = pickle.load(f)
     f.close()
-    
+
     sent = docs[0].sentences[-1]
-    print(docs[0].featured_words)
+    print(docs[0].featured_words_dict)
     #print(sent.__str__())
     #print(sent.set_features())
 
