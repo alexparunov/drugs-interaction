@@ -11,11 +11,6 @@ import nltk
 pickle_path = "data/pickle"
 pickled_files = [join(abspath(pickle_path), f) for f in listdir(abspath(pickle_path))]
 
-# train/drugbank
-f = open(pickled_files[3], 'rb')
-docs = pickle.load(f)
-f.close()
-
 def extract_features():
     for file_name in pickled_files:
         f = open(file_name, 'rb')
@@ -36,8 +31,12 @@ def main():
 
 def test():
 
+    # train/drugbank
+    f = open(pickled_files[3], 'rb')
+    docs = pickle.load(f)
+    f.close()
+    
     sent = docs[0].sentences[-1]
-
     print(docs[0].featured_words)
     #print(sent.__str__())
     #print(sent.set_features())

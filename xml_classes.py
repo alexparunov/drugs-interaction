@@ -74,6 +74,13 @@ class Sentence:
     def get_featured_tuple(self, index, tagged_words, bio_tag):
         word = tagged_words[index][0]
         pos_tag = tagged_words[index][1]
+        pos_tag_bef1 = '' #pos tag of word before
+        pos_tag_aft1 = '' #pos tag of word after
+
+        if index > 0:
+            pos_tag_bef1 = tagged_words[index-1][1]
+        if index < len(tagged_words) - 1:
+            pos_tag_aft1 = tagged_words[index + 1][1]
 
         orthographical_feature = "alphanumeric"
         f_uppercase = lambda w: 1 if ord(w) >= 65 and ord(w) <= 90 else 0
@@ -127,6 +134,7 @@ class Sentence:
         # Aspirin1+ will be mapped to Xx0O
 
         # Lambda function to determine if character belongs to category other based on its ascii value
+        # We assume ascii unicode, which is true since our XML has UTF-8 encoding (English text)
         f_other = lambda w: True if (ord(w) < 48 or (ord(w) >= 58 and ord(w) <= 64) or
         (ord(w) >= 91 and ord(w) <= 96) or ord(w) > 122) else False
 
@@ -163,9 +171,9 @@ class Sentence:
 
         # Following this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
         # we get feature vector of following type
-        #[bio_tag, f1,f2, len(word), f4, f9, f10, f11, f12, f13, f14, f15, f16]
+        #[bio_tag, f1,f2, pos_tag_bef, pos_tag_after, len(word), f4, f9, f10, f11, f12, f13, f14, f15, f16]
 
-        features = [bio_tag, word, pos_tag, len(word), orthographical_feature,
+        features = [bio_tag, word, pos_tag, pos_tag_bef1, pos_tag_aft1, len(word), orthographical_feature,
                     pl3, pl4, pl5, sufl3, sufl4, sufl5, word_shape, word_shape_brief]
 
         return tuple(features)
