@@ -27,7 +27,7 @@ class Document:
             m_dict = {}
             for s_feature in sent_features:
                 for i in range(len(s_feature)):
-                    m_dict[i] = s_feature[i]
+                    m_dict[str(i)] = s_feature[i]
 
                 featured_words_dict.append(m_dict)
             featured_words.extend(sent_features)
