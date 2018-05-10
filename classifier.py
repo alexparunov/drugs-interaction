@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from os.path import join, abspath, exists
-from os import listdir
+from os.path import join, abspath, exists, isdir
+from os import listdir, makedirs
 import pickle
 from sklearn import svm
 from sklearn.pipeline import Pipeline
@@ -30,9 +30,8 @@ class NERClassifier:
         if len(self.path) == 0:
             raise ValueError("Path can't be empty")
 
-        f = open(self.path, 'rb')
-        docs = pickle.load(f)
-        f.close()
+        with open(self.path, 'rb') as f:
+            docs = pickle.load(f)
 
         feature_vectors_dict = [] # feature vectors expressed as dicts. train data
         classes = [] # B,I,O classes
@@ -48,24 +47,58 @@ class NERClassifier:
 
     # train dataset, where X is a list of feature vectors expressed as dictionary
     # and Y is class variable, which is BIO tag in our case
-    def train_dataset(self, X, Y):
+    def train_dataset(self, X, Y, kernel = 'rbf'):
         vec = DictVectorizer(sparse=False)
-        svm_clf = svm.SVC()
+        svm_clf = svm.SVC(kernel = kernel, cache_size = 1200)
         vec_clf = Pipeline([('vectorizer', vec), ('svm', svm_clf)])
         vec_clf.fit(X, Y)
-        with open('models/drugbank_model_0','wb') as f:
-            pickle.dump(vec_clf, f)
 
-    def train_drugbank(self):
+        return vec_clf
+
+    def train_drugbank(self, kernel):
         self.set_path(pickled_files[3])
 
         Y_train, X_train = self.split_dataset()
-        self.train_dataset(X_train, Y_train)
+        vec_clf = self.train_dataset(X_train, Y_train, kernel)
+
+        if not isdir('models'):
+            makedirs('models')
+
+        model_names = [join(abspath("models"), f) for f in listdir(abspath("models"))]
+
+        from operator import contains
+        drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
+        model_index = len(drugbank_models) + 1 # save next model
+
+        model_name = 'models/drugbank_model_'+model_index+'.pkl'
+
+        with open(model_name,'wb') as f:
+            pickle.dump(vec_clf, f)
+            print("Model trained and saved into",model_name)
+
+    def test_drugbank(self, model_index):
+        self.set_path(pickled_files[4])
+
+        model_name = 'models/drugbank_model_'+model_index+'.pkl'
+
+        with open(model_name,'rb') as f:
+            vec_clf = pickle.load(f)
+
+        Y_test, X_test = self.split_dataset()
+        predictions = vec_clf.predict(X_test)
+        assert len(predictions) == len(Y_test)
+
+        if not isdir('predictions'):
+            makedirs('predictions')
+
+        prediction_name = 'predictions/drugbank_model_'+model_index+'_prediction.pkl'
+
+        with open(prediction_name, 'wb') as f:
+            pickle.load(predictions, f)
+            print("Saved predictions to",prediction_name)
 
 def main():
     nerCl = NERClassifier()
-
-    nerCl.train_drugbank()
 
 if __name__ == "__main__":
     #test()
