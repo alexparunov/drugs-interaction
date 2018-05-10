@@ -53,7 +53,8 @@ class NERClassifier:
         svm_clf = svm.SVC()
         vec_clf = Pipeline([('vectorizer', vec), ('svm', svm_clf)])
         vec_clf.fit(X, Y)
-        pickle.dump(vec_clf, "vectorizer_and_SVM.pkl")
+        with open('models/drugbank_model_0','wb') as f:
+            pickle.dump(vec_clf, f)
 
     def train_drugbank(self):
         self.set_path(pickled_files[3])
