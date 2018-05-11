@@ -13,6 +13,7 @@ def extract_features():
         f.close()
         all_featured_docs = []
         for doc in docs:
+            print("Extracting features for",doc.id)
             doc.set_features()
             all_featured_docs.append(doc)
 
@@ -24,7 +25,6 @@ def main():
     extract_features()
 
 def test():
-
     # train/drugbank
     f = open(pickled_files[3], 'rb')
     docs = pickle.load(f)

@@ -20,27 +20,17 @@ class Document:
         featured_words_dict = [] #we need dictionary for DictVectorizer
         for sentence in self.sentences:
             sent_features = sentence.set_features()
-
             for s_feature in sent_features:
                 m_dict = {}
-                # index 5 contains the word itself
-                m_dict['-1'] = self.find_word_metadata(s_feature[5], sentence)
-                for i in range(len(s_feature)):
+
+                # first indext contains BIO tag
+                # last index contains metadata
+                m_dict['-1'] = s_feature[len(s_feature)-1]
+                for i in range(len(s_feature) - 1):
                     m_dict[str(i)] = s_feature[i]
                 featured_words_dict.append(m_dict)
 
         self.featured_words_dict = featured_words_dict
-
-    # We need this loop in order to assign metadata to a drug-type word.
-    # It's necessary since our output should be of type:
-    # sentenceId|offsets...|text|type
-    def find_word_metadata(self, s_word, sentence):
-        for entity in sentence.entities:
-            # if word is in text of entity then we can proceed with assigning metadata
-            if str(s_word) in entity.text.split():
-                return [sentence.id, entity.charOffset, entity.text, entity.type]
-
-        return []
 
 class Sentence:
     def __init__(self, id, text):
@@ -86,7 +76,79 @@ class Sentence:
             else:
                 all_features.append(self.get_featured_tuple(index, tagged_words, 'O'))
 
+        all_features = self.get_vector_metadatas(all_features)
+
         return all_features
+
+    # We need this loop in order to assign metadata to a drug-type word.
+    # It's necessary since our output should be of type:
+    # sentenceId|offsets...|text|type
+    def get_vector_metadatas(self, all_features):
+        pos = 0 #initial search positions
+        new_all_features = [] #vector of new features with appended metadata
+        for i in range(len(all_features)):
+            charOffset = ""
+            type = "" #type of drug which is empty by default
+            f_vector = all_features[i] #feature vector
+            f_word = str(f_vector[5]) #word which is contained in postion 5
+
+            # if BIO tag of feature vector is B then we proceed with special case assignment
+            if f_vector[0] == 'B':
+                pos = self.text.find(f_word, pos) #find position where word starts in the sentence
+
+                # this should not be since there are always words in a sentence, but we don't want to deal with negative positions just in case
+                if pos < 0:
+                    continue
+
+                # beginning and end positions of word, so offset will be set accordingly
+                beg = pos; end = pos + len(f_word) - 1
+                charOffset = str(beg)+"-"+str(end)
+                pos = end #set a new search position to end of previous word, so that we search different words in sentence
+                while i < len(all_features) - 1:
+                    f_vector = all_features[i+1] #next word in a feature vectors
+
+                    # As soon as next words BIO tag is not I, we break the inner loop
+                    # otherwise we continue appending to charOffsetString. So eventually it looks like
+                    # 100-150;155-170;190-200...
+                    if f_vector[0] != 'I':
+                        break
+
+                    f_word = str(f_vector[5])
+                    pos = self.text.find(f_word, pos)
+
+                    if pos < 0:
+                        continue
+
+                    beg = pos; end = pos + len(f_word) - 1
+                    charOffset += ";" + str(beg)+"-"+str(end)
+                    pos = end
+                    i += 1
+
+                # since words is of type BI tag, then it must have type.
+                # So we search through all entities and if word is contained then we set type
+                # NOTE that all types of word in offsets like this 100-150;155-170;190-200 will be the same
+                for entity in self.entities:
+                    text_ar = entity.text.split()
+                    if f_word in text_ar:
+                        type = entity.type
+                        break
+            else:
+                # Otherwise BIO tag is O so we simply have charOffset and empty type
+                f_word = str(f_vector[5])
+                pos = self.text.find(f_word, pos)
+                if pos < 0:
+                    continue
+
+                beg = pos; end = pos + len(f_word) - 1
+                charOffset += str(beg)+"-"+str(end)
+                pos = end
+
+            metadata = [self.id, charOffset, f_word, type]
+            # appending metadata to last extracted feature vector (might be from inner while loop)
+            f_vector.append(metadata)
+            new_all_features.append(tuple(f_vector))
+
+        return new_all_features
 
     # Following some guidelines from this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
     def get_featured_tuple(self, index, tagged_words, bio_tag):
@@ -118,7 +180,7 @@ class Sentence:
         features.extend(word_shapes)
 
         # May be add Y,N if drug is in drugbank or FDA approved list of drugs?
-        return tuple(features)
+        return features
 
 # Getting words and pos tags of window +/- n
 # return will be [word-n,pos_tag-n,.....word+n,pos_tag+n]
