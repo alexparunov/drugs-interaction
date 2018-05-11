@@ -81,17 +81,26 @@ class NERClassifier:
             pickle.dump(vec_clf, f)
             print("Model trained and saved into", model_name)
 
-    def test_drugbank(self, model_index):
-        self.set_path(pickled_files[4])
-        print("Testing model", model_index,"...")
+    def test_NER_model(self, model_index, test_folder):
+        model_name = ""
+        predictions_name = ""
+        if test_folder == 1:
+            model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
+            self.set_path(pickled_files[4])
+        elif test_folder == 2:
+            model_name = 'models/medline_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/medline_model_'+str(model_index)+'.txt'
+            self.set_path(pickled_files[0])
+        else:
+            raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
 
-        model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
+        print("Testing model", model_index,"...")
 
         with open(model_name,'rb') as f:
             vec_clf = pickle.load(f)
 
         # metadatas are of type: sentenceId | offsets... | text | type
-
         X_test, Y_test, metadatas = self.split_dataset()
         predictions = vec_clf.predict(X_test)
         assert len(predictions) == len(Y_test) == len(metadatas)
@@ -101,6 +110,11 @@ class NERClassifier:
 
         predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
         pr_f = open(predictions_name,'w')
+        # clear file, i.e. remove all
+        pr_f.close()
+
+        # reopen clean file
+        pr_f = open(predictions_name, 'w')
 
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
@@ -108,7 +122,7 @@ class NERClassifier:
             if pred == 'B' or pred == 'I':
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + metadata[3]
             else:
-                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|'
+                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' +'null'
 
             pr_f.write(line + '\n')
 
@@ -120,7 +134,7 @@ def main():
     # stupid scikit warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        nerCl.test_drugbank(0)
+        nerCl.test_NER_model(model_index = 0, test_folder = 1) #test drugbank
 
 if __name__ == "__main__":
     main()

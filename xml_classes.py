@@ -90,6 +90,7 @@ class Sentence:
             type = "" #type of drug which is empty by default
             f_vector = all_features[i] #feature vector
             f_word = str(f_vector[5]) #word which is contained in postion 5
+            w_text = "" # word text
 
             # if BIO tag of feature vector is B then we proceed with special case assignment
             if f_vector[0] == 'B':
@@ -103,6 +104,7 @@ class Sentence:
                 beg = pos; end = pos + len(f_word) - 1
                 charOffset = str(beg)+"-"+str(end)
                 pos = end #set a new search position to end of previous word, so that we search different words in sentence
+                w_text = f_word
                 while i < len(all_features) - 1:
                     f_vector = all_features[i+1] #next word in a feature vectors
 
@@ -118,6 +120,7 @@ class Sentence:
                     if pos < 0:
                         continue
 
+                    w_text += " "+ f_word
                     beg = pos; end = pos + len(f_word) - 1
                     charOffset += ";" + str(beg)+"-"+str(end)
                     pos = end
@@ -134,6 +137,7 @@ class Sentence:
             else:
                 # Otherwise BIO tag is O so we simply have charOffset and empty type
                 f_word = str(f_vector[5])
+                w_text = f_word
                 pos = self.text.find(f_word, pos)
                 if pos < 0:
                     continue
@@ -142,7 +146,7 @@ class Sentence:
                 charOffset += str(beg)+"-"+str(end)
                 pos = end
 
-            metadata = [self.id, charOffset, f_word, type]
+            metadata = [self.id, charOffset, w_text, type]
             # appending metadata to last extracted feature vector (might be from inner while loop)
             f_vector.append(metadata)
             new_all_features.append(tuple(f_vector))
