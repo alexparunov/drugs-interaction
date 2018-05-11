@@ -41,10 +41,11 @@ class NERClassifier:
         for doc in docs:
             for m_dict in doc.featured_words_dict:
                 classes.append(m_dict['0'])
-                # we want sub-dictionary of all elements besides the class
-                sub_dict = {k:v for k,v in  m_dict.items() if k > '0'}
-
                 dict_metadatas.append(m_dict['-1'])
+
+                # we want sub-dictionary of all elements besides the class
+                sub_dict = {k:v for k,v in  m_dict.items() if k > '0' and not isinstance(v, list)}
+
                 feature_vectors_dict.append(sub_dict)
 
         return (feature_vectors_dict, classes,  dict_metadatas)
@@ -82,7 +83,7 @@ class NERClassifier:
 
     def test_drugbank(self, model_index):
         self.set_path(pickled_files[4])
-        print("Testing model", model_index)
+        print("Testing model", model_index,"...")
 
         model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
 
@@ -104,9 +105,12 @@ class NERClassifier:
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
 
-            if len(metadata) > 0:
-                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred
-                pr_f.write(line + '\n')
+            if pred == 'B' or pred == 'I':
+                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + metadata[3]
+            else:
+                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|'
+
+            pr_f.write(line + '\n')
 
         print("Predictions are saved in file", predictions_name)
         pr_f.close()

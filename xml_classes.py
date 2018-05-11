@@ -21,11 +21,10 @@ class Document:
         for sentence in self.sentences:
             sent_features = sentence.set_features()
             for s_feature in sent_features:
-                m_dict = {}
 
                 # first indext contains BIO tag
                 # last index contains metadata
-                m_dict['-1'] = s_feature[len(s_feature)-1]
+                m_dict = {'-1': s_feature[len(s_feature)-1] }
                 for i in range(len(s_feature) - 1):
                     m_dict[str(i)] = s_feature[i]
                 featured_words_dict.append(m_dict)
