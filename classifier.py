@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-from os.path import join, abspath, exists, isdir
+from os.path import join, abspath, isdir
 from os import listdir, makedirs
 import pickle
 from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction import DictVectorizer
+import warnings
 
 # Files are in the following order:
 # 0 - medline_ner_test.pkl
@@ -35,15 +36,18 @@ class NERClassifier:
 
         feature_vectors_dict = [] # feature vectors expressed as dicts. train data
         classes = [] # B,I,O classes
+        dict_metadatas = []
+
         for doc in docs:
             for m_dict in doc.featured_words_dict:
                 classes.append(m_dict['0'])
                 # we want sub-dictionary of all elements besides the class
                 sub_dict = {k:v for k,v in  m_dict.items() if k > '0'}
 
+                dict_metadatas.append(m_dict['-1'])
                 feature_vectors_dict.append(sub_dict)
 
-        return (classes, feature_vectors_dict)
+        return (feature_vectors_dict, classes,  dict_metadatas)
 
     # train dataset, where X is a list of feature vectors expressed as dictionary
     # and Y is class variable, which is BIO tag in our case
@@ -58,7 +62,7 @@ class NERClassifier:
     def train_drugbank(self, kernel):
         self.set_path(pickled_files[3])
 
-        Y_train, X_train = self.split_dataset()
+        X_train, Y_train, metadatas = self.split_dataset()
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
 
         if not isdir('models'):
@@ -70,36 +74,49 @@ class NERClassifier:
         drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
         model_index = len(drugbank_models) + 1 # save next model
 
-        model_name = 'models/drugbank_model_'+model_index+'.pkl'
+        model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
 
         with open(model_name,'wb') as f:
             pickle.dump(vec_clf, f)
-            print("Model trained and saved into",model_name)
+            print("Model trained and saved into", model_name)
 
     def test_drugbank(self, model_index):
         self.set_path(pickled_files[4])
+        print("Testing model", model_index)
 
-        model_name = 'models/drugbank_model_'+model_index+'.pkl'
+        model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
 
         with open(model_name,'rb') as f:
             vec_clf = pickle.load(f)
 
-        Y_test, X_test = self.split_dataset()
+        # metadatas are of type: sentenceId | offsets... | text | type
+
+        X_test, Y_test, metadatas = self.split_dataset()
         predictions = vec_clf.predict(X_test)
-        assert len(predictions) == len(Y_test)
+        assert len(predictions) == len(Y_test) == len(metadatas)
 
         if not isdir('predictions'):
             makedirs('predictions')
 
-        prediction_name = 'predictions/drugbank_model_'+model_index+'_prediction.pkl'
+        predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
+        pr_f = open(predictions_name,'w')
 
-        with open(prediction_name, 'wb') as f:
-            pickle.load(predictions, f)
-            print("Saved predictions to",prediction_name)
+        for i, pred in enumerate(predictions):
+            metadata = metadatas[i]
+
+            if len(metadata) > 0:
+                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred
+                pr_f.write(line + '\n')
+
+        print("Predictions are saved in file", predictions_name)
+        pr_f.close()
 
 def main():
     nerCl = NERClassifier()
+    # stupid scikit warnings
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        nerCl.test_drugbank(0)
 
 if __name__ == "__main__":
-    #test()
     main()

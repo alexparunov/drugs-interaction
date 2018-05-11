@@ -1,12 +1,7 @@
 #!/usr/bin/python3
-from os.path import join, abspath, exists
+from os.path import join, abspath
 from os import listdir
 import pickle
-from nltk import word_tokenize, pos_tag
-import nltk
-
-# Call this method once
-# nltk.download()
 
 pickle_path = "data/pickle"
 pickled_files = [join(abspath(pickle_path), f) for f in listdir(abspath(pickle_path))]
@@ -18,7 +13,6 @@ def extract_features():
         f.close()
         all_featured_docs = []
         for doc in docs:
-            print("Setting feature for Document: "+doc.id)
             doc.set_features()
             all_featured_docs.append(doc)
 

@@ -1,8 +1,5 @@
 from nltk import word_tokenize, pos_tag
 from nltk.stem import SnowballStemmer
-from numpy import isfinite
-import re
-import string
 
 class Document:
     def __init__(self, id):
@@ -20,20 +17,30 @@ class Document:
 
     # Sets features for each sentence
     def set_features(self):
-        featured_words = []
-        featured_words_dict = [] #we need dictionary for preprocessing for ML algorithm
+        featured_words_dict = [] #we need dictionary for DictVectorizer
         for sentence in self.sentences:
             sent_features = sentence.set_features()
-            m_dict = {}
+
             for s_feature in sent_features:
+                m_dict = {}
+                # index 5 contains the word itself
+                m_dict['-1'] = self.find_word_metadata(s_feature[5], sentence)
                 for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
-
                 featured_words_dict.append(m_dict)
-            featured_words.extend(sent_features)
 
-        self.featured_words = featured_words
         self.featured_words_dict = featured_words_dict
+
+    # We need this loop in order to assign metadata to a drug-type word.
+    # It's necessary since our output should be of type:
+    # sentenceId|offsets...|text|type
+    def find_word_metadata(self, s_word, sentence):
+        for entity in sentence.entities:
+            # if word is in text of entity then we can proceed with assigning metadata
+            if str(s_word) in entity.text.split():
+                return [sentence.id, entity.charOffset, entity.text, entity.type]
+
+        return []
 
 class Sentence:
     def __init__(self, id, text):
@@ -102,7 +109,7 @@ class Sentence:
         orthographical_feature = get_orthographical_feature(word)
         features.append(orthographical_feature)
 
-        # Prefix and suffixe is of lengths 3,4,5 respectively
+        # Prefix and suffix is of lengths 3,4,5 respectively
         prefix_suffix_features = get_prefix_suffix_feature(word)
         features.extend(prefix_suffix_features)
 
@@ -120,7 +127,7 @@ def get_words_window(index, tagged_words, n):
     if n >= len(tagged_words):
         raise ValueError("n must be less than length of tagged_words")
 
-    for i in range(-(n+1),n+1):
+    for i in range(-n,n+1):
         # we can reach the first and last element, so we are safe to get them
         if index + i >= 0 and index + i < len(tagged_words):
             word = tagged_words[index + i][0]
