@@ -52,15 +52,15 @@ class NERClassifier:
 
     # train dataset, where X is a list of feature vectors expressed as dictionary
     # and Y is class variable, which is BIO tag in our case
-    def train_dataset(self, X, Y, kernel = 'rbf'):
+    def train_dataset(self, X, Y, kernel):
         vec = DictVectorizer(sparse=False)
-        svm_clf = svm.SVC(kernel = kernel, cache_size = 1200)
+        svm_clf = svm.SVC(kernel = kernel, cache_size = 1800, C = 20, verbose = True)
         vec_clf = Pipeline([('vectorizer', vec), ('svm', svm_clf)])
-        vec_clf.fit(X, Y)
+        vec_clf.fit(X[:10000], Y[:10000])
 
         return vec_clf
 
-    def train_drugbank(self, kernel):
+    def train_drugbank(self, kernel = 'rbf' ):
         self.set_path(pickled_files[3])
 
         X_train, Y_train, metadatas = self.split_dataset()
@@ -73,7 +73,7 @@ class NERClassifier:
 
         from operator import contains
         drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
-        model_index = len(drugbank_models) + 1 # save next model
+        model_index = len(drugbank_models) # save next model
 
         model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
 
@@ -120,7 +120,7 @@ class NERClassifier:
             metadata = metadatas[i]
 
             if pred == 'B' or pred == 'I':
-                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + metadata[3]
+                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + 'drug'
             else:
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' +'null'
 
@@ -134,7 +134,8 @@ def main():
     # stupid scikit warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        nerCl.test_NER_model(model_index = 0, test_folder = 1) #test drugbank
+        #nerCl.train_drugbank(kernel = 'linear')
+        nerCl.test_NER_model(model_index = 1, test_folder = 1) #test drugbank
 
 if __name__ == "__main__":
     main()
