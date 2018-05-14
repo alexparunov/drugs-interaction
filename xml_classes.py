@@ -89,9 +89,8 @@ class Sentence:
             charOffset = ""
             type = "" #type of drug which is empty by default
             f_vector = all_features[i] #feature vector
-            f_word = str(f_vector[5]) #word which is contained in postion 5
+            f_word = str(f_vector[5]) #word which is contained in postion 3
             w_text = "" # word text
-
             # if BIO tag of feature vector is B then we proceed with special case assignment
             if f_vector[0] == 'B':
                 pos = self.text.find(f_word, pos) #find position where word starts in the sentence
@@ -104,6 +103,12 @@ class Sentence:
                 charOffset = str(beg)+"-"+str(end)
                 pos = end #set a new search position to end of previous word, so that we search different words in sentence
                 w_text = f_word
+
+                metadata = [self.id, charOffset, w_text, type]
+                # appending metadata to last extracted feature vector (might be from inner while loop)
+                f_vector.append(metadata)
+                new_all_features.append(f_vector)
+
                 while i < len(all_features) - 1:
                     f_vector = all_features[i+1] #next word in a feature vectors
 
@@ -125,6 +130,10 @@ class Sentence:
                     pos = end
                     i += 1
 
+                    metadata = [self.id, charOffset, w_text, type]
+                    # appending metadata to last extracted feature vector (might be from inner while loop)
+                    f_vector.append(metadata)
+                    new_all_features.append(f_vector)
             else:
                 # Otherwise BIO tag is O so we simply have charOffset and empty type
                 f_word = str(f_vector[5])
@@ -137,22 +146,29 @@ class Sentence:
                 charOffset += str(beg)+"-"+str(end)
                 pos = end
 
-            metadata = [self.id, charOffset, w_text, type]
-            # appending metadata to last extracted feature vector (might be from inner while loop)
-            f_vector.append(metadata)
+                metadata = [self.id, charOffset, w_text, type]
+                # appending metadata to last extracted feature vector (might be from inner while loop)
+                f_vector.append(metadata)
+                new_all_features.append(f_vector)
 
+        updated_features = []
+        for f_vector in new_all_features:
             # Update tags. It means each tag will be of type B_drug/B_group/I_drug/I_group/etc.
-            tag = f_vector[0]
-            if tag == 'B' or tag == 'I':
-                try:
+            try:
+                tag = f_vector[0]
+                if tag == 'B' or tag == 'I':
                     type = self.get_word_entity(str(f_vector[5]))
                     tag = tag + "_"+type
                     f_vector[0] = tag
-                except TypeError:
-                    pass
-            new_all_features.append(tuple(f_vector))
 
-        return new_all_features
+                # remove words at windows. Words are located at positions 1,3,7,9 in window of n = 2
+                # We need to remove them otherwise training takes forever
+                ff_vector = [f_vector[j] for j in range(len(f_vector)) if j != 1 and j != 3 and j != 7 and j != 9]
+                updated_features.append(ff_vector)
+            except TypeError:
+                pass
+
+        return updated_features
 
     # since words is of type BI tag, then it must have type.
     # So we search through all entities and if word is contained then we set type
@@ -171,15 +187,10 @@ class Sentence:
         # get array of [word,pos_tag] for +-2 word window
         if len(tagged_words) > 2:
             windows = get_words_window(index, tagged_words, 2)
-        elif len(tagged_words) > 1:
-            windows = get_words_window(index, tagged_words, 1)
-        else:
-            windows = get_words_window(index, tagged_words, 0)
+            features.extend(windows)
 
-        features.extend(windows)
-
-        # add length of a word
-        features.append(len(word))
+        # add boolean as length is more >= 7
+        features.append(int(len(word) >= 7))
 
         orthographical_feature = get_orthographical_feature(word)
         features.append(orthographical_feature)
@@ -213,7 +224,6 @@ def get_words_window(index, tagged_words, n):
 
         windows.append(word)
         windows.append(pos_tag)
-
     return windows
 
 def get_orthographical_feature(word):

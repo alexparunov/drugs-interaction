@@ -13,7 +13,7 @@ def extract_features():
         f.close()
         all_featured_docs = []
         for doc in docs:
-            print("Extracting features for",doc.id)
+            #print("Extracting features for",doc.id)
             doc.set_features()
             all_featured_docs.append(doc)
 

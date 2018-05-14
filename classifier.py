@@ -5,6 +5,7 @@ import pickle
 from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction import DictVectorizer
+from sklearn.externals import joblib
 import warnings
 
 # Files are in the following order:
@@ -45,7 +46,6 @@ class NERClassifier:
 
                 # we want sub-dictionary of all elements besides the class
                 sub_dict = {k:v for k,v in  m_dict.items() if k > '0' and not isinstance(v, list)}
-
                 feature_vectors_dict.append(sub_dict)
 
         return (feature_vectors_dict, classes,  dict_metadatas)
@@ -54,7 +54,7 @@ class NERClassifier:
     # and Y is class variable, which is BIO tag in our case
     def train_dataset(self, X, Y, kernel):
         vec = DictVectorizer(sparse=False)
-        svm_clf = svm.SVC(kernel = kernel, cache_size = 1800, C = 20, verbose = True)
+        svm_clf = svm.SVC(kernel = kernel, cache_size = 1800, C = 20, verbose = True, tol = 0.01)
         vec_clf = Pipeline([('vectorizer', vec), ('svm', svm_clf)])
         vec_clf.fit(X, Y)
 
@@ -77,9 +77,8 @@ class NERClassifier:
 
         model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
 
-        with open(model_name,'wb') as f:
-            pickle.dump(vec_clf, f)
-            print("Model trained and saved into", model_name)
+        joblib.dump(vec_clf, model_name)
+        print("Model trained and saved into", model_name)
 
     def test_NER_model(self, model_index, test_folder):
         model_name = ""
@@ -97,8 +96,7 @@ class NERClassifier:
 
         print("Testing model", model_index,"...")
 
-        with open(model_name,'rb') as f:
-            vec_clf = pickle.load(f)
+        vec_clf = joblib.load(model_name)
 
         # metadatas are of type: sentenceId | offsets... | text | type
         X_test, Y_test, metadatas = self.split_dataset()
@@ -121,7 +119,6 @@ class NERClassifier:
 
             # if prediction is B_type or I_type then we predicted the drug and it's type is after B_
             if pred[:2] == 'B_' or pred[:2] == 'I_':
-                print(pred)
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
                 pr_f.write(line + '\n')
 
