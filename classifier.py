@@ -56,7 +56,7 @@ class NERClassifier:
         vec = DictVectorizer(sparse=False)
         svm_clf = svm.SVC(kernel = kernel, cache_size = 1800, C = 20, verbose = True)
         vec_clf = Pipeline([('vectorizer', vec), ('svm', svm_clf)])
-        vec_clf.fit(X[:10000], Y[:10000])
+        vec_clf.fit(X, Y)
 
         return vec_clf
 
@@ -119,12 +119,11 @@ class NERClassifier:
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
 
-            if pred == 'B' or pred == 'I':
-                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + 'drug'
-            else:
-                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' +'null'
-
-            pr_f.write(line + '\n')
+            # if prediction is B_type or I_type then we predicted the drug and it's type is after B_
+            if pred[:2] == 'B_' or pred[:2] == 'I_':
+                print(pred)
+                line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
+                pr_f.write(line + '\n')
 
         print("Predictions are saved in file", predictions_name)
         pr_f.close()
@@ -134,8 +133,8 @@ def main():
     # stupid scikit warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        #nerCl.train_drugbank(kernel = 'linear')
-        nerCl.test_NER_model(model_index = 1, test_folder = 1) #test drugbank
+        nerCl.train_drugbank(kernel = 'linear')
+        #nerCl.test_NER_model(model_index = 2, test_folder = 1) #test drugbank
 
 if __name__ == "__main__":
     main()

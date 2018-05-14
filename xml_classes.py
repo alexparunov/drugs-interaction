@@ -95,7 +95,6 @@ class Sentence:
             # if BIO tag of feature vector is B then we proceed with special case assignment
             if f_vector[0] == 'B':
                 pos = self.text.find(f_word, pos) #find position where word starts in the sentence
-
                 # this should not be since there are always words in a sentence, but we don't want to deal with negative positions just in case
                 if pos < 0:
                     continue
@@ -126,14 +125,6 @@ class Sentence:
                     pos = end
                     i += 1
 
-                # since words is of type BI tag, then it must have type.
-                # So we search through all entities and if word is contained then we set type
-                # NOTE that all types of word in offsets like this 100-150;155-170;190-200 will be the same
-                for entity in self.entities:
-                    text_ar = entity.text.split()
-                    if f_word in text_ar:
-                        type = entity.type
-                        break
             else:
                 # Otherwise BIO tag is O so we simply have charOffset and empty type
                 f_word = str(f_vector[5])
@@ -149,9 +140,28 @@ class Sentence:
             metadata = [self.id, charOffset, w_text, type]
             # appending metadata to last extracted feature vector (might be from inner while loop)
             f_vector.append(metadata)
+
+            # Update tags. It means each tag will be of type B_drug/B_group/I_drug/I_group/etc.
+            tag = f_vector[0]
+            if tag == 'B' or tag == 'I':
+                try:
+                    type = self.get_word_entity(str(f_vector[5]))
+                    tag = tag + "_"+type
+                    f_vector[0] = tag
+                except TypeError:
+                    pass
             new_all_features.append(tuple(f_vector))
 
         return new_all_features
+
+    # since words is of type BI tag, then it must have type.
+    # So we search through all entities and if word is contained then we set type
+    # NOTE that all types of word in offsets like this 100-150;155-170;190-200 will be the same
+    def get_word_entity(self, f_word):
+        for entity in self.entities:
+            text_ar = entity.text.split()
+            if f_word in text_ar:
+                return entity.type
 
     # Following some guidelines from this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
     def get_featured_tuple(self, index, tagged_words, bio_tag):
