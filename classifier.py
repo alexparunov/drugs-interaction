@@ -7,6 +7,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.externals import joblib
 import warnings
+import argparse
 
 # Files are in the following order:
 # 0 - medline_ner_test.pkl
@@ -60,25 +61,33 @@ class NERClassifier:
 
         return vec_clf
 
-    def train_drugbank(self, kernel = 'rbf' ):
-        self.set_path(pickled_files[3])
+    def train_NER_model(self, train_folder, kernel = 'linear'):
+        if not isdir('models'):
+            makedirs('models')
+
+        model_name = ""
+        model_index = 0
+        model_names = [join(abspath("models"), f) for f in listdir(abspath("models"))]
+
+        from operator import contains
+        if train_folder == 1:
+            self.set_path(pickled_files[3])
+            drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
+            model_index = len(drugbank_models) # save next model
+            model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
+        elif train_folder == 2:
+            self.set_path(pickled_files[0])
+            medline_models = list(filter(lambda x: contains(x, 'medline_model_'), model_names))
+            model_index = len(medline_models) # save next model
+            model_name = 'models/medline_model_'+str(model_index)+'.pkl'
+        else:
+            raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
 
         X_train, Y_train, metadatas = self.split_dataset()
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
 
-        if not isdir('models'):
-            makedirs('models')
-
-        model_names = [join(abspath("models"), f) for f in listdir(abspath("models"))]
-
-        from operator import contains
-        drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
-        model_index = len(drugbank_models) # save next model
-
-        model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
-
         joblib.dump(vec_clf, model_name)
-        print("Model trained and saved into", model_name)
+        print("\nModel trained and saved into", model_name)
 
     def test_NER_model(self, model_index, test_folder):
         model_name = ""
@@ -106,7 +115,6 @@ class NERClassifier:
         if not isdir('predictions'):
             makedirs('predictions')
 
-        predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
         pr_f = open(predictions_name,'w')
         # clear file, i.e. remove all
         pr_f.close()
@@ -116,7 +124,6 @@ class NERClassifier:
 
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
-
             # if prediction is B_type or I_type then we predicted the drug and it's type is after B_
             if pred[:2] == 'B_' or pred[:2] == 'I_':
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
@@ -125,13 +132,34 @@ class NERClassifier:
         print("Predictions are saved in file", predictions_name)
         pr_f.close()
 
+parser = argparse.ArgumentParser(description = "Train or Test model")
+parser.add_argument('--train', help = "Train model", action="store_true")
+parser.add_argument('--test', help = "Test model at index i", action="store_true")
+parser.add_argument('-f','--folder_index', type=int, help = "Folder number. 1 is drugbank, 2 is medline", action = "store", default = -1)
+parser.add_argument('-i','--model_index', type=int, help = "Index of a model to test", action = "store", default = -1)
+
 def main():
     nerCl = NERClassifier()
     # stupid scikit warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        nerCl.train_drugbank(kernel = 'linear')
-        #nerCl.test_NER_model(model_index = 2, test_folder = 1) #test drugbank
+
+        args = parser.parse_args()
+        if args.train:
+            folder_index = args.folder_index
+            if folder_index == 1 or folder_index == 2:
+                nerCl.train_NER_model(train_folder = folder_index)
+            else:
+                parser.print_help()
+        elif args.test:
+            model_index = args.model_index
+            folder_index = args.folder_index
+            if model_index >= 0 and folder_index >= 1:
+                nerCl.test_NER_model(model_index = model_index, test_folder = folder_index)
+            else:
+                parser.print_help()
+        else:
+            parser.print_help()
 
 if __name__ == "__main__":
     main()
