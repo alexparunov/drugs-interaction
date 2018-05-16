@@ -20,7 +20,7 @@ import argparse
 pickle_path = "data/pickle"
 pickled_files = [join(abspath(pickle_path), f) for f in listdir(abspath(pickle_path))]
 
-class NERClassifier:
+class Classifier:
     def __init__(self):
         self.path = ""
 
@@ -85,11 +85,12 @@ class NERClassifier:
         else:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
 
+        # we ignore Y_ddi classes since they are not used for NER model training
         X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
 
         joblib.dump(vec_clf, model_name)
-        print("\nModel trained and saved into", model_name)
+        print("\nNER Model trained and saved into", model_name)
 
     def test_NER_model(self, model_index, test_folder):
         model_name = ""
@@ -105,12 +106,13 @@ class NERClassifier:
         else:
             raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
 
-        print("Testing model", model_index,"...")
+        print("Testing NER model", model_index,"...")
 
         vec_clf = joblib.load(model_name)
 
         # metadatas are of type: sentenceId | offsets... | text | type
-        X_test, Y_test, metadatas = self.split_dataset()
+        # we ignore Y_ddi classes since they are not used for NER model training
+        X_test, Y_test, Y_ddi, metadatas = self.split_dataset()
         predictions = vec_clf.predict(X_test)
         assert len(predictions) == len(Y_test) == len(metadatas)
 
@@ -126,12 +128,69 @@ class NERClassifier:
 
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
-            # if prediction is B_type or I_type then we predicted the drug and it's type is after B_
+            # if prediction is B_type or I_type then we predicted the drug and it's type is after B_, thus we can write into check file
             if pred[:2] == 'B_' or pred[:2] == 'I_':
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
                 pr_f.write(line + '\n')
 
-        print("Predictions are saved in file", predictions_name)
+        print("\nNER Predictions are saved in file", predictions_name)
+        pr_f.close()
+
+    def train_DDI_model(self, train_folder, kernel = 'linear'):
+        if not isdir('models'):
+            makedirs('models')
+
+        model_name = ""
+        model_index = 0
+        model_names = [join(abspath("models"), f) for f in listdir(abspath("models"))]
+        from operator import contains
+        if train_folder == 1:
+            self.set_path(pickled_files[3])
+            drugbank_ddi_models = list(filter(lambda x: contains(x, 'drugbank_ddi_model_'), model_names))
+            model_index = len(drugbank_ddi_models) # save next model
+            model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
+        elif train_folder == 2:
+            self.set_path(pickled_files[0])
+            medline_ddi_models = list(filter(lambda x: contains(x, 'medline_ddi_model_'), model_names))
+            model_index = len(medline_ddi_models) # save next model
+            model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
+        else:
+            raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
+
+        X_train, Y_ner, Y_train, metadatas = self.split_dataset()
+        vec_clf = self.train_dataset(X_train, Y_train, kernel)
+        joblib.dump(vec_clf, model_name)
+        print("\nDDI Model trained and saved into", model_name)
+
+    def test_DDI_model(self, model_index, test_folder):
+        model_name = ""
+        predictions_name = ""
+        if test_folder == 1:
+            model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/drugbank_ddi_model_'+str(model_index)+'.txt'
+            self.set_path(pickled_files[4])
+        elif test_folder == 2:
+            model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/medline_ddi_model_'+str(model_index)+'.txt'
+            self.set_path(pickled_files[0])
+        else:
+            raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
+
+        pr_f = open(predictions_name,'w')
+        # clear file, i.e. remove all
+        pr_f.close()
+
+        # reopen clean file
+        pr_f = open(predictions_name, 'w')
+
+        for i, pred in enumerate(predictions):
+            metadata = metadatas[i]
+            # if prediction is 1_type then we predicted ddi correctly, thus we can write into check file
+            if pred[:2] == "1_":
+                line = metadata[0]+'|'+metadata[5]+'|'+metadata[6]+'|'+pred[2:]
+                pr_f.write(line + '\n')
+
+        print("\nDDIPredictions are saved in file", predictions_name)
         pr_f.close()
 
 parser = argparse.ArgumentParser(description = "Train or Test model")
@@ -141,7 +200,8 @@ parser.add_argument('-f','--folder_index', type=int, help = "Folder number. 1 is
 parser.add_argument('-i','--model_index', type=int, help = "Index of a model to test", action = "store", default = -1)
 
 def main():
-    nerCl = NERClassifier()
+    clasf = Classifier()
+
     # stupid scikit warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
@@ -150,14 +210,14 @@ def main():
         if args.train:
             folder_index = args.folder_index
             if folder_index == 1 or folder_index == 2:
-                nerCl.train_NER_model(train_folder = folder_index)
+                clasf.train_NER_model(train_folder = folder_index)
             else:
                 parser.print_help()
         elif args.test:
             model_index = args.model_index
             folder_index = args.folder_index
             if model_index >= 0 and folder_index >= 1:
-                nerCl.test_NER_model(model_index = model_index, test_folder = folder_index)
+                clasf.test_NER_model(model_index = model_index, test_folder = folder_index)
             else:
                 parser.print_help()
         else:
