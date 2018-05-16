@@ -23,10 +23,15 @@ class Document:
             for s_feature in sent_features:
 
                 # first indext contains BIO tag
-                # last index contains metadata
-                m_dict = {'-1': s_feature[len(s_feature)-1] }
-                for i in range(len(s_feature) - 1):
+                # last index contains DDI bio tag
+                # previous to last index contains metadata
+                ddi_tag = s_feature.pop()
+                metadata = s_feature.pop()
+
+                m_dict = {'-2': metadata, '-1': ddi_tag}
+                for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
+
                 featured_words_dict.append(m_dict)
 
         self.featured_words_dict = featured_words_dict
@@ -81,7 +86,8 @@ class Sentence:
 
     # We need this loop in order to assign metadata to a drug-type word.
     # It's necessary since our output should be of type:
-    # sentenceId|offsets...|text|type
+    # for NER task we need sentenceId|offsets...|text|type
+    # for DDI prediction we need sentenceId|idDrug1|idDrug2|prediction (ddi = 1 or ddi = 0)|type (advice, effect, etc.)
     def get_vector_metadatas(self, all_features):
         pos = 0 #initial search positions
         new_all_features = [] #vector of new features with appended metadata
@@ -155,15 +161,38 @@ class Sentence:
         for f_vector in new_all_features:
             # Update tags. It means each tag will be of type B_drug/B_group/I_drug/I_group/etc.
             try:
+                metadata = f_vector.pop()
+                if not isinstance(metadata, list):
+                    continue
+
+                word_ddi = self.get_word_ddi(str(f_vector[5]))
+                metadata.extend(word_ddi)
+
+                assert len(metadata) == 8
+                # if ddi = True then it's 1, otherwise it's 0
+                ddi_tag = int(metadata[4])
+
+                # append type of interaction in both cases
+                if ddi_tag > 0:
+                    ddi_tag = str(ddi_tag)+"_"+metadata[len(metadata)-1]
+                else:
+                    ddi_tag = str(ddi_tag)+"_null"
+
+                # update metadata
+                f_vector.append(metadata)
+
+                # set class of ddi to the last element
+                f_vector.append(ddi_tag)
+
                 tag = f_vector[0]
                 if tag == 'B' or tag == 'I':
                     type = self.get_word_entity(str(f_vector[5]))
                     tag = tag + "_"+type
                     f_vector[0] = tag
-
                 # remove words at windows. Words are located at positions 1,3,7,9 in window of n = 2
                 # We need to remove them otherwise training takes forever
                 ff_vector = [f_vector[j] for j in range(len(f_vector)) if j != 1 and j != 3 and j != 7 and j != 9]
+                #print(ff_vector)
                 updated_features.append(ff_vector)
             except TypeError:
                 pass
@@ -178,6 +207,25 @@ class Sentence:
             text_ar = entity.text.split()
             if f_word in text_ar:
                 return entity.type
+
+    def get_word_ddi(self, f_word):
+        ddi = False
+        idDrug1 = ""
+        idDrug2 = ""
+        type = ""
+        for entity in self.entities:
+            text_ar = entity.text.split()
+            if f_word in text_ar:
+                for pair in self.pairs:
+                    if pair.e1 == entity.id or pair.e2 == entity.id:
+                        ddi = pair.ddi
+                        idDrug1 = pair.e1
+                        idDrug2 = pair.e2
+                        type = pair.type
+
+        return [ddi, idDrug1, idDrug2, type]
+
+
 
     # Following some guidelines from this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
     def get_featured_tuple(self, index, tagged_words, bio_tag):

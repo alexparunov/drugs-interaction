@@ -38,18 +38,20 @@ class NERClassifier:
 
         feature_vectors_dict = [] # feature vectors expressed as dicts. train data
         classes = [] # B,I,O classes
+        ddi_classes = []
         dict_metadatas = []
 
         for doc in docs:
             for m_dict in doc.featured_words_dict:
-                classes.append(m_dict['0'])
-                dict_metadatas.append(m_dict['-1'])
+                ner_classes.append(m_dict['0'])
+                ddi_classes.append(m_dict['-1'])
+                dict_metadatas.append(m_dict['-2'])
 
                 # we want sub-dictionary of all elements besides the class
                 sub_dict = {k:v for k,v in  m_dict.items() if k > '0' and not isinstance(v, list)}
                 feature_vectors_dict.append(sub_dict)
 
-        return (feature_vectors_dict, classes,  dict_metadatas)
+        return (feature_vectors_dict, ner_classes, ddi_classes, dict_metadatas)
 
     # train dataset, where X is a list of feature vectors expressed as dictionary
     # and Y is class variable, which is BIO tag in our case
@@ -83,7 +85,7 @@ class NERClassifier:
         else:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
 
-        X_train, Y_train, metadatas = self.split_dataset()
+        X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
 
         joblib.dump(vec_clf, model_name)
