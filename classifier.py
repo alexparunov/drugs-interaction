@@ -8,6 +8,7 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.externals import joblib
 import warnings
 import argparse
+from operator import contains
 
 # Files are in the following order:
 # 0 - medline_ner_test.pkl
@@ -19,6 +20,13 @@ import argparse
 
 pickle_path = "data/pickle"
 pickled_files = [join(abspath(pickle_path), f) for f in listdir(abspath(pickle_path))]
+
+# function that returns full path of a file
+def get_file_full_path(file_name):
+    for p_f in pickled_files:
+        if contains(file_name, p_f):
+            return p_f
+    return ""
 
 class Classifier:
     def __init__(self):
@@ -71,14 +79,21 @@ class Classifier:
         model_index = 0
         model_names = [join(abspath("models"), f) for f in listdir(abspath("models"))]
 
-        from operator import contains
         if train_folder == 1:
-            self.set_path(pickled_files[3])
+            path = get_file_full_path("drug_bank_train.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
             drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
             model_index = len(drugbank_models) # save next model
             model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
         elif train_folder == 2:
-            self.set_path(pickled_files[1])
+            path = get_file_full_path("medline_train.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
             medline_models = list(filter(lambda x: contains(x, 'medline_model_'), model_names))
             model_index = len(medline_models) # save next model
             model_name = 'models/medline_model_'+str(model_index)+'.pkl'
@@ -100,11 +115,19 @@ class Classifier:
         if test_folder == 1:
             model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
-            self.set_path(pickled_files[4])
+            path = get_file_full_path("drug_bank_ner_test.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
         elif test_folder == 2:
             model_name = 'models/medline_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/medline_model_'+str(model_index)+'.txt'
-            self.set_path(pickled_files[0])
+            path = get_file_full_path("medline_ner_test.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
         else:
             raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
 
@@ -145,14 +168,21 @@ class Classifier:
         model_name = ""
         model_index = 0
         model_names = [join(abspath("models"), f) for f in listdir(abspath("models"))]
-        from operator import contains
         if train_folder == 1:
-            self.set_path(pickled_files[3])
+            path = get_file_full_path("drug_bank_train.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
             drugbank_ddi_models = list(filter(lambda x: contains(x, 'drugbank_ddi_model_'), model_names))
             model_index = len(drugbank_ddi_models) # save next model
             model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
         elif train_folder == 2:
-            self.set_path(pickled_files[1])
+            path = get_file_full_path("medline_train.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
             medline_ddi_models = list(filter(lambda x: contains(x, 'medline_ddi_model_'), model_names))
             model_index = len(medline_ddi_models) # save next model
             model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
@@ -171,11 +201,21 @@ class Classifier:
         if test_folder == 1:
             model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/drugbank_ddi_model_'+str(model_index)+'.txt'
-            self.set_path(pickled_files[2])
+
+            path = get_file_full_path("drug_bank_ddi_test.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
         elif test_folder == 2:
             model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/medline_ddi_model_'+str(model_index)+'.txt'
-            self.set_path(pickled_files[5])
+
+            path = get_file_full_path("medline_ddi_test.pkl")
+            if path.empty():
+                raise ValueError("File path can't be empty")
+
+            self.set_path(path)
         else:
             raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
 
@@ -219,6 +259,8 @@ parser.add_argument('-i','--model_index', type = int, help = "Index of a model t
 def main():
     clasf = Classifier()
 
+    print(pickled_files)
+    return
     # stupid scikit warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
