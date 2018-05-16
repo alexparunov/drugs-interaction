@@ -10,7 +10,7 @@ import warnings
 import argparse
 from operator import contains
 
-# Files are in the following order:
+# Files are in the following order (on Alex's computer):
 # 0 - medline_ner_test.pkl
 # 1 - medline_train.pkl
 # 2 - drug_bank_ddi_test.pkl
@@ -85,19 +85,20 @@ class Classifier:
             drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
             model_index = len(drugbank_models) # save next model
             model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
+            print("Started training NER Drugbank model...")
         elif train_folder == 2:
             path = get_file_full_path("medline_train.pkl", pickled_files)
             self.set_path(path)
             medline_models = list(filter(lambda x: contains(x, 'medline_model_'), model_names))
             model_index = len(medline_models) # save next model
             model_name = 'models/medline_model_'+str(model_index)+'.pkl'
+            print("Started training NER Medline model...")
         else:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
 
         # we ignore Y_ddi classes since they are not used for NER model training
         X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
 
-        print("Started training NER model...")
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
 
         joblib.dump(vec_clf, model_name)
@@ -111,15 +112,15 @@ class Classifier:
             predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
             path = get_file_full_path("drug_bank_ner_test.pkl", pickled_files)
             self.set_path(path)
+            print("Testing NER Drugbank model", model_index,"...")
         elif test_folder == 2:
             model_name = 'models/medline_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/medline_model_'+str(model_index)+'.txt'
             path = get_file_full_path("medline_ner_test.pkl", pickled_files)
             self.set_path(path)
+            print("Testing NER Medline model", model_index,"...")
         else:
             raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
-
-        print("Testing NER model", model_index,"...")
 
         vec_clf = joblib.load(model_name)
 
@@ -162,17 +163,19 @@ class Classifier:
             drugbank_ddi_models = list(filter(lambda x: contains(x, 'drugbank_ddi_model_'), model_names))
             model_index = len(drugbank_ddi_models) # save next model
             model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
+            print("Started training DDI Drugbank model...")
         elif train_folder == 2:
             path = get_file_full_path("medline_train.pkl", pickled_files)
             self.set_path(path)
             medline_ddi_models = list(filter(lambda x: contains(x, 'medline_ddi_model_'), model_names))
             model_index = len(medline_ddi_models) # save next model
             model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
+            print("Started training DDI Medline model...")
         else:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
 
         X_train, Y_ner, Y_train, metadatas = self.split_dataset()
-        print("Started training DDI model...")
+
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
         joblib.dump(vec_clf, model_name)
         print("\nDDI Model trained and saved into", model_name)
@@ -185,15 +188,15 @@ class Classifier:
             predictions_name = 'predictions/drugbank_ddi_model_'+str(model_index)+'.txt'
             path = get_file_full_path("drug_bank_ddi_test.pkl", pickled_files)
             self.set_path(path)
+            print("Testing DDI Drugbank model", model_index,"...")
         elif test_folder == 2:
             model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/medline_ddi_model_'+str(model_index)+'.txt'
-            path = self.self.get_full_path("medline_ddi_test.pkl", pickled_files)
+            path = get_file_full_path("medline_ddi_test.pkl", pickled_files)
             self.set_path(path)
+            print("Testing DDI Medline model", model_index,"...")
         else:
             raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
-
-        print("Testing DDI model", model_index,"...")
 
         vec_clf = joblib.load(model_name)
 
@@ -216,9 +219,11 @@ class Classifier:
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
             # if prediction is 1_type then we predicted ddi correctly, thus we can write into check file
-            if pred[:2] == "1_":
-                line = metadata[0]+'|'+metadata[5]+'|'+metadata[6]+'|'+pred[2:]
-                pr_f.write(line + '\n')
+            if len(metadata[5]) > 0 and len(metadata[6]) > 0:
+                # some document sentence ids are completely wrong, we want only DDI-Medline
+                if metadata[0][:12] == 'DDI-MedLine.':
+                    line = metadata[0]+'|'+metadata[5]+'|'+metadata[6]+'|'+pred[0]+'|'+pred[2:]
+                    pr_f.write(line + '\n')
 
         print("\nDDIPredictions are saved in file", predictions_name)
         pr_f.close()
