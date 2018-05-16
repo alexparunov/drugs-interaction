@@ -37,7 +37,7 @@ class Classifier:
             docs = pickle.load(f)
 
         feature_vectors_dict = [] # feature vectors expressed as dicts. train data
-        classes = [] # B,I,O classes
+        ner_classes = [] # B,I,O classes
         ddi_classes = []
         dict_metadatas = []
 
@@ -78,7 +78,7 @@ class Classifier:
             model_index = len(drugbank_models) # save next model
             model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
         elif train_folder == 2:
-            self.set_path(pickled_files[0])
+            self.set_path(pickled_files[1])
             medline_models = list(filter(lambda x: contains(x, 'medline_model_'), model_names))
             model_index = len(medline_models) # save next model
             model_name = 'models/medline_model_'+str(model_index)+'.pkl'
@@ -87,6 +87,8 @@ class Classifier:
 
         # we ignore Y_ddi classes since they are not used for NER model training
         X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
+
+        print("Started training NER model...")
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
 
         joblib.dump(vec_clf, model_name)
@@ -150,7 +152,7 @@ class Classifier:
             model_index = len(drugbank_ddi_models) # save next model
             model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
         elif train_folder == 2:
-            self.set_path(pickled_files[0])
+            self.set_path(pickled_files[1])
             medline_ddi_models = list(filter(lambda x: contains(x, 'medline_ddi_model_'), model_names))
             model_index = len(medline_ddi_models) # save next model
             model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
@@ -158,6 +160,7 @@ class Classifier:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
 
         X_train, Y_ner, Y_train, metadatas = self.split_dataset()
+        print("Started training DDI model...")
         vec_clf = self.train_dataset(X_train, Y_train, kernel)
         joblib.dump(vec_clf, model_name)
         print("\nDDI Model trained and saved into", model_name)
@@ -168,13 +171,26 @@ class Classifier:
         if test_folder == 1:
             model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/drugbank_ddi_model_'+str(model_index)+'.txt'
-            self.set_path(pickled_files[4])
+            self.set_path(pickled_files[2])
         elif test_folder == 2:
             model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
             predictions_name = 'predictions/medline_ddi_model_'+str(model_index)+'.txt'
-            self.set_path(pickled_files[0])
+            self.set_path(pickled_files[5])
         else:
             raise ValueError('test_folder value should be 1 - drugbank, or 2 - medline')
+
+        print("Testing DDI model", model_index,"...")
+
+        vec_clf = joblib.load(model_name)
+
+        # metadatas are of type: sentenceId | offsets... | text | type
+        # we ignore Y_ddi classes since they are not used for NER model training
+        X_test, Y_test, Y_ddi, metadatas = self.split_dataset()
+        predictions = vec_clf.predict(X_test)
+        assert len(predictions) == len(Y_test) == len(metadatas)
+
+        if not isdir('predictions'):
+            makedirs('predictions')
 
         pr_f = open(predictions_name,'w')
         # clear file, i.e. remove all
@@ -194,10 +210,11 @@ class Classifier:
         pr_f.close()
 
 parser = argparse.ArgumentParser(description = "Train or Test model")
+parser.add_argument('-t','--task', type = int, help = "Task of problem. 1 - NER task, 2 - DDI task.", action = "store", default = -1)
 parser.add_argument('--train', help = "Train model", action="store_true")
 parser.add_argument('--test', help = "Test model at index i", action="store_true")
-parser.add_argument('-f','--folder_index', type=int, help = "Folder number. 1 is drugbank, 2 is medline", action = "store", default = -1)
-parser.add_argument('-i','--model_index', type=int, help = "Index of a model to test", action = "store", default = -1)
+parser.add_argument('-f','--folder_index', type = int, help = "Folder number. 1 - drugbank, 2 - medline", action = "store", default = -1)
+parser.add_argument('-i','--model_index', type = int, help = "Index of a model to test", action = "store", default = -1)
 
 def main():
     clasf = Classifier()
@@ -207,17 +224,28 @@ def main():
         warnings.simplefilter("ignore")
 
         args = parser.parse_args()
+
         if args.train:
             folder_index = args.folder_index
             if folder_index == 1 or folder_index == 2:
-                clasf.train_NER_model(train_folder = folder_index)
+                if args.task == 1:
+                    clasf.train_NER_model(train_folder = folder_index)
+                elif args.task == 2:
+                    clasf.train_DDI_model(train_folder = folder_index)
+                else:
+                    parser.print_help()
             else:
                 parser.print_help()
         elif args.test:
             model_index = args.model_index
             folder_index = args.folder_index
             if model_index >= 0 and folder_index >= 1:
-                clasf.test_NER_model(model_index = model_index, test_folder = folder_index)
+                if args.task == 1:
+                    clasf.test_NER_model(model_index = model_index, test_folder = folder_index)
+                elif args.task == 2:
+                    clasf.test_DDI_model(model_index = model_index, test_folder = folder_index)
+                else:
+                    parser.print_help()
             else:
                 parser.print_help()
         else:
