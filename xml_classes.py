@@ -18,10 +18,11 @@ class Document:
     # Sets features for each sentence
     def set_features(self):
         featured_words_dict = [] #we need dictionary for DictVectorizer
+        featured_sent_dict = []
         for sentence in self.sentences:
             sent_features = sentence.set_features()
+            sent_dict = []
             for s_feature in sent_features:
-
                 # first indext contains BIO tag
                 # last index contains DDI bio tag
                 # previous to last index contains metadata
@@ -31,10 +32,13 @@ class Document:
                 m_dict = {'-2': metadata, '-1': ddi_tag}
                 for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
-
                 featured_words_dict.append(m_dict)
+                sent_dict.append(m_dict)
 
+            featured_sent_dict.append(sent_dict)
+            
         self.featured_words_dict = featured_words_dict
+        self.featured_sent_dict = featured_sent_dict
 
 class Sentence:
     def __init__(self, id, text):

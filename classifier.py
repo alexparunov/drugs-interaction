@@ -4,13 +4,20 @@ import warnings
 import argparse
 from os.path import join, abspath, isdir
 from os import listdir, makedirs
+from operator import contains
+
+from numpy.random import randint
+import scipy
+
+import sklearn_crfsuite
+from sklearn_crfsuite import scorers
+from sklearn_crfsuite import metrics
+
 from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.externals import joblib
-from numpy.random import randint
-
-from operator import contains
+from sklearn.grid_search import RandomizedSearchCV
 
 # Files are in the following order (on Alex's computer):
 # 0 - medline_ner_test.pkl
@@ -48,7 +55,7 @@ class Classifier:
 
         feature_vectors_dict = [] # feature vectors expressed as dicts. train data
         ner_classes = [] # B,I,O classes
-        ddi_classes = []
+        ddi_classes = [] # B,I,O classes
         dict_metadatas = []
 
         for doc in docs:
@@ -62,6 +69,34 @@ class Classifier:
                 feature_vectors_dict.append(sub_dict)
 
         return (feature_vectors_dict, ner_classes, ddi_classes, dict_metadatas)
+
+    def split_dataset_crf(self):
+        if len(self.path) == 0:
+            raise ValueError("Path can't be empty")
+
+            with open(self.path, 'rb') as f:
+                docs = pickle.load(f)
+
+            all_sentences_features = []
+            for doc in docs:
+                # sent is a list of dictionaries
+                for sent in featured_sent_dict:
+                    ner_classes = []
+                    ddi_classes = []
+                    dict_metadatas = []
+                    sub_dicts = []
+                    for m_dict in sent:
+                        ner_classes.append(m_dict['0'])
+                        ddi_classes.append(m_dict['-1'])
+                        dict_metadatas.append(m_dict['-2'])
+
+                        # we want sub-dictionary of all elements besides the class
+                        sub_dict = {k:v for k,v in  m_dict.items() if k > '0' and not isinstance(v, list)}
+                        sub_dicts.append(sub_dict)
+
+                    all_sentences_features.append((sub_dicts, ner_classes, ddi_classes, dict_metadatas))
+
+            return all_sentences_features
 
     # train dataset, where X is a list of feature vectors expressed as dictionary
     # and Y is class variable, which is BIO tag_type in our case. ratio is proportion of data to use to train
@@ -81,7 +116,20 @@ class Classifier:
 
         return vec_clf
 
-    def train_NER_model(self, train_folder, kernel = 'linear', ratio = 1):
+    def train_dataset_crf(self, X, Y, ratio):
+        crf = sklearn_crfsuite.CRF(algorithm = 'lbfgs', max_iterations = 100, all_possible_transitions = True)
+
+        params_space = { 'c1': scipy.stats.expon(scale = 0.5), 'c2': scipy.stats.expon(scale = 0.05)}
+
+        f1_scorer = scorers.make_scorer(metrics.flat_f1_score, average = 'weighted', labels = Y)
+
+        rs = RandomizedSearchCV(crf, params_space, cv = 3, verbose = 1, n_jobs = -1, n_iter = 50, scoring = f1_scorer)
+
+        rs.fit(X, Y)
+
+        return res
+
+    def train_NER_model(self, train_folder, kernel = 'linear', ratio = 1, classifier = 1):
         if not isdir('models'):
             makedirs('models')
 
@@ -109,9 +157,12 @@ class Classifier:
         # we ignore Y_ddi classes since they are not used for NER model training
         X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
 
-        vec_clf = self.train_dataset(X_train, Y_train, kernel, ratio)
+        if classifier == 2:
+            clf = self.train_dataset_crf(X_train, Y_train, ratio)
+        else:
+            clf = self.train_dataset(X_train, Y_train, kernel, ratio)
 
-        joblib.dump(vec_clf, model_name)
+        joblib.dump(clf, model_name)
         print("\nNER Model trained and saved into", model_name)
 
     def test_NER_model(self, model_index, test_folder):
@@ -160,7 +211,7 @@ class Classifier:
         print("\nNER Predictions are saved in file", predictions_name)
         pr_f.close()
 
-    def train_DDI_model(self, train_folder, kernel = 'linear'):
+    def train_DDI_model(self, train_folder, kernel = 'linear', ratio = 1, classifier = 1):
         if not isdir('models'):
             makedirs('models')
 
@@ -186,8 +237,12 @@ class Classifier:
 
         X_train, Y_ner, Y_train, metadatas = self.split_dataset()
 
-        vec_clf = self.train_dataset(X_train, Y_train, kernel, ratio)
-        joblib.dump(vec_clf, model_name)
+        if classifier == 2:
+            clf = self.train_dataset_crf(X_train, Y_train, ratio)
+        else:
+            clf = self.train_dataset(X_train, Y_train, kernel, ratio)
+
+        joblib.dump(clf, model_name)
         print("\nDDI Model trained and saved into", model_name)
 
     def test_DDI_model(self, model_index, test_folder):
@@ -245,6 +300,8 @@ parser.add_argument('--test', help = "Test model at index i", action="store_true
 parser.add_argument('-f','--folder_index', type = int, help = "Folder number. 1 - drugbank, 2 - medline", action = "store", default = -1)
 parser.add_argument('-i','--model_index', type = int, help = "Index of a model to test", action = "store", default = -1)
 parser.add_argument('-r','--ratio', type = float, help = "Ratio of data to use for training", action = "store", default = 1)
+parser.add_argument('-c','--classifier', type = int, help = "Classifier to use. 1 - SVM, 2 - CRF", action = "store", default = 1)
+
 def main():
     clasf = Classifier()
 
@@ -261,9 +318,9 @@ def main():
                 ratio = 1
             if folder_index == 1 or folder_index == 2:
                 if args.task == 1:
-                    clasf.train_NER_model(train_folder = folder_index, ratio = ratio)
+                    clasf.train_NER_model(train_folder = folder_index, ratio = ratio, classifier = args.classifier)
                 elif args.task == 2:
-                    clasf.train_DDI_model(train_folder = folder_index, ratio = ratio)
+                    clasf.train_DDI_model(train_folder = folder_index, ratio = ratio, classifier = args.classifier)
                 else:
                     parser.print_help()
             else:
