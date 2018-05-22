@@ -79,16 +79,28 @@ def parse_all_files():
     parser = Parser()
     if not exists("data/pickle/"+drug_bank_train['name']+".pkl"):
         parser.parse_save_xml_dict(drug_bank_train)
+    else:
+        print("drug_bank_train objects already parsed - skipping")
     if not exists("data/pickle/"+medline_train['name']+".pkl"):
         parser.parse_save_xml_dict(medline_train)
+    else:
+        print("medline_train objects already parsed - skipping")
     if not exists("data/pickle/"+drug_bank_ddi_test['name']+".pkl"):
         parser.parse_save_xml_dict(drug_bank_ddi_test)
+    else:
+        print("drug_bank_ddi_test objects already parsed - skipping")
     if not exists("data/pickle/"+medline_ddi_test['name']+".pkl"):
         parser.parse_save_xml_dict(medline_ddi_test)
+    else:
+        print("medline_ddi_test objects already parsed - skipping")
     if not exists("data/pickle/"+drug_bank_ner_test['name']+".pkl"):
         parser.parse_save_xml_dict(drug_bank_ner_test)
+    else:
+        print("drug_bank_ner_test objects already parsed - skipping")
     if not exists("data/pickle/"+medline_ner_test['name']+".pkl"):
         parser.parse_save_xml_dict(medline_ner_test)
+    else:
+        print("medline_ner_test objects already parsed - skipping")
 
 def main():
     parse_all_files()
