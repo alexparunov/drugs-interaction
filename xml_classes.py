@@ -32,11 +32,12 @@ class Document:
                 m_dict = {'-2': metadata, '-1': ddi_tag}
                 for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
+
                 featured_words_dict.append(m_dict)
                 sent_dict.append(m_dict)
 
             featured_sent_dict.append(sent_dict)
-            
+
         self.featured_words_dict = featured_words_dict
         self.featured_sent_dict = featured_sent_dict
 
