@@ -1,13 +1,15 @@
 #!/usr/bin/python3
+import pickle
+import warnings
+import argparse
 from os.path import join, abspath, isdir
 from os import listdir, makedirs
-import pickle
 from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.externals import joblib
-import warnings
-import argparse
+from numpy.random import randint
+
 from operator import contains
 
 # Files are in the following order (on Alex's computer):
@@ -62,16 +64,24 @@ class Classifier:
         return (feature_vectors_dict, ner_classes, ddi_classes, dict_metadatas)
 
     # train dataset, where X is a list of feature vectors expressed as dictionary
-    # and Y is class variable, which is BIO tag in our case
-    def train_dataset(self, X, Y, kernel):
+    # and Y is class variable, which is BIO tag_type in our case. ratio is proportion of data to use to train
+    def train_dataset(self, X, Y, kernel, ratio):
         vec = DictVectorizer(sparse=False)
         svm_clf = svm.SVC(kernel = kernel, cache_size = 1800, C = 20, verbose = True, tol = 0.01)
         vec_clf = Pipeline([('vectorizer', vec), ('svm', svm_clf)])
-        vec_clf.fit(X, Y)
+        assert len(X) == len(Y)
+
+        # subset of indexes to used in training
+        r_indexes = randint(low = 0, high = len(X)-1, size = round(ratio*(len(X)-1)))
+
+        X_subset = [X[i] for i in r_indexes]
+        Y_subset = [Y[i] for i in r_indexes]
+
+        vec_clf.fit(X_subset, Y_subset)
 
         return vec_clf
 
-    def train_NER_model(self, train_folder, kernel = 'linear'):
+    def train_NER_model(self, train_folder, kernel = 'linear', ratio = 1):
         if not isdir('models'):
             makedirs('models')
 
@@ -99,7 +109,7 @@ class Classifier:
         # we ignore Y_ddi classes since they are not used for NER model training
         X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
 
-        vec_clf = self.train_dataset(X_train, Y_train, kernel)
+        vec_clf = self.train_dataset(X_train, Y_train, kernel, ratio)
 
         joblib.dump(vec_clf, model_name)
         print("\nNER Model trained and saved into", model_name)
@@ -176,7 +186,7 @@ class Classifier:
 
         X_train, Y_ner, Y_train, metadatas = self.split_dataset()
 
-        vec_clf = self.train_dataset(X_train, Y_train, kernel)
+        vec_clf = self.train_dataset(X_train, Y_train, kernel, ratio)
         joblib.dump(vec_clf, model_name)
         print("\nDDI Model trained and saved into", model_name)
 
@@ -234,7 +244,7 @@ parser.add_argument('--train', help = "Train model", action="store_true")
 parser.add_argument('--test', help = "Test model at index i", action="store_true")
 parser.add_argument('-f','--folder_index', type = int, help = "Folder number. 1 - drugbank, 2 - medline", action = "store", default = -1)
 parser.add_argument('-i','--model_index', type = int, help = "Index of a model to test", action = "store", default = -1)
-
+parser.add_argument('-r','--ratio', type = float, help = "Ratio of data to use for training", action = "store", default = 1)
 def main():
     clasf = Classifier()
 
@@ -246,11 +256,14 @@ def main():
 
         if args.train:
             folder_index = args.folder_index
+            ratio = args.ratio
+            if ratio <= 0 and ratio > 1:
+                ratio = 1
             if folder_index == 1 or folder_index == 2:
                 if args.task == 1:
-                    clasf.train_NER_model(train_folder = folder_index)
+                    clasf.train_NER_model(train_folder = folder_index, ratio = ratio)
                 elif args.task == 2:
-                    clasf.train_DDI_model(train_folder = folder_index)
+                    clasf.train_DDI_model(train_folder = folder_index, ratio = ratio)
                 else:
                     parser.print_help()
             else:
