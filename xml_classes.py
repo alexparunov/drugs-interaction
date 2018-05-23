@@ -30,7 +30,7 @@ class Document:
                 metadata = s_feature.pop()
 
                 assert isinstance(metadata, list)
-                
+
                 m_dict = {'-2': metadata, '-1': ddi_tag}
                 for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
@@ -76,7 +76,7 @@ class Sentence:
         tagged_words = pos_tag(word_tokenize(self.text))
         all_features = []
 
-        window_size = 5
+        window_size = 3
         for index, tagged_word in enumerate(tagged_words):
             # We don't want to save punctuations
             if len(tagged_word[0]) < 2:
