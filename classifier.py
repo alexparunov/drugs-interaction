@@ -123,7 +123,7 @@ class Classifier:
 
         import multiprocessing
         cpus = multiprocessing.cpu_count()
-        rs = RandomizedSearchCV(crf, params_space, cv = 5, verbose = 1, n_jobs = cpus-1, n_iter = 500)
+        rs = RandomizedSearchCV(crf, params_space, cv = 3, verbose = 1, n_jobs = cpus-1, n_iter = 50)
 
         assert len(X) == len(Y)
 
@@ -238,7 +238,7 @@ class Classifier:
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
             # if prediction is B_type or I_type then we predicted the drug and it's type is after B_, thus we can write into check file
-            if pred[:2] == 'B_' or pred[:2] == 'I_':
+            if pred[0] == 'B' or pred[0] == 'I':
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
                 pr_f.write(line + '\n')
 

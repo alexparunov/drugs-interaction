@@ -29,6 +29,8 @@ class Document:
                 ddi_tag = s_feature.pop()
                 metadata = s_feature.pop()
 
+                assert isinstance(metadata, list)
+                
                 m_dict = {'-2': metadata, '-1': ddi_tag}
                 for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
@@ -106,6 +108,7 @@ class Sentence:
                 continue
             if isinstance(f_vector[len(f_vector)-1], list):
                 f_vector.pop()
+
             f_word = str(f_vector[word_pos]) #word which is contained in postion 2*n+1
             w_text = "" # word text
             # if BIO tag of feature vector is B then we proceed with special case assignment
@@ -177,9 +180,10 @@ class Sentence:
         updated_features = []
         for f_vector in new_all_features:
             # Update tags. It means each tag will be of type B_drug/B_group/I_drug/I_group/etc.
-            metadata = f_vector.pop()
-            if not isinstance(metadata, list):
+            if not isinstance(f_vector[len(f_vector)-1], list):
                 continue
+
+            metadata = f_vector.pop()
 
             word_ddi = self.get_word_ddi(str(f_vector[word_pos]))
             metadata.extend(word_ddi)
