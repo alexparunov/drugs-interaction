@@ -74,18 +74,19 @@ class Sentence:
         tagged_words = pos_tag(word_tokenize(self.text))
         all_features = []
 
+        window_size = 5
         for index, tagged_word in enumerate(tagged_words):
             # We don't want to save punctuations
             if len(tagged_word[0]) < 2:
                 continue
             if tagged_word[0] in B_tags:
-                all_features.append(self.get_featured_tuple(index, tagged_words, 'B'))
+                all_features.append(self.get_featured_tuple(index, tagged_words, 'B', window_size))
             elif tagged_word[0] in I_tags:
-                all_features.append(self.get_featured_tuple(index, tagged_words, 'I'))
+                all_features.append(self.get_featured_tuple(index, tagged_words, 'I', window_size))
             else:
-                all_features.append(self.get_featured_tuple(index, tagged_words, 'O'))
+                all_features.append(self.get_featured_tuple(index, tagged_words, 'O', window_size))
 
-        all_features = self.get_vector_metadatas(all_features)
+        all_features = self.get_vector_metadatas(all_features, window_size)
 
         return all_features
 
@@ -93,14 +94,19 @@ class Sentence:
     # It's necessary since our output should be of type:
     # for NER task we need sentenceId|offsets...|text|type
     # for DDI prediction we need sentenceId|idDrug1|idDrug2|prediction (ddi = 1 or ddi = 0)|type (advice, effect, etc.)
-    def get_vector_metadatas(self, all_features):
+    def get_vector_metadatas(self, all_features, window_size):
         pos = 0 #initial search positions
         new_all_features = [] #vector of new features with appended metadata
+        word_pos = 2 * window_size + 1 #position where main word is
         for i in range(len(all_features)):
             charOffset = ""
             type = "" #type of drug which is empty by default
             f_vector = all_features[i] #feature vector
-            f_word = str(f_vector[5]) #word which is contained in postion 3
+            if len(f_vector) <= word_pos:
+                continue
+            if isinstance(f_vector[len(f_vector)-1], list):
+                f_vector.pop()
+            f_word = str(f_vector[word_pos]) #word which is contained in postion 2*n+1
             w_text = "" # word text
             # if BIO tag of feature vector is B then we proceed with special case assignment
             if f_vector[0] == 'B':
@@ -123,13 +129,19 @@ class Sentence:
                 while i < len(all_features) - 1:
                     f_vector = all_features[i+1] #next word in a feature vectors
 
+                    if len(f_vector) <= word_pos:
+                        continue
+
+                    if isinstance(f_vector[len(f_vector)-1], list):
+                        f_vector.pop()
+
                     # As soon as next words BIO tag is not I, we break the inner loop
                     # otherwise we continue appending to charOffsetString. So eventually it looks like
                     # 100-150;155-170;190-200...
                     if f_vector[0] != 'I':
                         break
 
-                    f_word = str(f_vector[5])
+                    f_word = str(f_vector[word_pos])
                     pos = self.text.find(f_word, pos)
 
                     if pos < 0:
@@ -147,7 +159,7 @@ class Sentence:
                     new_all_features.append(f_vector)
             else:
                 # Otherwise BIO tag is O so we simply have charOffset and empty type
-                f_word = str(f_vector[5])
+                f_word = str(f_vector[word_pos])
                 w_text = f_word
                 pos = self.text.find(f_word, pos)
                 if pos < 0:
@@ -165,42 +177,39 @@ class Sentence:
         updated_features = []
         for f_vector in new_all_features:
             # Update tags. It means each tag will be of type B_drug/B_group/I_drug/I_group/etc.
-            try:
-                metadata = f_vector.pop()
-                if not isinstance(metadata, list):
-                    continue
+            metadata = f_vector.pop()
+            if not isinstance(metadata, list):
+                continue
 
-                word_ddi = self.get_word_ddi(str(f_vector[5]))
-                metadata.extend(word_ddi)
+            word_ddi = self.get_word_ddi(str(f_vector[word_pos]))
+            metadata.extend(word_ddi)
 
-                assert len(metadata) == 8
-                # if ddi = True then it's 1, otherwise it's 0
-                ddi_tag = int(metadata[4])
+            assert len(metadata) == 8
+            # if ddi = True then it's 1, otherwise it's 0
+            ddi_tag = int(metadata[4])
 
-                # append type of interaction in both cases
-                if ddi_tag > 0:
-                    ddi_tag = str(ddi_tag)+"_"+metadata[len(metadata)-1]
-                else:
-                    ddi_tag = str(ddi_tag)+"_null"
+            # append type of interaction in both cases
+            if ddi_tag > 0:
+                ddi_tag = str(ddi_tag)+"_"+metadata[len(metadata)-1]
+            else:
+                ddi_tag = str(ddi_tag)+"_null"
 
-                # update metadata
-                f_vector.append(metadata)
+            # update metadata
+            f_vector.append(metadata)
 
-                # set class of ddi to the last element
-                f_vector.append(ddi_tag)
+            # set class of ddi to the last element
+            f_vector.append(ddi_tag)
 
-                tag = f_vector[0]
-                if tag == 'B' or tag == 'I':
-                    type = self.get_word_entity(str(f_vector[5]))
-                    tag = tag + "_"+type
-                    f_vector[0] = tag
-                # remove words at windows. Words are located at positions 1,3,7,9 in window of n = 2
-                # We need to remove them otherwise training takes forever
-                ff_vector = [f_vector[j] for j in range(len(f_vector)) if j != 1 and j != 3 and j != 7 and j != 9]
-                #print(ff_vector)
-                updated_features.append(ff_vector)
-            except TypeError:
-                pass
+            tag = f_vector[0]
+            if tag == 'B' or tag == 'I':
+                type = self.get_word_entity(str(f_vector[word_pos]))
+                tag = tag + "_"+type
+                f_vector[0] = tag
+
+            # remove words at those indexes. They are located at positions word_pos +/- 2*i where i is in interval [-window_size,window_size and i != 0]
+            skipping_indexes = [word_pos + 2*i for i in range(-window_size,window_size+1) if i != 0]
+            ff_vector = [f_vector[j] for j in range(len(f_vector)) if j not in skipping_indexes]
+            updated_features.append(f_vector)
 
         return updated_features
 
@@ -230,16 +239,14 @@ class Sentence:
 
         return [ddi, idDrug1, idDrug2, type]
 
-
-
     # Following some guidelines from this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
-    def get_featured_tuple(self, index, tagged_words, bio_tag):
+    def get_featured_tuple(self, index, tagged_words, bio_tag, window_size = 2):
         features = [bio_tag]
         word = tagged_words[index][0]
 
-        # get array of [word,pos_tag] for +-2 word window
-        if len(tagged_words) > 2:
-            windows = get_words_window(index, tagged_words, 2)
+        # get array of [word,pos_tag] for +-window_size word window. Default is 2
+        if len(tagged_words) > window_size:
+            windows = get_words_window(index, tagged_words, window_size)
             features.extend(windows)
 
         # add boolean as length is more >= 7

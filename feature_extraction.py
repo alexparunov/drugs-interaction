@@ -13,7 +13,6 @@ def extract_features():
         f.close()
         all_featured_docs = []
         for doc in docs:
-            #print("Extracting features for",doc.id)
             doc.set_features()
             all_featured_docs.append(doc)
 
@@ -32,8 +31,6 @@ def test():
 
     sent = docs[0].sentences[-1]
     print(docs[0].featured_words_dict)
-    #print(sent.__str__())
-    #print(sent.set_features())
 
 if __name__ == "__main__":
     #main()

@@ -123,7 +123,7 @@ class Classifier:
 
         import multiprocessing
         cpus = multiprocessing.cpu_count()
-        rs = RandomizedSearchCV(crf, params_space, cv = 3, verbose = 1, n_jobs = cpus-1, n_iter = 50)
+        rs = RandomizedSearchCV(crf, params_space, cv = 5, verbose = 1, n_jobs = cpus-1, n_iter = 500)
 
         assert len(X) == len(Y)
 
