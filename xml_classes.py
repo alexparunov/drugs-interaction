@@ -23,15 +23,13 @@ class Document:
             sent_features = sentence.set_features()
             sent_dict = []
             for s_feature in sent_features:
-                # first indext contains BIO tag
-                # last index contains DDI bio tag
-                # previous to last index contains metadata
-                ddi_tag = s_feature.pop()
+                # First indext contains BIO tag
+                # Last index contains metadata
                 metadata = s_feature.pop()
 
                 assert isinstance(metadata, list)
 
-                m_dict = {'-2': metadata, '-1': ddi_tag}
+                m_dict = {'-1': metadata }
                 for i in range(len(s_feature)):
                     m_dict[str(i)] = s_feature[i]
 
@@ -104,10 +102,9 @@ class Sentence:
             charOffset = ""
             type = "" #type of drug which is empty by default
             f_vector = all_features[i] #feature vector
-            if len(f_vector) <= word_pos:
+
+            if len(f_vector) < 13:
                 continue
-            if isinstance(f_vector[len(f_vector)-1], list):
-                f_vector.pop()
 
             f_word = str(f_vector[word_pos]) #word which is contained in postion 2*n+1
             w_text = "" # word text
@@ -132,11 +129,8 @@ class Sentence:
                 while i < len(all_features) - 1:
                     f_vector = all_features[i+1] #next word in a feature vectors
 
-                    if len(f_vector) <= word_pos:
+                    if len(f_vector) < 13:
                         continue
-
-                    if isinstance(f_vector[len(f_vector)-1], list):
-                        f_vector.pop()
 
                     # As soon as next words BIO tag is not I, we break the inner loop
                     # otherwise we continue appending to charOffsetString. So eventually it looks like
@@ -179,31 +173,6 @@ class Sentence:
 
         updated_features = []
         for f_vector in new_all_features:
-            # Update tags. It means each tag will be of type B_drug/B_group/I_drug/I_group/etc.
-            if not isinstance(f_vector[len(f_vector)-1], list):
-                continue
-
-            metadata = f_vector.pop()
-
-            word_ddi = self.get_word_ddi(str(f_vector[word_pos]))
-            metadata.extend(word_ddi)
-
-            assert len(metadata) == 8
-            # if ddi = True then it's 1, otherwise it's 0
-            ddi_tag = int(metadata[4])
-
-            # append type of interaction in both cases
-            if ddi_tag > 0:
-                ddi_tag = str(ddi_tag)+"_"+metadata[len(metadata)-1]
-            else:
-                ddi_tag = str(ddi_tag)+"_null"
-
-            # update metadata
-            f_vector.append(metadata)
-
-            # set class of ddi to the last element
-            f_vector.append(ddi_tag)
-
             tag = f_vector[0]
             if tag == 'B' or tag == 'I':
                 type = self.get_word_entity(str(f_vector[word_pos]))
@@ -213,7 +182,7 @@ class Sentence:
             # remove words at those indexes. They are located at positions word_pos +/- 2*i where i is in interval [-window_size,window_size and i != 0]
             skipping_indexes = [word_pos + 2*i for i in range(-window_size,window_size+1) if i != 0]
             ff_vector = [f_vector[j] for j in range(len(f_vector)) if j not in skipping_indexes]
-            updated_features.append(f_vector)
+            updated_features.append(ff_vector)
 
         return updated_features
 
@@ -225,23 +194,6 @@ class Sentence:
             text_ar = entity.text.split()
             if f_word in text_ar:
                 return entity.type
-
-    def get_word_ddi(self, f_word):
-        ddi = False
-        idDrug1 = ""
-        idDrug2 = ""
-        type = ""
-        for entity in self.entities:
-            text_ar = entity.text.split()
-            if f_word in text_ar:
-                for pair in self.pairs:
-                    if pair.e1 == entity.id or pair.e2 == entity.id:
-                        ddi = pair.ddi
-                        idDrug1 = pair.e1
-                        idDrug2 = pair.e2
-                        type = pair.type
-
-        return [ddi, idDrug1, idDrug2, type]
 
     # Following some guidelines from this table https://www.hindawi.com/journals/cmmm/2015/913489/tab1/
     def get_featured_tuple(self, index, tagged_words, bio_tag, window_size = 2):

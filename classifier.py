@@ -53,20 +53,18 @@ class Classifier:
 
         feature_vectors_dict = [] # feature vectors expressed as dicts. train data
         ner_classes = [] # B,I,O classes
-        ddi_classes = [] # B,I,O classes
         dict_metadatas = []
 
         for doc in docs:
             for m_dict in doc.featured_words_dict:
                 ner_classes.append(m_dict['0'])
-                ddi_classes.append(m_dict['-1'])
-                dict_metadatas.append(m_dict['-2'])
+                dict_metadatas.append(m_dict['-1'])
 
                 # we want sub-dictionary of all elements besides the class
                 sub_dict = {k:v for k,v in  m_dict.items() if k > '0' and not isinstance(v, list)}
                 feature_vectors_dict.append(sub_dict)
 
-        return (feature_vectors_dict, ner_classes, ddi_classes, dict_metadatas)
+        return (feature_vectors_dict, ner_classes, dict_metadatas)
 
     def split_dataset_crf(self):
         if len(self.path) == 0:
@@ -80,19 +78,17 @@ class Classifier:
             # sent is a list of dictionaries
             for sent in doc.featured_sent_dict:
                 ner_classes = []
-                ddi_classes = []
                 dict_metadatas = []
                 sub_dicts = []
                 for m_dict in sent:
                     ner_classes.append(m_dict['0'])
-                    ddi_classes.append(m_dict['-1'])
-                    dict_metadatas.append(m_dict['-2'])
+                    dict_metadatas.append(m_dict['-1'])
 
                     # we want sub-dictionary of all elements besides the class
                     sub_dict = {k:v for k,v in  m_dict.items() if k > '0' and not isinstance(v, list)}
                     sub_dicts.append(sub_dict)
 
-                all_sentences_features.append((sub_dicts, ner_classes, ddi_classes, dict_metadatas))
+                all_sentences_features.append((sub_dicts, ner_classes, dict_metadatas))
 
         return all_sentences_features
 
@@ -167,7 +163,7 @@ class Classifier:
             clf = self.train_dataset_crf(X_train, Y_train, ratio)
         else:
             # we ignore Y_ddi classes since they are not used for NER model training
-            X_train, Y_train, Y_ddi, metadatas = self.split_dataset()
+            X_train, Y_train, metadatas = self.split_dataset()
             clf = self.train_dataset_svm(X_train, Y_train, kernel, ratio)
 
         joblib.dump(clf, model_name)
@@ -202,7 +198,7 @@ class Classifier:
                 for y_test in y:
                     Y_test.append(y_test)
 
-            met = [f[3] for f in featured_sent_dict]
+            met = [f[2] for f in featured_sent_dict]
             metadatas = []
             for metadata in met:
                 for met in metadata:
@@ -210,7 +206,7 @@ class Classifier:
         else:
             # metadatas are of type: sentenceId | offsets... | text | type
             # we ignore Y_ddi classes since they are not used for NER model training
-            X_test, Y_test, Y_ddi, metadatas = self.split_dataset()
+            X_test, Y_test, metadatas = self.split_dataset()
 
         if classifier == 2:
             preds = vec_clf.predict(X_test)
@@ -339,8 +335,8 @@ class Classifier:
         # clear file, i.e. remove all
         pr_f.close()
 
-        # reopen clean file
         pr_f = open(predictions_name, 'w')
+        # reopen clean file
 
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
