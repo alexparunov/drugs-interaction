@@ -76,7 +76,7 @@ class Sentence:
         tagged_words = pos_tag(word_tokenize(self.text))
         all_features = []
 
-        window_size = 3
+        window_size = 2
         for index, tagged_word in enumerate(tagged_words):
             # We don't want to save punctuations
             if len(tagged_word[0]) < 2:
@@ -213,7 +213,7 @@ class Sentence:
             # remove words at those indexes. They are located at positions word_pos +/- 2*i where i is in interval [-window_size,window_size and i != 0]
             skipping_indexes = [word_pos + 2*i for i in range(-window_size,window_size+1) if i != 0]
             ff_vector = [f_vector[j] for j in range(len(f_vector)) if j not in skipping_indexes]
-            updated_features.append(f_vector)
+            updated_features.append(ff_vector)
 
         return updated_features
 

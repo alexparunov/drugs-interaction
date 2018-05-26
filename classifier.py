@@ -8,8 +8,6 @@ from numpy.random import randint
 import scipy
 
 import sklearn_crfsuite
-from sklearn_crfsuite import scorers
-from sklearn_crfsuite import metrics
 
 from sklearn import svm
 from sklearn.pipeline import Pipeline
@@ -148,14 +146,14 @@ class Classifier:
             self.set_path(path)
             drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
             model_index = len(drugbank_models) # save next model
-            model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
+            model_name = 'models/ner_drugbank_model_'+str(model_index)+'.pkl'
             print("Started training NER Drugbank model...")
         elif train_folder == 2:
             path = get_file_full_path("medline_train.pkl", pickled_files)
             self.set_path(path)
             medline_models = list(filter(lambda x: contains(x, 'medline_model_'), model_names))
             model_index = len(medline_models) # save next model
-            model_name = 'models/medline_model_'+str(model_index)+'.pkl'
+            model_name = 'models/ner_medline_model_'+str(model_index)+'.pkl'
             print("Started training NER Medline model...")
         else:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
@@ -177,14 +175,14 @@ class Classifier:
         model_name = ""
         predictions_name = ""
         if test_folder == 1:
-            model_name = 'models/drugbank_model_'+str(model_index)+'.pkl'
-            predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
+            model_name = 'models/ner_drugbank_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/ner_drugbank_model_'+str(model_index)+'.txt'
             path = get_file_full_path("drug_bank_ner_test.pkl", pickled_files)
             self.set_path(path)
             print("Testing NER Drugbank model", model_index,"...")
         elif test_folder == 2:
-            model_name = 'models/medline_model_'+str(model_index)+'.pkl'
-            predictions_name = 'predictions/medline_model_'+str(model_index)+'.txt'
+            model_name = 'models/ner_medline_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/ner_medline_model_'+str(model_index)+'.txt'
             path = get_file_full_path("medline_ner_test.pkl", pickled_files)
             self.set_path(path)
             print("Testing NER Medline model", model_index,"...")
@@ -236,7 +234,7 @@ class Classifier:
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
             # if prediction is B_type or I_type then we predicted the drug and it's type is after B_, thus we can write into check file
-            if pred[0] == 'B' or pred[0] == 'I':
+            if pred[0] == 'B':
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
                 pr_f.write(line + '\n')
 
@@ -255,14 +253,14 @@ class Classifier:
             self.set_path(path)
             drugbank_ddi_models = list(filter(lambda x: contains(x, 'drugbank_ddi_model_'), model_names))
             model_index = len(drugbank_ddi_models) # save next model
-            model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
+            model_name = 'models/ddi_drugbank_model_'+str(model_index)+'.pkl'
             print("Started training DDI Drugbank model...")
         elif train_folder == 2:
             path = get_file_full_path("medline_train.pkl", pickled_files)
             self.set_path(path)
             medline_ddi_models = list(filter(lambda x: contains(x, 'medline_ddi_model_'), model_names))
             model_index = len(medline_ddi_models) # save next model
-            model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
+            model_name = 'models/ddi_medline_model_'+str(model_index)+'.pkl'
             print("Started training DDI Medline model...")
         else:
             raise ValueError('train_folder value should be 1 - drugbank, or 2 - medline')
@@ -286,14 +284,14 @@ class Classifier:
         model_name = ""
         predictions_name = ""
         if test_folder == 1:
-            model_name = 'models/drugbank_ddi_model_'+str(model_index)+'.pkl'
-            predictions_name = 'predictions/drugbank_ddi_model_'+str(model_index)+'.txt'
+            model_name = 'models/ddi_drugbank_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/ddi_drugbank_model_'+str(model_index)+'.txt'
             path = get_file_full_path("drug_bank_ddi_test.pkl", pickled_files)
             self.set_path(path)
             print("Testing DDI Drugbank model", model_index,"...")
         elif test_folder == 2:
-            model_name = 'models/medline_ddi_model_'+str(model_index)+'.pkl'
-            predictions_name = 'predictions/medline_ddi_model_'+str(model_index)+'.txt'
+            model_name = 'models/ddi_medline_model_'+str(model_index)+'.pkl'
+            predictions_name = 'predictions/ddi_medline_model_'+str(model_index)+'.txt'
             path = get_file_full_path("medline_ddi_test.pkl", pickled_files)
             self.set_path(path)
             print("Testing DDI Medline model", model_index,"...")
@@ -347,7 +345,7 @@ class Classifier:
             # if prediction is 1_type then we predicted ddi correctly, thus we can write into check file
             if len(metadata[5]) > 0 and len(metadata[6]) > 0:
                 # some document sentence ids are completely wrong, we want only DDI-Medline
-                if metadata[0][:12] == 'DDI-MedLine.':
+                if metadata[0][:4] == 'DDI-':
                     line = metadata[0]+'|'+metadata[5]+'|'+metadata[6]+'|'+pred[0]+'|'+pred[2:]
                     pr_f.write(line + '\n')
 
