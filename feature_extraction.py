@@ -6,6 +6,7 @@ import pickle
 pickle_path = "data/pickle"
 pickled_files = [join(abspath(pickle_path), f) for f in listdir(abspath(pickle_path))]
 
+
 def extract_features():
     for file_name in pickled_files:
         f = open(file_name, 'rb')
@@ -16,12 +17,14 @@ def extract_features():
             doc.set_features()
             all_featured_docs.append(doc)
 
-        with open(file_name,'wb') as f:
+        with open(file_name, 'wb') as f:
             pickle.dump(all_featured_docs, f)
-            print("All documents with features are set in "+file_name)
+            print("All documents with features are set in " + file_name)
+
 
 def main():
     extract_features()
+
 
 def test():
     # train/drugbank
@@ -32,6 +35,7 @@ def test():
     sent = docs[0].sentences[-1]
     print(docs[0].featured_words_dict)
 
+
 if __name__ == "__main__":
-    #main()
+    # main()
     test()
