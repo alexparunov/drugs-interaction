@@ -74,7 +74,7 @@ class Sentence:
         tagged_words = pos_tag(word_tokenize(self.text))
         all_features = []
 
-        window_size = 3
+        window_size = 2
         for index, tagged_word in enumerate(tagged_words):
             # We don't want to save punctuations
             if len(tagged_word[0]) < 2:
@@ -98,12 +98,14 @@ class Sentence:
         pos = 0 #initial search positions
         new_all_features = [] #vector of new features with appended metadata
         word_pos = 2 * window_size + 1 #position where main word is
+        min_len_th = 11 + window_size*2 #word vector should be at least this length
+
         for i in range(len(all_features)):
             charOffset = ""
             type = "" #type of drug which is empty by default
             f_vector = all_features[i] #feature vector
 
-            if len(f_vector) < 13:
+            if len(f_vector) < min_len_th:
                 continue
 
             f_word = str(f_vector[word_pos]) #word which is contained in postion 2*n+1
@@ -129,7 +131,7 @@ class Sentence:
                 while i < len(all_features) - 1:
                     f_vector = all_features[i+1] #next word in a feature vectors
 
-                    if len(f_vector) < 13:
+                    if len(f_vector) < min_len_th:
                         continue
 
                     # As soon as next words BIO tag is not I, we break the inner loop

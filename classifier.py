@@ -8,8 +8,6 @@ from numpy.random import randint
 import scipy
 
 import sklearn_crfsuite
-from sklearn_crfsuite import scorers
-from sklearn_crfsuite import metrics
 
 from sklearn import svm
 from sklearn.pipeline import Pipeline
@@ -142,14 +140,14 @@ class Classifier:
         if train_folder == 1:
             path = get_file_full_path("drug_bank_train.pkl", pickled_files)
             self.set_path(path)
-            drugbank_models = list(filter(lambda x: contains(x, 'drugbank_model_'), model_names))
+            drugbank_models = list(filter(lambda x: contains(x, 'ner_drugbank_model_'), model_names))
             model_index = len(drugbank_models) # save next model
             model_name = 'models/ner_drugbank_model_'+str(model_index)+'.pkl'
             print("Started training NER Drugbank model...")
         elif train_folder == 2:
             path = get_file_full_path("medline_train.pkl", pickled_files)
             self.set_path(path)
-            medline_models = list(filter(lambda x: contains(x, 'medline_model_'), model_names))
+            medline_models = list(filter(lambda x: contains(x, 'ner_medline_model_'), model_names))
             model_index = len(medline_models) # save next model
             model_name = 'models/ner_medline_model_'+str(model_index)+'.pkl'
             print("Started training NER Medline model...")
@@ -174,13 +172,13 @@ class Classifier:
         predictions_name = ""
         if test_folder == 1:
             model_name = 'models/ner_drugbank_model_'+str(model_index)+'.pkl'
-            predictions_name = 'predictions/drugbank_model_'+str(model_index)+'.txt'
+            predictions_name = 'predictions/ner_drugbank_model_'+str(model_index)+'.txt'
             path = get_file_full_path("drug_bank_ner_test.pkl", pickled_files)
             self.set_path(path)
             print("Testing NER Drugbank model", model_index,"...")
         elif test_folder == 2:
             model_name = 'models/ner_medline_model_'+str(model_index)+'.pkl'
-            predictions_name = 'predictions/medline_model_'+str(model_index)+'.txt'
+            predictions_name = 'predictions/ner_medline_model_'+str(model_index)+'.txt'
             path = get_file_full_path("medline_ner_test.pkl", pickled_files)
             self.set_path(path)
             print("Testing NER Medline model", model_index,"...")
@@ -231,7 +229,7 @@ class Classifier:
 
         for i, pred in enumerate(predictions):
             metadata = metadatas[i]
-            # if prediction is B_type then we predicted the drug and it's type is after B_, thus we can write into check file
+            # if prediction is B_type or I_type then we predicted the drug and it's type is after B_/I_, thus we can write into check file
             if pred[0] == 'B':
                 line = metadata[0] + '|' + metadata[1] + '|' + metadata[2] + '|' + pred[2:]
                 pr_f.write(line + '\n')
